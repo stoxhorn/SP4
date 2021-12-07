@@ -26,7 +26,7 @@ public class Storyline {
             case 1:
                 kapitel1A();
             case 2:
-                kapitel1B();
+                goToCafeteria();
             case 3:
                 kapitel1C();
             case 4:
@@ -62,7 +62,7 @@ public class Storyline {
         if (pointer == 1) {
             story.kapitel1A();
         } else if (pointer ==2){
-            story.kapitel1B();
+            story.goToCafeteria();
         } else if (pointer == 3) {
             story.kapitel1C();
         } else if (pointer ==4) {
@@ -103,8 +103,13 @@ public class Storyline {
 
 
     private static void kapitel1A1() {
-
         System.out.println("PRUT");
+        player.buySandwich();
+     player.buyCoffee();
+     player.viewInventory();
+
+
+
     }
     private static void kapitel1A2() {
         System.out.println("PRUTTTTT!");
@@ -117,20 +122,36 @@ public class Storyline {
         System.out.println("Flirt!");
     }
 
-    public static void kapitel1B(){
-        System.out.println("Du ankommer til kantinen. Hvad vil du gøre?" +
-                "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner" +
-                "\n\t(2) Jeg vil gerne bede om en kaffe til 10 kroner" +
-                "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner" +
-                "\n\t(4) Jeg forlader kantinen" );
+    public static void goToCafeteria(){
+        System.out.println("" +
+                "\n##     ##         #        ##       ##  ########### ######  ##       ##  ######## " +
+                "\n##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##       " +
+                "\n##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##       " +
+                "\n## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##       " +
+                "\n###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####    " +
+                "\n## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##       " +
+                "\n##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##       " +
+                "\n##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##       " +
+                "\n##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ######## ");
+
+        System.out.println("Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød," +
+                "\nfriskbrygget kaffe og ung-drengesved. Hvad vil du gøre?" +
+                "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
+                "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
+                "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
+                "\n\t(4) Jeg forlader kantinen og vender tilbage til det sidste sted jeg var." );
         int pointer;
         pointer = IO.getUserInput();
         if (pointer == 1) {
-            story.kapitel1B1();
+            // story.kapitel1B1();
+            System.out.println("Vi har desværre udsolgt vores æbler.");
+            story.goToCafeteria();
         } else if (pointer == 2) {
-            story.kapitel1B2();
+            player.buyCoffee();
+            story.goToCafeteria();
         } else if (pointer == 3) {
-            story.kapitel1B3();
+            player.buySandwich();
+            story.goToCafeteria();
         } else if (pointer == 4) {
             story.kapitel1B4();
         } else {
@@ -142,16 +163,19 @@ public class Storyline {
         TicTacToe tic = new TicTacToe();
 
     }
-
-    private static void kapitel1B3() {
-    }
-
-    private static void kapitel1B2() {
-        player.setCoffee(++);
-        System.out.println("Du får en kop kaffe og har nu " + player.getCoffee() + " kopper kaffe til rådighed!");
+/*
+    private static void getSandwich() { // Er det sådan her vi skal gøre?
+        Sandwich sandwich = new Sandwich(50);
+        sandwich.buySandwich();
+        }
+*/
+    private static void buyCoffee() {
+      //  player.setCoffee(player.getCoffee()+1);
+    //    System.out.println("Du får en kop kaffe og har nu " + player.getCoffee() + " kopper kaffe til rådighed!");
     }
 
     private static void kapitel1B1() {
+
     }
 
     public static void kapitel1C() {

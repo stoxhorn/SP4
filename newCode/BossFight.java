@@ -27,11 +27,12 @@ public class BossFight{
                 String userInput = input.nextLine();
                 if (input.equals("3")) {
                     System.out.println("KORREKT!");
-                    player.correctAnswers = player.correctAnswers++;
+                    player.setCorrectAnswers( player.getCorrectAnswers()+1 );
+
                 } else {
                     System.out.println("FORKERT!");
-                    player.correctAnswers = player.wrongAnswers++;
-                    if (player.wrongAnswers > 4) {
+                    player.setWrongAnswers(player.getWrongAnswers()+1);
+                    if (player.getWrongAnswers() > 4) {
                         System.out.println("Du svarede desværre forkert på for mange spørgsmål i SP-quizzen og må tage semestret om.");
                         break;
                     }
@@ -45,11 +46,11 @@ public class BossFight{
 
                 if (input.equals("D")) {
                     System.out.println("KORREKT!");
-                    player.correctAnswers = player.correctAnswers++;
+                    player.setCorrectAnswers( player.getCorrectAnswers()+1 );
                 } else {
                     System.out.println("FORKERT!");
-                    player.wrongAnswers = player.wrongAnswers++;
-                    if (player.wrongAnswers > 4) {
+                    player.setWrongAnswers(player.getWrongAnswers()+1);
+                    if (player.getWrongAnswers() > 4) {
                         System.out.println("Du svarede desværre forkert på for mange spørgsmål i SP-quizzen og må tage semestret om.");
                         break;
                     }
