@@ -64,6 +64,11 @@ public class Storyline {
         } else if (pointer ==2){
             story.goToCafeteria();
         } else if (pointer == 3) {
+            clearAll();
+            System.out.println("Du er smart, så du følger selvfølgelig skiltet hvorpå der står 'DATAMATIKER'," +
+                            "\nog inden du ved af det, er du ankommet i din klasse." +
+                            "\nDu er kommet i god tid, så du kan sætte dig lige hvor du vil." +
+                            "\nHvor vil du sidde?");
             story.kapitel1C();
         } else if (pointer ==4) {
             story.kapitel1D();
@@ -144,7 +149,8 @@ public class Storyline {
         pointer = IO.getUserInput();
         if (pointer == 1) {
             // story.kapitel1B1();
-            System.out.println("Vi har desværre udsolgt vores æbler.");
+            System.out.println("Vi har desværre udsolgt vores æbler." +
+                    "---------------------------------------------------------------------------------------------------");
             story.goToCafeteria();
         } else if (pointer == 2) {
             player.buyCoffee();
@@ -159,8 +165,8 @@ public class Storyline {
         }
     }
 
+
     private static void kapitel1B4() {
-        TicTacToe tic = new TicTacToe();
 
     }
 /*
@@ -179,17 +185,44 @@ public class Storyline {
     }
 
     public static void kapitel1C() {
-        System.out.println("Du er smart, så du følger selvfølgelig skiltet hvorpå der står 'DATAMATIKER'," +
-                "\nog inden du ved af det, er du ankommet i din klasse." +
-                "\nDu er kommet i god tid, så du kan sætte dig lige hvor du vil." +
-                "\nHvor vil du sidde?" +
-                "\n\t(1) Jeg sætter mig forrest, så kan læreren bedre se mig." +
+        System.out.println("\t(1) Jeg sætter mig forrest, så kan læreren bedre se mig når jeg har fingeren oppe." +
                 "\n\t(2) Bagerst. Gerne bag den højeste i klassen, så ingen bemærker mig." +
                 "\n\t(3) Der hvor de søde piger sidder, selvfølgelig." +
                 "\n\t(4) Jeg sætter mig i vindueskarmen, og beholder mine solbriller på.");
+        int pointer;
+        pointer = IO.getUserInput();
+        if (pointer == 1) {
+            clearAll();
+            System.out.println("Du sætter dig selvfølgelig så langt fremme som muligt." +
+                    "\n---------------------------------------------------------------------------------------------------");
+            player.setStudyPoints(5);
+            kapitel1C5();
+        } else if (pointer == 2) {
+            clearAll();
+            System.out.println("Nede bagved skal du sidde, så kan du håbe, at læreren ikke bemærker dig." +
+                    "\n------------------------------------------------------------------------------------------------");
+            kapitel1C5();
+        } else if (pointer == 3) {
+            clearAll();
+            System.out.println("Der sidder en rigtig sød pige yderst til venstre, mon ikke hun kan bruge lidt selskab?" +
+                    "\n------------------------------------------------------------------------------------------------");
+            player.setStudyPoints(-5);
+            kapitel1C5();
+        } else if (pointer == 4) {
+            clearAll();
+            System.out.println("De andre kan sætte sig lige hvor de vil, du sætter dig selvfølgelig i vindueskarmen, og finder din mobiltelefon frem... Instagram skal jo opdateres!" +
+                    "\n------------------------------------------------------------------------------------------------");
+            player.setStudyPoints(-15);
+            kapitel1C5();
+        } else {
+            System.out.println("Det kan du ikke gøre nu, prøv igen");
 
+        }
     }
+    //bliv stående lidt endnu
+
     public static void kapitel1D() {
+
         System.out.println("" +
                 "" +
                 "" +
@@ -197,7 +230,117 @@ public class Storyline {
                 "");
     }
 
+    //TODO LAV ET NAVNELEGSSPIL!
 
+    public static void kapitel1C5() {
+        System.out.println("Første time går selvfølgelig med introduktion, navneleg og andre sjove påfund. " +
+                "\nDu får i løbet af dagen danset en følelse, hørt røverhistorier fra de andre studerende" +
+                "\nog næsten åbnet din bog. Du er træt, men har ikke helt lært så meget om kodning endnu.");
+        Main.io.pressEnterToContinue();
+        kapitel2();
+    }
+
+    private static void kapitel2() {
+        clearAll();
+        System.out.println(
+
+                                  "####            ###       ##########   #########    " +
+                                "\n## ###         ## ##      ##      ##   ##     ##    " +
+                                "\n##   ##       ##   ##     ##      ##          ##    " +
+                                "\n##    ##     ##     ##    ##                  ##    " +
+                                "\n##     ##   ##       ##   ##           #########    " +
+                                "\n##    ##   #############  ##    ####   ##           " +
+                                "\n##   ##    ##         ##  ##      ##   ##           " +
+                                "\n## ###     ##         ##  ##      ##   ##           " +
+                                "\n####       ##         ##  ##########   ########     " +
+        "\n");
+        System.out.println("Efter den første dag på studiet, er du nu tilbage hvor du startede. " +
+                "\nBogen i din taske har endnu ikke været åbnet, men mon ikke du får lov til, at lære noget i dag?" +
+                "\nNu står du i hvert fald i lobbyen på CPH-Business igen og overvejer hvilken vej du skal tage i dag." +
+                "\nHvad gør du?" +
+                "\n\t(1)Jeg går direkte til undervisningslokalet, nu kan jeg jo vejen." +
+                "\n\t(2)Jeg tager elevatoren, det må da gå hurtigere end trapperne?" +
+                "\n\t(3)Jeg skal liiiiiige forbi kantinen først!");
+        int pointer;
+        pointer = IO.getUserInput();
+        if (pointer == 1) {
+            clearAll();
+            System.out.println("-----------------------------------------------------------------------------------------------");
+
+            kapitel2A();
+        } else if (pointer ==2){
+            kapitel2B();
+        } else if (pointer == 3) {
+            goToCafeteria();
+        } else {
+            System.out.println("Det kan du ikke nu, prøv igen!");
+        }
+
+    }
+
+    private static void kapitel2A() {
+        System.out.println("Du ankommer til første time med din nye lærer, William. Han fortæller dig gladeligt om en ting som hedder variabler." +
+                "\n" +
+                "\nDet hele er meget nyt for dig, men du når at opfange, at variabler skal erklæres (declares) førend de kan benyttes. " +
+                "\nFor at gøre det, skal man først specificere variabel-typen, og herefter give den værdi som passer til dens type." +
+                "\nHvis du f.eks. skal lave en variabel af typen String (en sekvens af bogstaver), så benyttes syntaksen: " +
+                "\n\tString name = \"Arne\" " +
+                "\ntil at lave en String med navnet \"name\" og med værdien \"Arne\". " +
+                "\nFørst variebel-typen (String), så det du navngiver den (name) og slutteligt dens værdi (Arne)\n");
+        player.setStudyPoints(player.getStudyPoints()+10);
+        player.setEnergyLevel(player.getEnergyLevel()-30);
+        Main.io.pressEnterToContinue();
+        clearAll();
+        System.out.println("Et lige tal kaldes en int (kort for en Integer). Du kan gemme dem ud fra samme syntaks som Strings." +
+                "\n\tint newNumber = 100 " +
+                "\nHer oprettes en variabel-type \"int\", med navnet \"newNumber\" og værdien \"100\"." +
+                "\n");
+        Main.io.pressEnterToContinue();
+        kapitel2C();
+    }
+
+
+    private static void kapitel2B() {
+    }
+
+    private static void kapitel2C() {
+        clearAll();
+        System.out.println("PYHA! Ovenpå den omgang med variabler, har du vist brug for en luftforandring. " +
+                "\nDu er dog blevet lidt træt, og din energi er nu " + player.getEnergyLevel() + "." +
+                "\nHvad kunne du nu tænke dig at gøre?" +
+                "\n\t(1)Der er vist nogle af dine medstuderende som talte om nogle øl?" +
+                "\n\t(2)Jeg skal direkte hjem, drikke en kop the og så sove så jeg kan være frisk til i morgen." +
+                "\n\t(3)Jeg synes jeg har hørt om nogle spændende steder her på kampus. Jeg tror liiiige jeg skal se hvad det er ..." +
+                "\n\t(4)Jeg sidder lige så godt, så jeg åbner min bog og læser videre i den ...");
+        int pointer;
+        pointer = IO.getUserInput();
+        if (pointer == 1) {
+            kapitel2D();
+        } else if (pointer ==2){
+            kapitel2E();
+        } else if (pointer == 3) {
+            kapitel2F();
+        } else if (pointer ==4) {
+            kapitel2G();
+        } else {
+            System.out.println("Det kan du ikke nu, prøv igen!");
+        }
+    }
+
+    private static void kapitel2D() {
+    }
+
+    private static void kapitel2E() {
+        player.setEnergyLevel(player.getEnergyLevel()+20);
+        System.out.println("Jeg tager direkte hjem, min stakkels hjerne skal restituere og genopfriskes..." +
+                "\nDu får ny energi, og din energi er nu " + player.getEnergyLevel());
+    }
+
+    private static void kapitel2F() {
+    }
+
+    private static void kapitel2G() {
+    }
 
 }
 
