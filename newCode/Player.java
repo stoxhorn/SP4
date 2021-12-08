@@ -16,7 +16,7 @@ public class Player {
 
 
     private String name;
-    public Player(String name, int coffee) {
+    public Player(String name) {
         this.name = name;
         this.coffee = 0;
         this.studyPoints = 0;

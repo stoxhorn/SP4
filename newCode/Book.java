@@ -4,7 +4,7 @@ public class Book extends Item {
 
     String bookTitle;
     boolean isRead = false;
-    Player player = new Player("H", 1);
+    Player player = new Player("H");
     public Book(String bookTitle, int studyPoints){
         this.studyPoints = studyPoints;
         this.bookTitle = bookTitle;

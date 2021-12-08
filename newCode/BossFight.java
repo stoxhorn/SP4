@@ -9,7 +9,7 @@ public class BossFight{
     public void BossFight() {
         boolean running = true;
         int[] bossFightNumber = {1, 2, 3, 4, 5};
-        Player player = new Player("testPlayer", 10);
+        Player player = new Player("testPlayer");
 
         while (running) {
             if (bossFightNumber.equals(1)) {

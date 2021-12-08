@@ -5,7 +5,7 @@ public class Coffee extends Item {
     public Coffee(int energyBoost){
         this.energyBoost = energyBoost;
     }
-    Player player = new Player("John", 1);
+    Player player = new Player("John");
 
     @Override
     public void useItem() {
