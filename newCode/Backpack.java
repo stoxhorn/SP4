@@ -10,13 +10,25 @@ public class Backpack { //ArrayList af items her (sandwich, bøger, kaffe og hva
    private final ArrayList<Item> items;
 
 
-   public ArrayList<Item> showBackPack(){
+   public ArrayList<Item> showBackPack(){ // Jeg tror måske den kan slettes
        return items;
    }
 
-   public void addToBackPack(Item item){
-       items.add(item);
-   }
+    public void addToBackPack(Item item){
+        items.add(item);
+        updateCounter(item);
+    }
+
+    public void updateCounter(Item s) {
+
+        if(s.toString() == "sandwich"){
+            sandwich += 1;
+        } else if(s.toString() == "coffee"){
+            coffee += 1;
+        } else if(s.toString() == "book"){
+            book += 1;
+        }
+    }
 
     @Override
     public String toString() {

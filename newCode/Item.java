@@ -5,7 +5,7 @@ public abstract class Item {
     @Override
     public abstract String toString();
 
-    public abstract void addToBackpack();
+    // public abstract void addToBackpack();
     public abstract void useItem();
 
 }

@@ -1,4 +1,4 @@
-public class NPC extends Person{
+public class NPC {
 
 
 

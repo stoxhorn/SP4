@@ -28,12 +28,7 @@ public class Sandwich extends Item {
 
     @Override
     public String toString() {
-        return null;
-    }
-
-    @Override
-    public void addToBackpack() {
-        player.addItemToInventory(new Sandwich(50)); // Skal testes om man får en sandwich
+        return "sandwich";
     }
 
 }
