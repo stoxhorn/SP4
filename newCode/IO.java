@@ -26,7 +26,7 @@ public class IO {
         } else if (userInput ==5) {
             return 5;
         }else {
-                System.out.printf("hej");
+
             }
         return -1;
     }

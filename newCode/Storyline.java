@@ -170,7 +170,7 @@ public class Storyline {
                     "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
                     "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
                     "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
-                    "\n\t(4) Jeg forlader kantinen og vender tilbage til det sidste sted jeg var." +
+                    "\n\t(4) Jeg forlader kantinen og skynder mig imod undervisningslokalerne." +
                     "\n\t(5) For menu");
             int pointer;
             pointer = IO.getUserInput();
@@ -178,15 +178,19 @@ public class Storyline {
                 // story.kapitel1B1();
                 System.out.println("Vi har desværre udsolgt vores æbler." +
                         "---------------------------------------------------------------------------------------------------");
+                Main.io.pressEnterToContinue();
                 story.goToCafeteria();
             } else if (pointer == 2) {
                 player.buyCoffee();
+                Main.io.pressEnterToContinue();
                 story.goToCafeteria();
             } else if (pointer == 3) {
                 player.buySandwich();
+                Main.io.pressEnterToContinue();
                 story.goToCafeteria();
             } else if (pointer == 4) {
-                story.kapitel1B4();
+                clearAll();
+                story.kapitel1C();
             } else if (pointer == 5) {
                 menu.playingMenu();
             } else {
@@ -436,7 +440,7 @@ public class Storyline {
             } else if (pointer == 2) {
                 kapitel2B();
             } else if (pointer == 3) {
-                goToCafeteria();
+                goToCafeteria2();
             } else if (pointer == 4) {
                 menu.playingMenu();
             } else {
@@ -445,9 +449,66 @@ public class Storyline {
         }
     }
 
+    public static void goToCafeteria2() {
+        boolean running = true;
+        while (running) {
+            System.out.println("" +
+                    "\n##     ##         #        ##       ##  ########### ######  ##       ##  ######## " +
+                    "\n##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##       " +
+                    "\n##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##       " +
+                    "\n## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##       " +
+                    "\n###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####    " +
+                    "\n## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##       " +
+                    "\n##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##       " +
+                    "\n##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##       " +
+                    "\n##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ######## ");
+
+            System.out.println("Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød," +
+                    "\nfriskbrygget kaffe og ung-drengesved. Hvad vil du gøre?" +
+                    "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
+                    "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
+                    "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
+                    "\n\t(4) Jeg forlader kantinen og vender tilbage til det sidste sted jeg var." +
+                    "\n\t(5) For menu");
+            int pointer;
+            pointer = IO.getUserInput();
+            if (pointer == 1) {
+                // story.kapitel1B1();
+                System.out.println("Vi har desværre udsolgt vores æbler." +
+                        "---------------------------------------------------------------------------------------------------");
+                Main.io.pressEnterToContinue();
+                story.goToCafeteria2();
+            } else if (pointer == 2) {
+                player.buyCoffee();
+                Main.io.pressEnterToContinue();
+                story.goToCafeteria2();
+            } else if (pointer == 3) {
+                player.buySandwich();
+                Main.io.pressEnterToContinue();
+                story.goToCafeteria2();
+            } else if (pointer == 4) {
+                story.kapitel2();
+            } else if (pointer == 5) {
+                menu.playingMenu();
+            } else {
+                System.out.println("Det kan du ikke gøre nu, prøv igen");
+            }
+        }
+    }
     private static void kapitel2A() {
         boolean running = true;
         while (running) {
+            System.out.println("" +
+                    "\n#######        ###  ##                 ##      ###       " +
+                    "\n     ##       ## ##  ##               ##      ## ##      " +
+                    "\n     ##      ##   ##  ##             ##      ##   ##     " +
+                    "\n     ##     ##     ##  ##           ##      ##     ##    " +
+                    "\n     ##    ##       ##  ##         ##      ##       ##   " +
+                    "\n     ##   ##         ##  ##       ##      ##         ##  " +
+                    "\n     ##  ##############   ##     ##      ##############  " +
+                    "\n     ##  ##          ##    ##   ##       ##          ##  " +
+                    "\n     ##  ##          ##     ## ##        ##          ##  " +
+                    "\n#######  ##          ##      ###         ##          ## \n " );
             System.out.println("Du ankommer til første time med din nye lærer, William. Han fortæller dig gladeligt om en ting som hedder variabler." +
                     "\n" +
                     "\nDet hele er meget nyt for dig, men du når at opfange, at variabler skal erklæres (declares) førend de kan benyttes. " +
@@ -531,6 +592,7 @@ public class Storyline {
     private static void kapitel2D() {
         boolean running = true;
         while (running) {
+            clearAll();
             player.setEnergyLevel(player.getEnergyLevel()-25);
             System.out.println("Du kommer vist til at tage ud med nogen fra studiet." +
                     "\nDet blev ... sent? Du er faktisk i tvivl, for efter to øl kan du ikke huske hvad der skete." +
@@ -556,7 +618,140 @@ public class Storyline {
     private static void kapitel2F() {
         boolean running = true;
         while (running) {
+            clearAll();
+            System.out.println("Du tænker, at det da kunne være sjovt, at gå lidt på opdagelse og måske møde nogle andre elever på skolen." +
+                    "\nEfter lidt overtagelse går to af dine klassekamerater med dig. " +
+                    "\nHvor vil I begive jer hen?" +
+                    "\n\t(1)Vi skal se hvad der er på anden sal." +
+                    "\n\t(2)Vi bevæger os imod kantinen. Vi er SULTNE!" +
+                    "\n\t(3)Der var vist noget med nogle piger som læste her på kampus ..." +
+                    "\n\t(4)For menu");
+            int pointer;
+            pointer = IO.getUserInput();
+            if (pointer == 1) {
+                kapitel2F1();
+            } else if (pointer == 2) {
+                kapitel2F2();
+            } else if (pointer == 3) {
+                kapitel2F3();
+            } else if (pointer == 4) {
+                menu.playingMenu();
+            } else {
+                System.out.println("Det kan du ikke nu, prøv igen!");
+            }
+        }
+    }
 
+    private static void kapitel2F2() {
+
+            boolean running = true;
+            while (running) {
+                System.out.println("" +
+                        "\n##     ##         #        ##       ##  ########### ######  ##       ##  ######## " +
+                        "\n##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##       " +
+                        "\n##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##       " +
+                        "\n## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##       " +
+                        "\n###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####    " +
+                        "\n## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##       " +
+                        "\n##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##       " +
+                        "\n##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##       " +
+                        "\n##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ######## ");
+
+                System.out.println("Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød," +
+                        "\nfriskbrygget kaffe og ung-drengesved. Hvad vil du gøre?" +
+                        "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
+                        "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
+                        "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
+                        "\n\t(4) Jeg forlader kantinen og går hjem, jeg skal være frisk til i morgen." +
+                        "\n\t(5) For menu");
+                int pointer;
+                pointer = IO.getUserInput();
+                if (pointer == 1) {
+                    // story.kapitel1B1();
+                    System.out.println("Vi har desværre udsolgt vores æbler." +
+                            "---------------------------------------------------------------------------------------------------");
+                    Main.io.pressEnterToContinue();
+                    story.goToCafeteria2();
+                } else if (pointer == 2) {
+                    player.buyCoffee();
+                    Main.io.pressEnterToContinue();
+                    story.goToCafeteria2();
+                } else if (pointer == 3) {
+                    player.buySandwich();
+                    Main.io.pressEnterToContinue();
+                    story.goToCafeteria2();
+                } else if (pointer == 4) {
+                    story.kapitel2();
+                } else if (pointer == 5) {
+                    menu.playingMenu();
+                } else {
+                    System.out.println("Det kan du ikke gøre nu, prøv igen");
+                }
+            }
+        }
+
+
+
+    private static void kapitel2F1() {
+        boolean running = true;
+        while (running) {
+            clearAll();
+            System.out.println("Du ankommer sammen med dine nye venner på anden sal." +
+                    "\nDer går en masse studerende der med et tomt blik går rundt i en zombielignende tilstand ..." +
+                    "\nAnders, din nye ven fra klassen kigger på dig og udbryder: 'Nice!'" +
+                    "\nDu er nu ikke helt så sikker på, at det er top-nice at være her på anden sal ..." +
+                    "\nHvad vil du gøre nu?" +
+                    "\n\t(1)Jeg skal i hvert fald ikke fremstå som en kylling. Vi BLIVER!" +
+                    "\n\t(2)Anden sal er vist ikke lige mig ... jeg tror, at jeg tager hjem for i dag ..." +
+                    "\n\t(3)For menu");
+            int pointer;
+            pointer = IO.getUserInput();
+            if (pointer == 1) {
+                kapitel2F12();
+            } else if (pointer == 2) {
+                clearAll();
+                System.out.println("Du synes de studerende på anden sal var lidt for skræmmende ... og vender næsen hjemad.");
+                Main.io.pressEnterToContinue();
+                kapitel3();
+            } else if (pointer == 3) {
+                menu.playingMenu();
+            } else {
+                System.out.println("Det kan du ikke nu, prøv igen!");
+            }
+        }
+
+        }
+
+
+
+    private static void kapitel2F12() {
+        boolean running = true;
+        while (running) {
+            clearAll();
+            player.setStudyPoints(player.getStudyPoints()-15);
+            player.setEnergyLevel(player.getEnergyLevel()-15);
+            System.out.println("Anders synes det er sejt, så det gør du også. Desværre var det ikke så sejt." +
+                    "\nDe studerende gik rundt og så lige zombie-agtige ud fordi de har læst på CPH-business for længe." +
+                    "\nEfter I har tilbragt en halv time på anden sal kan du mærke din IQ blive tocifret, og derefter halveret." +
+                    "\nDu har nu " + player.getStudyPoints() + " studypoints og " + player.getEnergyLevel() + " i energi." +
+                    "\nDu skynder dig hjem i seng, så du kan blive klar til næste skoledag!");
+            Main.io.pressEnterToContinue();
+            kapitel3();
+        }
+    }
+    private static void kapitel2F3() {
+        boolean running = true;
+        while (running) {
+            player.setStudyPoints(player.getStudyPoints()-5);
+            player.setEnergyLevel(player.getEnergyLevel()-10);
+            clearAll();
+            System.out.println("Du indser alt, alt for sent, at du er datamatiker studerende, " +
+                    "\nog pigerne her på kampus, vil derfor absolut ikke ses i nærheden af dig." +
+                    "\nDet kunne jo være, at dit nørderi smittede?" +
+                    "\nDine studypoints går en smule ned ("+ player.getStudyPoints() + ") fordi du mister selvtillid, og din energi er også en smule drænet ("+player.getEnergyLevel()+")." +
+                    "\nSkuffet vender du snuden hjemad. Ingen piger til dig i dag!");
+                    Main.io.pressEnterToContinue();
+                    kapitel3();
         }
     }
 
@@ -567,12 +762,13 @@ public class Storyline {
             player.setEnergyLevel(player.getEnergyLevel()-20);
             player.setStudyPoints(player.getStudyPoints()+10);
             System.out.println("Du bliver på skolen lidt længere og hygger dig med din bog." +
+                    "\n-------------------------------------------------------------------------------------------------" +
                     "\nDu lærer bl.a., at man kan give variabler en 'final' værdi, så kan de ikke ændres." +
                     "\nOg om variabel-typer som 'float' (komma-tal som erklæres med et 'f' efter værdien), " +
                     "\n'char' (enkelte bogstaver, her skal værdien være i enkle situationstegn 'E' " +
                     "\nog boolean, som altid har en 'true' eller 'false' værdi." +
                     "\nDet giver selvfølgelig lidt ekstra studypoints, men kan også mærkes på din energi, du er godt træt i hovedet nu ...." +
-                    "\nDu tager hjem i seng, så du kan være klar til i morgen.");
+                    "\nDu tager hjem i seng, så du kan være klar til i morgen.\n");
             Main.io.pressEnterToContinue();
             kapitel3();
         }
@@ -594,9 +790,177 @@ public class Storyline {
                             "\n##   ##    ##         ##  ##      ##         ##     " +
                             "\n## ###     ##         ##  ##      ##   ##    ##     " +
                             "\n####       ##         ##  ##########   ########     " +
-                            "\n");
+                            "\n" +
+                   "\nEndnu en dejlig dag på CPH-Business venter dig, du er spændt på at se, hvad du mon skal lære i dag." +
+                   "\nI lobbyen har du nu de velkendte valgmuligheder." +
+                   "\n\t(1)For at gå direkte til time." +
+                   "\n\t(2)For at gå i kantinen." +
+                   "\n\t(3)For at tage elevatoren." +
+                   "\n\t(4)For menu");
+            int pointer;
+            pointer = IO.getUserInput();
+            if (pointer == 1) {
+                clearAll();
+                System.out.println("Du bevæger dig straks til time, du skulle jo nødigt gå glip af noget undervisning!");
+                Main.io.pressEnterToContinue();
+                kapitel3A();
+            } else if (pointer == 2) {
+                clearAll();
+                goToCafeteria3();
+            } else if (pointer == 3) {
+                kapitel3B();
+            }  else if (pointer == 4) {
+                menu.playingMenu();
+            } else {
+                System.out.println("Det kan du ikke nu, prøv igen!");
+            }
+        }
+
+        }
+
+
+    private static void kapitel3B() {
+        clearAll();
+        player.setStudyPoints(player.getStudyPoints()-5);
+        player.setEnergyLevel(player.getEnergyLevel()-5);
+        System.out.println("Du har enten ikke prøvet at tage elevatoren før, " +
+                "\neller også lærer du ikke af dine fejl. " +
+                "\nElevatoren går i stå, og du kommer for sent til time fordi du først skal have hjælp af pedellen." +
+                "\nDu får fratrukket nogle studypoints og din energi bliver en smule drænet.");
+        Main.io.pressEnterToContinue();
+        kapitel3A();
+    }
+
+    private static void goToCafeteria3() {
+        boolean running = true;
+        while (running) {
+            System.out.println("" +
+                    "\n##     ##         #        ##       ##  ########### ######  ##       ##  ######## " +
+                    "\n##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##       " +
+                    "\n##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##       " +
+                    "\n## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##       " +
+                    "\n###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####    " +
+                    "\n## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##       " +
+                    "\n##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##       " +
+                    "\n##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##       " +
+                    "\n##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ######## ");
+
+            System.out.println("Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød," +
+                    "\nfriskbrygget kaffe og ung-drengesved. Hvad vil du gøre?" +
+                    "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
+                    "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
+                    "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
+                    "\n\t(4) Jeg forlader kantinen og skynder mig til time" +
+                    "\n\t(5) For menu");
+            int pointer;
+            pointer = IO.getUserInput();
+            if (pointer == 1) {
+                // story.kapitel1B1();
+                System.out.println("Vi har desværre udsolgt vores æbler." +
+                        "---------------------------------------------------------------------------------------------------");
+                Main.io.pressEnterToContinue();
+                story.goToCafeteria3();
+            } else if (pointer == 2) {
+                player.buyCoffee();
+                Main.io.pressEnterToContinue();
+                story.goToCafeteria3();
+            } else if (pointer == 3) {
+                player.buySandwich();
+                Main.io.pressEnterToContinue();
+                story.goToCafeteria3();
+            } else if (pointer == 4) {
+                kapitel3A();
+            } else if (pointer == 5) {
+                menu.playingMenu();
+            } else {
+                System.out.println("Det kan du ikke gøre nu, prøv igen");
+            }
+        }
+    }
+    private static void kapitel3A() {
+        boolean running = true;
+        while (running) {
+            clearAll();
+            System.out.println("Du har sådan glædet dig til den næste time. Og i dag præsenterer din lærer et nyt koncept: if/else -statements.\n" +
+                    "\n ######  #########     ##  ######## ##       ########  ######## " +
+                    "\n   ##    ##           ##   ##       ##       ##        ##       " +
+                    "\n   ##    ##          ##    ##       ##       ##        ##       " +
+                    "\n   ##    ##         ##     ##       ##       ##        ##       " +
+                    "\n   ##    #####     ##      #####    ##       ########  #####    " +
+                    "\n   ##    ##       ##       ##       ##             ##  ##       " +
+                    "\n   ##    ##      ##        ##       ##             ##  ##       " +
+                    "\n   ##    ##     ##         ##       ##             ##  ##       " +
+                    "\n   ##    ##    ##          ##       ##             ##  ##       " +
+                    "\n ######  ##   ##           #######  #######  ########  ####### \n ");
+            Main.io.pressEnterToContinue();
+            clearAll();
+            System.out.println("En if/else-statement benytter et booleansk udtryk til at køre koden hvis det booleanske udtryk er sandt," +
+                    "\net andet stykke kode hvis et andet booleansk udtryk er sandt osv." +
+                    "\nI praksis skrives det således op:" +
+                    "\nif (1<2) {" +
+                    "\n\t\tkør den kode (1) som står her hvis 1<2" +
+                    "\n\t} else if (2<1) {" +
+                    "\n\tkør den kode (2)som står her hvis 2<1" +
+                    "\n\t} else {" +
+                    "\n\t\tkør den her kode (3) hvis ingen af udtrykkene er sande." +
+                    "\nHvilket stykke kode vil der blive kørt?" +
+                    "\n(1)" +
+                    "\n(2)" +
+                    "\n(3)");
+            int pointer;
+            pointer = IO.getUserInput();
+            if (pointer == 1) {
+                player.setStudyPoints(player.getStudyPoints() + 5);
+                System.out.println("Det er korrekt! Du får 5 studypoints og har nu " + player.getStudyPoints() + " i alt.");
+                Main.io.pressEnterToContinue();
+                kapitel3A1();
+            } else if (pointer == 2) {
+                player.setStudyPoints(player.getStudyPoints() - 5);
+                System.out.println("Det er desværre forkert, da 2 ikke er mindre end 1 ... Du mister 5 studypoints og har nu " + player.getStudyPoints() + " i alt.");
+                Main.io.pressEnterToContinue();
+                kapitel3A1();
+            } else if (pointer == 3) {
+                player.setStudyPoints(player.getStudyPoints() - 5);
+                System.out.println("Det er desværre forkert. Du mister 5 studypoints og har nu "  + player.getStudyPoints() + " i alt.");
+                Main.io.pressEnterToContinue();
+                kapitel3A1();
+            } else {
+                System.out.println("Det kan du ikke gøre nu, prøv igen.");
+            }
 
         }
     }
+
+    private static void kapitel3A1() {
+        boolean running = true;
+        while (running) {
+            System.out.println("Din sidemakker begynder at sidde og synge en sang... inden længe hænger den fast i hovedet på ham. " +
+                    "\nDu kan allerede mærke hovedpinen begynde at melde sig på banen, men du forsøger desperat at følge med i undervisningen." +
+                    "\nDin sidemakker, Michael, spørger, om I skal slå sten, saks papir om en kop kaffe." +
+                    "\nHvad vil du gøre?" +
+                    "\n\t(1)Jeg ignorerer ham. Jeg er her for at lære, ikke for at få venner!" +
+                    "\n\t(2)Jeg siger top og begynder at slå sten saks papir med ham ...." +
+                    "\n\t(3)For menu");
+            int pointer;
+            pointer = IO.getUserInput();
+            if (pointer == 1) {
+
+            }else if (pointer == 2) {
+
+
+            } else {
+                System.out.println("Det kan du ikke gøre nu, prøv igen.");
+            }
+        }
+    }
+
+
+    private static void bossFightStart() {
+        ArrayList<Question> qs = Main.io.readQuestionsFromFile();
+        for(Question q : qs){
+            System.out.println(q);
+        }
+    }
 }
+
 

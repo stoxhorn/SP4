@@ -10,24 +10,73 @@ public class Backpack { //ArrayList af items her (sandwich, bøger, kaffe og hva
    private final ArrayList<Item> items;
 
 
-   public ArrayList<Item> showBackPack(){ // Jeg tror måske den kan slettes
+   public ArrayList<Item> showBackPack(){
        return items;
    }
 
     public void addToBackPack(Item item){
         items.add(item);
-        updateCounter(item);
+        updateCounter();
     }
 
-    public void updateCounter(Item s) {
+    public void updateCounter() {
+        sandwich = 0;
+        coffee = 0;
+        book = 0;
+        for(Item s : items) {
 
-        if(s.toString() == "sandwich"){
-            sandwich += 1;
-        } else if(s.toString() == "coffee"){
-            coffee += 1;
-        } else if(s.toString() == "book"){
-            book += 1;
+            if(s.toString() == "sandwich"){
+                sandwich += 1;
+            } else if(s.toString() == "coffee"){
+                coffee += 1;
+            } else if(s.toString() == "book"){
+                book += 1;
+            }
         }
+
+    }
+
+    public void eatSandwich() { // Skal erstatte den abstracte useItem metode **MANGLER TEST**
+        for (int j = 0; j < items.size(); j++) {
+            Item s = this.items.get(j);
+            if (s.toString() == "sandwich") {
+                items.remove(j);
+                System.out.println("Du spiser en sandwich. Dit energiniveau er steget med 25");
+                this.sandwich = sandwich - 1;
+                Storyline.player.setEnergyLevel(Storyline.player.getEnergyLevel() + 25);
+                if (Storyline.player.getEnergyLevel() >= Storyline.player.getMaxEnergyLevel()) {
+                    Storyline.player.setEnergyLevel(100);
+
+                }
+            } else if (items.size() == 0 || s.toString() != "sandwich") {
+                System.out.println("Du har ikke nogen sandwich. Du kan købe i kantinen");
+            }
+
+        }
+        if (items.size() == 0) {
+            System.out.println("Du har ingen sandwich :(");
+        }
+    }
+
+    public void drinkCoffee() { // Skal erstatte den abstracte useItem metode **MANGLER TEST**
+        for (int j = 0; j < items.size(); j++) {
+            Item s = this.items.get(j);
+            if (s.toString() == "coffee") {
+                items.remove(j);
+                System.out.println("Du drikker en kaffe - av den er varm");
+                this.coffee = coffee - 1;
+                Storyline.player.setEnergyLevel(Storyline.player.getEnergyLevel() + 10);
+                if (Storyline.player.getEnergyLevel() >= Storyline.player.getMaxEnergyLevel()) {
+                    Storyline.player.setEnergyLevel(100);
+                }
+            } else if (s.toString() != "coffee") {
+                System.out.println("Du har ingen kaffe");
+            }
+
+        } if(items.size() == 0) {
+            System.out.println("Du har ingen kaffe");
+        }
+
     }
 
     @Override

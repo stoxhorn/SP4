@@ -25,6 +25,7 @@ public class Player {
         this.correctAnswers = 0;
         this.money = 100;
         this.inventory = new Backpack();
+        this.maxEnergyLevel = 100;
     }
 
     public void setStudyPoints(int studyPoints) {
