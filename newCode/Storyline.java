@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Storyline {
@@ -419,7 +420,7 @@ public class Storyline {
 
     private void kapitel1D4() {
         boolean running = true;
-        final String [] monstreOgWeirdos = {"Zombie", "Tidligere Underviser på CPH-Business", "Tiger", "Klovn", "Kæmpe edderkop", "Vampyr", "Ork", "Ninja", "Skelet"};
+
 
         while (running) {
             clearAll();
@@ -431,8 +432,8 @@ public class Storyline {
             Scanner input = new Scanner(System.in);
             String userInput = input.nextLine();
             player2.setName(userInput);
-            System.out.println("\"Dit navn er altså, " + player2.getName() +"! " +
-                    "\nSikke dog et grimt navn.\", siger manden ... ubehøvlede stodder!");
+            clearAll();
+            System.out.println("\"Dit navn er altså, " + player2.getName() +"! " + " Sikke dog et grimt navn." + ",siger manden ... ubehøvlede stodder!\n");
             Main.io.pressEnterToContinue();
             clearAll();
             System.out.println("\"Jeg har bragt dig her til DØDSSKOVEN, fordi jeg kan se, at du er en fremragende kriger, " + player2.getName() + "!" +
@@ -446,37 +447,82 @@ public class Storyline {
     }
 
     private void kapitel1D5() {
-        boolean running = true;
-        int pointer;
-        pointer = IO.getUserInput();
-        while (running){
+        clearAll();
             System.out.println("\"Hvilket våben vil du foretrække at benytte her i DØDSSKOVEN?\", spørger han. " +
             "\nHan lægger tre våben foran dig. Hvilket foretrækker du?" +
             "\n\t(1)Sværdet der ser rimelig sejt ud, det prøver jeg da." +
             "\n\t(2)Bue og pil må være sagen." +
             "\n\t(3)Jeg tror jeg bruger min bare næver, den her DØDSSKOV ser ikke så skide farlig ud ...");
+        boolean running = true;
+        int pointer;
+        pointer = IO.getUserInput();
+        while (running){
         if (pointer == 1) {
             clearAll();
             player2.setAttackPower(player2.getAttackPower()+10);
             System.out.println("Du tager sværdet, og kan allerede mærke hvordan du bliver en stærkere og farligere kriger af det ..." +
                     "\nDin evne til at angribe og slås stiger, og du har nu " + player2.getAttackPower() + " i anggrebsstyrke!");
             Main.io.pressEnterToContinue();
+            kapitel1D6();
         } else if (pointer== 2) {
             clearAll();
             player2.setAttackPower(player2.getAttackPower()+5);
             System.out.println("Du har ikke prøvet at kæmpe med bue og pil før, men det kan umuligt være værre end ikke at have noget våben, vel?" +
                     "\nDin evne til at angribe og slås stiger, og du har nu " + player2.getAttackPower() + " i angrebsstyrke!");
             Main.io.pressEnterToContinue();
+            kapitel1D6();
         } else if (pointer == 3) {
             clearAll();
             player2.setAttackPower(player2.getAttackPower()-25);
             System.out.println("Det var nok ikke så smart, hvad nu hvis DØDSSKOVEN virkelig har en masse monstre?" +
                     "\nDin evne til at slås er faldet gevaldigt, og du har nu " + player2.getAttackPower() + " i angrebsstyrke");
+            Main.io.pressEnterToContinue();
+            kapitel1D6();
         } else {
             System.out.println("Det kan du ikke nu, prøv igen!");
         }
     }
 }
+
+    private void kapitel1D6() {
+        Random randomizer = new Random();
+        final String [] monstreOgWeirdos = {"Zombie", "Tidligere Underviser på CPH-Business", "Tiger", "Klovn", "Kæmpe edderkop", "Vampyr", "Ork", "Ninja", "Skelet", "Elverpige","Dinosaur"};
+        boolean running = true;
+
+        while (running) {
+            clearAll();
+
+            String monsterName = monstreOgWeirdos[randomizer.nextInt(monstreOgWeirdos.length)];
+            Monster monster = new Monster(monsterName, 50);
+            System.out.println("\"Du er nu klar til at tage kampen op imod de mange monstre som findes her i DØDSSKOVEN\", siger manden." +
+                    "\nInden du når at svare ham, forsvinder han for øjnene af dig i en tågedis, og ud af tågen springer en " + monsterName + "!" +
+                    "\nForbered dig på kamp til døden!\n");
+            Main.io.pressEnterToContinue();
+            while (monster.getHealth() > 1) {
+                System.out.println("\n\tTryk (1) for at angribe!" +
+                 "\n\tTryk (2) for at flygte og løbe hjem til CPH-Business ... hvis du altså kan finde vej ud af DØDSSKOVEN!");
+                int pointer;
+                pointer = IO.getUserInput();
+                if (pointer == 1) {
+
+                    int fightPower = randomizer.nextInt(player2.getAttackPower() / 5);
+                    int monsterFightPower = randomizer.nextInt((player2.getDefensePower()) / 5);
+                    player2.setHealth(player2.getHealth() - monsterFightPower);
+                    monster.setHealth(monster.getHealth() - fightPower);
+                    System.out.println(monsterName + " rammer dig for " + monsterFightPower + " skade, og du har nu " + player2.getHealth() + " liv tilbage!" +
+                            "\nDu slår " + monsterName + " lige i fjæset! " + monsterName + " tager " + fightPower + " i skade, og har nu " + monster.getHealth() + " liv tilbage!");
+                    if (player2.getHealth() < 1) {
+                        System.out.println("GAME OVER!");
+                    } else if (monster.getHealth() < 1) {
+                        System.out.println("DØDT MONSTER!");
+                    }
+                }
+            }
+        }
+    }
+
+
+
     //TODO LAV ET NAVNELEGSSPIL!
 
     public static void kapitel1C5() {

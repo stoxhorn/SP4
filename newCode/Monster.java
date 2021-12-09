@@ -4,7 +4,6 @@ public class Monster {
     private int health;
 
 
-
     public Monster(String name, int health) {
         this.name = name;
         this.health = health;
