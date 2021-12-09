@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Player extends Person {
+public class Player {
 
     private int sandwich;
     private int studyPoints;
@@ -14,7 +14,9 @@ public class Player extends Person {
     Scanner input;
     private int money;
 
-    public Player(String name, int coffee) {
+
+    private String name;
+    public Player(String name) {
         this.name = name;
         this.coffee = 0;
         this.studyPoints = 0;
@@ -23,6 +25,7 @@ public class Player extends Person {
         this.correctAnswers = 0;
         this.money = 100;
         this.inventory = new Backpack();
+        this.maxEnergyLevel = 100;
     }
 
     public void setStudyPoints(int studyPoints) {
@@ -100,6 +103,9 @@ public class Player extends Person {
         return money;
     }
 
+    public String getName() {
+        return name;
+    }
     public void setMoney(int money) {
         this.money = money;
     }
@@ -128,26 +134,25 @@ public class Player extends Person {
     }
 
 
-        public void buySandwich() {
-            if (getMoney() >= 25) {
-                setMoney(getMoney() - 25);
-                System.out.println("Du har nu købt en Homestyle Singapore Fried Chicken x Henrik Jyrk (Standard Recipe) \n" +
-                        "Energi (kcal):642 kcal (32% RI) \n" +
-                        "Fedt (g):28 g (40% RI) \n" +
-                        "heraf mættede fedtsyrer (g):4,5 g (22% RI) \n" +
-                        "Kulhydrater (g):71 g (27% RI) \n" +
-                        "heraf sukkerarter (g):11 g (13% RI) \n" +
-                        "Protein (g):25 g (49% RI) \n" +
-                        "Salt (g):3 g (51% RI) \n" +
-                        "Kostfibre (g):3,1 g");
+    public void buySandwich() {
+        if (getMoney() >= 25) {
+            setMoney(getMoney() - 25);
+            System.out.println("Du har nu købt en Homestyle Singapore Fried Chicken x Henrik Jyrk (Standard Recipe) \n" +
+                    "Energi (kcal):642 kcal (32% RI) \n" +
+                    "Fedt (g):28 g (40% RI) \n" +
+                    "heraf mættede fedtsyrer (g):4,5 g (22% RI) \n" +
+                    "Kulhydrater (g):71 g (27% RI) \n" +
+                    "heraf sukkerarter (g):11 g (13% RI) \n" +
+                    "Protein (g):25 g (49% RI) \n" +
+                    "Salt (g):3 g (51% RI) \n" +
+                    "Kostfibre (g):3,1 g");
 
-                // addItemToInventory(new Sandwich(50));
-                inventory.addToBackPack(new Sandwich(50));
-                System.out.println("Du har nu så mange penge tilbage: " + getMoney());
+            addItemToInventory(new Sandwich(50));
+            System.out.println("Du har nu så mange penge tilbage: " + getMoney());
 
-            } else {
-                System.out.println("Du har ikke råd din fattiglus.");
-            }
-
+        } else {
+            System.out.println("Du har ikke råd din fattiglus.");
         }
+
+    }
     }

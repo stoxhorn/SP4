@@ -1,7 +1,7 @@
 public class Sandwich extends Item {
 
     private int sandwichEnergyBoost;
-    Player player = new Player("John", 1); // midlertidig player
+    Player player = new Player("John"); // midlertidig player
     Storyline story = new Storyline(); // Hvad er den rigtige løsning her??
 
     public Sandwich(int sandwichEnergyBoost){
@@ -28,12 +28,7 @@ public class Sandwich extends Item {
 
     @Override
     public String toString() {
-        return null;
-    }
-
-    @Override
-    public void addToBackpack() {
-        player.addItemToInventory(new Sandwich(50)); // Skal testes om man får en sandwich
+        return "sandwich";
     }
 
 }

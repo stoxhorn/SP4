@@ -5,7 +5,7 @@ public class Coffee extends Item {
     public Coffee(int energyBoost){
         this.energyBoost = energyBoost;
     }
-    Player player = new Player("John", 1);
+    Player player = new Player("John");
 
     @Override
     public void useItem() {
@@ -25,19 +25,19 @@ public class Coffee extends Item {
 
     @Override
     public String toString() {
-        String coffeeString;
-        coffeeString = String.valueOf(player.getInventory().showBackPack());
-        return coffeeString;
+        return "coffee";
     }
 
-    @Override
+    /*@Override
     public void addToBackpack() {
         player.getInventory().addToBackPack(new Coffee(25));
 
         player.setCoffee(player.getCoffee()+1);
         System.out.println("Du tager kaffen ned i din rygsæk");
+                 }
+              */
 
-    }
+
     public int getEnergyBoost() {
         return energyBoost;
     }

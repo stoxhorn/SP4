@@ -4,7 +4,7 @@ public class Book extends Item {
 
     String bookTitle;
     boolean isRead = false;
-    Player player = new Player("H", 1);
+    Player player = new Player("H");
     public Book(String bookTitle, int studyPoints){
         this.studyPoints = studyPoints;
         this.bookTitle = bookTitle;
@@ -25,25 +25,31 @@ public class Book extends Item {
 
     @Override
     public String toString() {
-        return null;
+        return "book";
     }
 
-    @Override
-    public void addToBackpack() {
+
+
+
+
+   /* @Override
+   public void addToBackpack() {
         //TODO husk at lave hvert enkelt bog som objekter osv.
 
         player.getInventory().addToBackPack(new Book("Strings for nybegyndere",25));
         System.out.println("Du har nu lagt bogen, " + getBookTitle() + " i din taske.");
     }
-    public int getStudyPoints() {
-        return studyPoints;
-    }
+    */
 
-    public void setStudyPoints(int studyPoints) {
-        this.studyPoints = studyPoints;
-    }
+        public int getStudyPoints() {
+            return studyPoints;
+        }
 
-    public String getBookTitle() {
-        return bookTitle;
+        public void setStudyPoints(int studyPoints) {
+            this.studyPoints = studyPoints;
+        }
+
+        public String getBookTitle() {
+            return bookTitle;
+        }
     }
-}
