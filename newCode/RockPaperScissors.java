@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class RockPaperScissors {
     //Denne klasse er lidt fedtmule. Hvis man har tid og lyst er man velkommen til forbedre det :)
 
-    public static void main(String[] args) {
-
+    public void RockPaperScissors() {
         int playerScore = 0;
         int ComputersScore = 0;
         String usersChoice;
@@ -12,8 +11,6 @@ public class RockPaperScissors {
         String Loser;
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Sten, saks, papir! " +
-                "\n Skriv hvilken du vælger!");
 
         while (true) {
             int computersChoice = (int) ((Math.random() * (3 - 1 + 1)) + 1);
@@ -22,39 +19,47 @@ public class RockPaperScissors {
 
             if (playerScore == 3) {
                 Winner = Storyline.player.getName();
-                Loser = "Kasper";
+                Loser = "August";
                 System.out.println("Vinderen er " + Winner + " og taberen er " + Loser + ".");
+                Storyline.player.addItemToInventory(new Coffee());
+                System.out.println("\"Jeg tabte?\", siger August." +
+                        "\n\"Det troede jeg ikke var muligt, men en aftale er en aftale.\"" +
+                        "\nHan rækker sin nyindkøbte kaffe frem. Du takker ham og lægger din sejrspræmie i tasken.");
+                IO.pressEnterToContinue();
                 break;
             }
 
             if (ComputersScore == 3) {
-                Winner = "Kasper";
+                Winner = "August";
                 Loser = Storyline.player.getName();
                 System.out.println("Vinderen er " + Winner + " og taberen er " + Loser + ".");
                 break;
             }
+
+        System.out.print("Sten, saks, papir! " +
+                "\n Skriv hvilken du vælger!");
 
             usersChoice = input.nextLine();
 
             if ((computersChoice == 1) && (usersChoice.equalsIgnoreCase("Sten"))) {
                 System.out.println(" vs Sten");
                 System.out.println("Uafgjort");
-                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - Kasper's score");
+                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - August's score");
             } else if ((computersChoice == 1) && (usersChoice.equalsIgnoreCase("papir"))) {
                 System.out.println(" vs Sten");
                 System.out.println("Du vandt!");
                 playerScore++;
-                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - Kasper's score");
+                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - August's score");
             } else if ((computersChoice == 1) && (usersChoice.equalsIgnoreCase("Saks"))) {
                 System.out.println(" vs Sten");
                 System.out.println("Du tabte");
                 ComputersScore++;
-                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - Kasper's score");
+                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - August's score");
             } else if ((computersChoice == 2) && (usersChoice.equalsIgnoreCase("Sten"))) {
                 System.out.println(" vs papir");
                 System.out.println("Du tabte");
                 ComputersScore++;
-                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - Kasper's score");
+                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - August's score");
             } else if ((computersChoice == 2) && (usersChoice.equalsIgnoreCase("papir"))) {
                 System.out.println(" vs papir");
                 System.out.println("Uafgjort");
@@ -62,17 +67,17 @@ public class RockPaperScissors {
                 System.out.println(" vs papir");
                 System.out.println("Du vandt");
                 playerScore++;
-                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - Kasper's score");
+                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - August's score");
             } else if ((computersChoice == 3) && (usersChoice.equalsIgnoreCase("Sten"))) {
                 System.out.println(" vs Saks");
                 System.out.println("Du vandt!");
                 playerScore++;
-                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - Kasper's score");
+                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - August's score");
             } else if ((computersChoice == 3) && (usersChoice.equalsIgnoreCase("papir"))) {
                 System.out.println(" vs Saks");
                 System.out.println("Du tabte");
                 ComputersScore++;
-                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - Kasper's score");
+                System.out.println("Din score - " + playerScore + " vs " + ComputersScore + " - August's score");
             } else if ((computersChoice == 3) && (usersChoice.equalsIgnoreCase("Saks"))) {
                 System.out.println(" vs Saks");
                 System.out.println("Uafgjort");
@@ -80,3 +85,4 @@ public class RockPaperScissors {
         }
     }
 }
+

@@ -3,25 +3,14 @@ public class Book extends Item {
     private int studyPoints;
 
     String bookTitle;
+    int ID;
     boolean isRead = false;
-    Player player = new Player("H");
-    public Book(String bookTitle, int studyPoints){
+    public Book(String bookTitle, int studyPoints, int ID){
         this.studyPoints = studyPoints;
         this.bookTitle = bookTitle;
+        this.ID = ID;
     }
 
-    @Override
-    public void useItem() {
-        if(isRead == false) {
-            System.out.println("Du læste den spændende bog, " + bookTitle + " og fik 25 Study Points!");
-            player.setStudyPoints(player.getStudyPoints() +25);
-            isRead = true;
-            System.out.println("I alt har du " + player.getStudyPoints() + " studypoints!" +
-                    "\nFor at tage den første SP-prøve, skal du have optjent mindst 100 Study Points");
-        } else if (isRead == true) {
-            System.out.println("Du kan ikke læse din bog igen, din nød!");
-        }
-    }
 
     @Override
     public String toString() {
@@ -45,7 +34,11 @@ public class Book extends Item {
             return studyPoints;
         }
 
-        public void setStudyPoints(int studyPoints) {
+    public int getID() {
+        return ID;
+    }
+
+    public void setStudyPoints(int studyPoints) {
             this.studyPoints = studyPoints;
         }
 

@@ -6,6 +6,7 @@ public class Main {
     static GameLoop gl = new GameLoop();
     public static void main(String[] args) {
 
+
         /*
         ArrayList<Question> qs = io.readQuestionsFromFile();
         for(Question q : qs){
@@ -13,8 +14,9 @@ public class Main {
         }
 
          */
-     //IO.startScreen();
-         gl.startScreen();
+
+     IO.startScreen();
+
 
 
 

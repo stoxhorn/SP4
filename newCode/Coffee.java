@@ -2,26 +2,11 @@ public class Coffee extends Item {
 
     private int energyBoost;
 
-    public Coffee(int energyBoost){
-        this.energyBoost = energyBoost;
+    public Coffee(){
+        this.energyBoost = 10;
     }
-    Player player = new Player("John");
 
-    @Override
-    public void useItem() {
 
-        if (player.getCoffee() >= 1) {
-            player.setEnergyLevel(player.getEnergyLevel()+ energyBoost);
-            player.setCoffee(player.getCoffee()-1);
-            System.out.println("Du har nu drukket en forfriskende varm kop kaffe og fået 25 energi!" +
-                    "\nDu har nu " + player.getEnergyLevel() + "/100 energi.");
-            if (player.getEnergyLevel() > 100) {
-                player.setEnergyLevel(100);
-            } else if (player.getCoffee() < 1) {
-                System.out.println("Du har desværre ikke noget kaffe lige nu ... prøv eventuelt senere!");
-            }
-        }
-    }
 
     @Override
     public String toString() {

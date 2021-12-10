@@ -20,7 +20,18 @@ public class Question {
         this.question = question;
         this.choices = choices;
         this.answer = answer;
+    }
 
+    public int getAnswer(){
+        return this.answer;
+    }
+
+    public ArrayList<String> getChoices(){
+        return this.choices;
+    }
+
+    public String getQuestion(){
+        return this.question;
     }
 
     @Override

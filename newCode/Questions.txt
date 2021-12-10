@@ -1,15 +1,76 @@
-__what is 1+1?
-2
-1
-4
-3
+__Spørgsmål 1/12:Hvad er en int i Java?
+(1)Det er et helt tal
+(2)Det er et bogstav
+(3)Det er et decimaltal(f.eks. 1,4)
+(4)Det er et ord
 -1
-__what is 2+2?
-2
-1
-4
-3
+
+__Spørgsmål 2/12:Hvad gør kommandoen, System.out.println(“Hej med dig!”);?
+(1)Afspiller lyd
+(2)Printer “Hej med dig” i konsollen
+(3)Printer Hej med dig i konsollen
+(4)Printer et objekt i konsollen
 -3
-__ what is 2*2?
-4
+
+__ Spørgsmål 3/12:Hvordan erklærer man et Array?
+(1)Man skal have variabeltype før klammerne (f.eks. int [ ] arrayNavn; )
+(2)Man kan skrive int.length
+(3)Man skal først lave objekterne som skal i arrayet
+(4)Man skriver arrayets navn først (f.eks. arrayNavn = int[ ];
 -1
+
+__ Spørgsmål 4/12:Hvad kaldes den klasse som Java har, der tager imod inputs fra brugeren?
+(1) Java.input
+(2) input
+(3) Scanner
+(4) Scan-in
+-3
+
+__ Spørgsmål 5/12: Hvordan skriver man kommentarer i Java?
+(1) /Kommentar
+(2) **Kommentar
+(3) /*/Kommentar
+(4) //Kommentar
+-4
+
+__ Spørgsmål 6/12: Er tekst-variablen (String) en simpel datatype?
+(1) Ja
+(2) Nej
+(3) Det ved jeg ikke
+-2
+
+__ Spørgsmål 7/12: Hvordan laver man en variabel med værdien 3?
+(1) int x = 3
+(2) int x = 5;
+(3) int y = 3;
+(4) int 3 = x;
+-3
+
+__ Spørgsmål 8/12: String.length(); gør hvad?
+(1) Viser længden på en String
+(2) Viser antallet af sætninger i en String
+(3) Tæller tal i en String
+(4) Sætter længden på en String
+-1
+
+__ Spørgsmål 9/12: Hvordan instantierer man en float?
+(1) float x = 3.14float;
+(2) float x = 3.14f;
+(3) float x = 3.14;
+(4) Float x = 3.14;
+-2
+
+__Spørgsmål 10/12: Hvilket er et eksempel på et for-each loop?
+(1) for(array x : dataType)
+(2) foreach(dataType x : array)
+(3) for(dataType x : array)
+(4) foreach(array x : dataType)
+-1
+
+__ Spørgsmål 11/12: Hvordan kan man få Intellij til at skrive et for-loop for sig?
+(1) FL + tab
+(2) forloop + tab
+(3) for + tab
+(4) fori + tab
+-4
+

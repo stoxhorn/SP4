@@ -40,8 +40,17 @@ public class Menu {
             } else if (userInput == 2) {
                 return 2;
             } else if (userInput == 3) {
+                Storyline.player.viewInventory();
+                IO.pressEnterToContinue();
                 return 3;
             } else if (userInput == 4) {
+                 System.out.println("Her kan du se oplysninger om din karakter. \n" +
+                         "Dit navn er "+ Storyline.player.getName() + " og du har følgende stats: \n" +
+                         "Studypoints: " +Storyline.player.getStudyPoints() + "\n" +
+                         "Energi niveau: " + Storyline.player.getEnergyLevel() + "\n" +
+                         "Penge: " + Storyline.player.getMoney());
+
+                 IO.pressEnterToContinue();
                 return 4;
             } else if (userInput == 5) {
                 return 5;
