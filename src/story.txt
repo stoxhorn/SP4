@@ -955,7 +955,7 @@ Det er rigtigt! 10 fine studypoints til dig! x0Slut
 Du stiller dig gladeligt hen til elevatoren. Den kommer faktisk denne her gang!
 Og den sætter dig også af!
 Desværre i kælderen, og du kravler rundt hernede i støvet i et par timer.
-Du går glip af en masse undervisning, og først efter to timer kommer du til klassen ...
+Du går glip af en masse undervisning, og først efter to timer kommer du til klassen ... Måske du har mistet noget energi og study points?
 x0Slut
 
 0xkapitel8Pjækx0
@@ -1014,7 +1014,7 @@ x0Slut
 Det var en lærerig dag, men nu er du træt og vil hjem.
 Din energi er nu x0Slut
 
-0xkapitel9A3x0 og dine studypoints er :x0Slut
+0xkapitel9A3x0 og dine studypoints er: x0Slut
 
 0xkapitel9påVejHjemx0
 Du vender snuden hjemad. På vejen hjem mærker du noget lande på din kind.

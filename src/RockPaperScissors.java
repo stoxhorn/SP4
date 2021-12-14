@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class RockPaperScissors {
-    //Denne klasse er lidt fedtmule. Hvis man har tid og lyst er man velkommen til forbedre det :)
 
     public void RockPaperScissors() {
         int playerScore = 0;
@@ -36,7 +35,7 @@ public class RockPaperScissors {
                 break;
             }
 
-        System.out.print("Sten, saks, papir! " +
+        System.out.print("\nSten, saks, papir! " +
                 "\n Skriv hvilken du vælger!");
 
             usersChoice = input.nextLine();

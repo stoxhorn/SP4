@@ -1,6 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
-import java.nio.charset.spi.CharsetProvider;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -143,7 +140,7 @@ public class Storyline {
     }
 
 
-    public static void kapitel1A3() { //Venter endnu 30 min, ankommer til klassen
+    public static void kapitel1A3() {
         while (true) {
             System.out.println(findPointerFromId("kapitel1A3"));
             player.setEnergyLevel(player.getEnergyLevel() - 10);
@@ -1319,6 +1316,7 @@ public class Storyline {
                     player.setStudyPoints(player.getStudyPoints() - 15);
                     player.setEnergyLevel(player.getEnergyLevel() - 5);
                     checkEnergyLevel();
+                    System.out.println(findPointerFromId("kapitel8B"));
                     io.pressEnterToContinue();
                     kapitel8A();
                 } else if (pointer == 4) {
@@ -1472,10 +1470,13 @@ public class Storyline {
         io.clearAll();
         System.out.println(findPointerFromId("kapitel9Undervisning"));
         io.pressEnterToContinue();
+        io.clearAll();
         System.out.println(findPointerFromId("kapitel9A1Del1"));
         io.pressEnterToContinue();
+        io.clearAll();
         System.out.println(findPointerFromId("kapitel9A1Del2"));
         io.pressEnterToContinue();
+        io.clearAll();
         System.out.print(findPointerFromId("kapitel9A2"));
         player.setEnergyLevel(player.getEnergyLevel()-15);
         System.out.print(player.getEnergyLevel());
@@ -1484,6 +1485,7 @@ public class Storyline {
         System.out.print(player.getStudyPoints());
         System.out.println("\n");
         io.pressEnterToContinue();
+        io.clearAll();
         System.out.println(findPointerFromId("kapitel9påVejHjem"));
         io.pressEnterToContinue();
         kapitel10();

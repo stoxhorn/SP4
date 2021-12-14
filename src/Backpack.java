@@ -1,13 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Backpack { //ArrayList af items her (sandwich, bøger, kaffe og hvad ellers?)
+public class Backpack {
    private int sandwich;
    private int book;
    private int coffee;
    private int apple;
-   // Final for arraylist gør at man ikke kan ændre hvilken liste/hvilket objekt items peger på,
-   // og dermed ikke kan "slette" listen, men kun ændre på den
+
    private final ArrayList<Item> items;
 
 

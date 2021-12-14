@@ -11,7 +11,7 @@ public class BossFight{
 
          IO.clearAll();
          System.out.println("Dine mange anstrengelser, tårer, blod og sved har gjort, at du er klar til Eksamen!" +
-         "\nFor at bestå prøven, skal du have mindst 7 korrekte svar.");
+         "\nFor at bestå prøven, skal du have mindst 9 korrekte svar.");
 
 
 
@@ -26,7 +26,7 @@ public class BossFight{
                         if (pointer == newQ.getAnswer()) {
                             Storyline.player.setCorrectAnswers(Storyline.player.getCorrectAnswers() + 1);
                             System.out.println("Det er korrekt! Du har nu " + Storyline.player.getCorrectAnswers() + " rigtige svar og " + Storyline.player.getWrongAnswers() + " forkerte svar!");
-
+                            checkCorrectAnswer();
                         } else {
                             Storyline.player.setWrongAnswers(Storyline.player.getWrongAnswers() + 1);
                             System.out.println("Det er desværre forkert, du har nu svaret forkert på, " + Storyline.player.getWrongAnswers() + " spørgsmål og korrekt på " +Storyline.player.getCorrectAnswers() + " spørgsmål ...");
@@ -39,8 +39,8 @@ public class BossFight{
     }
 
     public void checkWrongAnswer() {
-        if (Storyline.player.getWrongAnswers()>4) {
-            System.out.println("Du har desværre svaret forkert på for mange spørgsmål og må tage semestret om... øv bøv!");//TODO SKriv en lidt længere gameoverSCreen
+        if (Storyline.player.getWrongAnswers()>=3) {
+            System.out.println("Du har desværre svaret forkert på for mange spørgsmål og må tage semestret om... øv bøv!");//
             gameOverScreen();
         } else  {
             return;
@@ -48,8 +48,11 @@ public class BossFight{
     }
 
     public void checkCorrectAnswer() {
-        if (Storyline.player.getCorrectAnswers() >=7) {
-            System.out.println("Sådan! Du har bestået eksamen med bravour! ");
+        if (Storyline.player.getCorrectAnswers() >=9) {
+            System.out.println("Sådan! Du har bestået eksamen med bravour! Tess sad godt nok og spillede Matador til eksamen, og Jesper headbanger på parkeringspladsen, men du bestod!" +
+                    "Wohoooo!!! You are the king of DATAMATIK! ");
+            IO.pressEnterToContinue();
+            System.exit(0);
         }
     }
 
