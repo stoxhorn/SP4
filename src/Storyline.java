@@ -1282,7 +1282,7 @@ public class Storyline {
                     io.pressEnterToContinue();
                     story.goToCafeteria5();
                 } else if (pointer == 4) {
-                    System.out.println(findPointerFromId("kapitel6B"));
+                    kapitel6C();
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
@@ -1323,6 +1323,7 @@ public class Storyline {
                     kapitel8A();
                 } else if (pointer == 4) {
                     System.out.println(findPointerFromId("kapitel8Pjæk"));
+                    io.pressEnterToContinue();
                     player.setStudyPoints(player.getStudyPoints() - 20);
                     kapitel9();
                 } else if (pointer == 5) {
@@ -1386,6 +1387,7 @@ public class Storyline {
     public static void goToCafeteria6() {
         boolean running = true;
         while (running) {
+            System.out.println(findPointerFromId("goToCafeteria7"));
             try {
                 int pointer;
                 pointer = io.getUserInput();
@@ -1402,7 +1404,7 @@ public class Storyline {
                     io.pressEnterToContinue();
                     goToCafeteria6();
                 } else if (pointer == 4) {
-                    System.out.println(findPointerFromId("kapitel8A"));
+                    kapitel8A();
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
@@ -1492,6 +1494,13 @@ public class Storyline {
             try {
                 io.clearAll();
                 System.out.println(findPointerFromId("kapitelJul"));
+                System.out.println("Dit navn er: "+ player.getName() + "\n" +
+                        "Studypoints: " + player.getStudyPoints() + "\n" +
+                        "Energi niveau: " + player.getEnergyLevel() + "\n" +
+                        "Penge: " + player.getMoney());
+                        io.pressEnterToContinue();
+                System.out.println(findPointerFromId("kapitelJul2"));
+
                 int pointer = io.getUserInput();
                 if (pointer == 1) {
                     kapitelJulA();
@@ -1556,6 +1565,9 @@ public class Storyline {
                 int pointer = io.getUserInput();
                 if (pointer == 1) {
                     System.out.println(findPointerFromId("kapitelJulAHanky"));
+                    io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitelJulHankysSmiley"));
+                    io.pressEnterToContinue();
                     System.out.println(findPointerFromId("kapitelJulAHankyTekst"));
                     player.setEnergyLevel(player.getEnergyLevel()-15);
                     player.setStudyPoints(player.getStudyPoints()-5);
@@ -1768,13 +1780,13 @@ public class Storyline {
     public static void kapitel100() {
         System.out.println(findPointerFromId("kapitelslut"));
         io.pressEnterToContinue();
-        if (player.getStudyPoints() >= 20) {
+        if (player.getStudyPoints() >= 150) {
             System.out.print(findPointerFromId("kapitelslut2"));
             System.out.print(player.getStudyPoints());
             System.out.println(findPointerFromId("kapitelslut3"));
             io.pressEnterToContinue();
             bossFightStart();
-        } else if (player.getStudyPoints() < 100) {
+        } else if (player.getStudyPoints() < 150) {
             System.out.print(findPointerFromId("kapitelslut2"));
             System.out.print(player.getStudyPoints());
             System.out.print(findPointerFromId("kapitelslut4"));

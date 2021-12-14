@@ -152,8 +152,8 @@ public class Backpack { //ArrayList af items her (sandwich, bøger, kaffe og hva
     @Override
     public String toString() {
         return "Din taske indeholder : \n" +
-                "Sandwich: " + this.sandwich + "\n" +
                 "Kaffe: " + this.coffee + "\n" +
+                "Sandwich: " + this.sandwich + "\n" +
                 "Bøger: " + this.book + "\n" +
                 "Æbler: " + this.apple;
 

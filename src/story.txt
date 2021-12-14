@@ -25,7 +25,7 @@ så det gælder om at følge godt med i undervisningen, og ikke bruge for meget 
 0xstartScreen2x0
 Reglerne for DATAMATIKER-SPILLET er simple...
 Din karakter samler Study Points ved at gå til undervisning, læse bøger eller anden aktivitet.
-Hvis du skal til eksamen, skal du samle i alt 100 Study Points. Består du eksamen har du vundet spillet!
+Hvis du skal til eksamen, skal du samle i alt 150 Study Points. Består du eksamen har du vundet spillet!
 Men husk at holde øje med dit energiniveau! For alle aktiviteter koster energi.
 Heldigvis kan du købe lækker mad i kantinen for at få ny energi. Det koster dog penge, og livet på SU er ikke let.
 Du finder dine købte og fundne ting i din rygsæk ved hjælp af menuen. I menuen kan du også se hvor mange penge du har tilbage og dine optjente Study Points.x0Slut
@@ -116,7 +116,7 @@ Vi har desværre udsolgt vores æbler ...
 
 0xkapitel1C5x0
 Første time går med introduktion, navneleg og andre sjove påfund.
-Du får i løbet af dagen danset en følelse, hørt røverhistorier fra det andre studerende
+Du får i løbet af dagen danset en følelse, hørt røverhistorier fra de andre studerende
 og næsten åbnet din nye bog, som nu ligger klar i din taske. Du er træt, men har ikke helt lært så meget om kodning endnu. x0Slut
 
 
@@ -344,7 +344,7 @@ friskbrygget kaffe og ung-drengesved. Hvad vil du gøre?
         ########  ##          ##      ###         ##          ##
 Du ankommer til første time med din nye lærer, William. Han fortæller dig gladeligt om en ting som hedder variabler.
 
-Det hele er meget nyt for dig, men du når at opfange, at variabler skal erklæres (declares) førend de kan benyttes.
+Det hele er meget nyt for dig, men du når at opfange, at variabler skal erklæres (declare) førend de kan benyttes.
 For at gøre det, skal man først specificere variabel-typen, og herefter give den værdi som passer til dens type.
 Hvis du f.eks. skal lave en variabel af typen String (en sekvens af bogstaver), så benyttes syntaksen:
     String name = "Arne";
@@ -353,7 +353,7 @@ Først variebel-typen (String), så det du navngiver den (name) og slutteligt de
 
 
 0xkapitel2AFortsatx0
-Et lige tal kaldes en int (kort for en Integer). Du kan gemme dem ud fra samme syntaks som Strings.
+Et helt tal kaldes en int (kort for en Integer). Du kan gemme dem ud fra samme syntaks som Strings.
     int newNumber = 100;
 Her oprettes en variabel-type "int", med navnet "newNumber" og værdien "100".
 
@@ -458,7 +458,7 @@ Du skynder dig hjem i seng, så du kan blive klar til næste skoledag! x0Slut
 Du indser alt, alt for sent, at du er datamatiker studerende,
 og pigerne her på kampus, vil derfor absolut ikke ses i nærheden af dig.
 Det kunne jo være, at dit nørderi smittede?
-Dine studypoints går en smule ned fordi du mister selvtillid, og din energi er også en smule drænet.
+Dine study Points går en smule ned fordi du mister selvtillid, og din energi er også en smule drænet.
 Skuffet vender du snuden hjemad. Ingen piger til dig i dag! x0Slut
 
 
@@ -958,7 +958,7 @@ Desværre i kælderen, og du kravler rundt hernede i støvet i et par timer.
 Du går glip af en masse undervisning, og først efter to timer kommer du til klassen ...
 x0Slut
 
-0xkapitel8Pjæk
+0xkapitel8Pjækx0
 Du tager hjem og spiller dit Anime-spil. Det der JAVA må vente til du bliver rigtig voksen!
 x0Slut
 
@@ -1040,7 +1040,6 @@ Hvad vil du gøre?
         (3) Jeg vil gerne bede om en sandwich til 25 kroner.
         (4) Jeg forlader kantinen og tager til time.
         (5) For menu
-
 x0Slut
 
 
@@ -1118,7 +1117,11 @@ x0Slut
 
 Idag er sidste dag inden den store eksamen. Har du ikke dine 100 studypoints endnu, er det idag du skal hente de sidste!
 Du ankommer til skolen og står i lobbyen. Du spotter nogle søde piger, men kommer i tanke om eksamen er lige rundt om hjørnet.
-Du ved at julehygge i klassen ikke bliver særlig fagligt, så din beslutning nu kan blive altafgørende!
+Du ved at julehygge i klassen ikke bliver særlig fagligt, så din beslutning nu kan blive altafgørende! Man skal jo bruge 150 point for at tage eksamen!
+Som update her den sidste dag kan du lige se information om din karakter:
+x0slut
+
+0xkapitelJul2x0
 Hvad vil du gøre?
    (1)For at gå hen til de søde piger og fortælle en vittighed
    (2)For at gå i kantinen
@@ -1152,7 +1155,7 @@ x0slut
 Du går over til pigerne, som kigger underligt på dig. "Hvorfor står den datamatiker nørd ved siden af os?" siger den ene pige til den anden.
 Du afbryder deres snak og fortæller en vittighed:
 "Såå her den anden dag skulle jeg vælge ny kode til min computer. Jeg prøvede at ændre koden til 'MinPenis'"
-"Men computeren godkendte ikke min nye kode og gav mig fejlbeskeden: Dit kodeord er for kort"
+"Men computeren godkendte ikke min nye kode og gav mig fejlbeskeden: Dit kodeord er for kort ;D"
 x0slut
 
 0xkapitelJulAFortsatx0
@@ -1171,12 +1174,12 @@ Du sætter dig ved siden af din bedste ven August, som ønsker dig god juleferie
 Han undskylder også for alle de gange han har prøvet at lokke dig til dumme ting, i stedet for at lade dig fokusere på dit studie.
 August har glemt sin kaffe på bordet da han går ud og tisser. Du kan mærke du er tørstig og den kaffe ser dejlig varm og fristende ud.
 Hvad vil du gøre?
-    (1) Du lader den være og nyder resten af dagen i godt selvskab
+    (1) Du lader den være og nyder resten af dagen i godt selskab
     (2) Smager lige hurtigt hans kaffe
 x0slut
 
 0xkapitelJulC1x0
-August kommer tilbage og i nyder resten af dagen i godt selvskab med klassen
+August kommer tilbage og i nyder resten af dagen i godt selskab med klassen
 Efter morgenmaden tager du hjem og gamer med august.
 x0slut
 
@@ -1225,6 +1228,10 @@ x0Slut
      ###              ####    #####
     ###               ####    #####
 #######               #######  ########
+x0slut
+
+0xkapitelJulHankysSmileyx0
+¯\_(ツ)_/¯
 x0slut
 
 0xkapitelJulAHankyTekstx0
