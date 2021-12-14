@@ -1482,6 +1482,7 @@ public class Storyline {
         player.setStudyPoints(player.getStudyPoints()+10);
         System.out.print(findPointerFromId("kapitel9A3"));
         System.out.print(player.getStudyPoints());
+        System.out.println("\n");
         io.pressEnterToContinue();
         System.out.println(findPointerFromId("kapitel9påVejHjem"));
         io.pressEnterToContinue();

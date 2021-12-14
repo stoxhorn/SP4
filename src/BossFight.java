@@ -10,7 +10,7 @@ public class BossFight{
     public void BossFight() {
 
          IO.clearAll();
-         System.out.println("Dine mange anstrengelser, tårer, blod og sved har gjort, at du er klar til SP1-opgaven!" +
+         System.out.println("Dine mange anstrengelser, tårer, blod og sved har gjort, at du er klar til Eksamen!" +
          "\nFor at bestå prøven, skal du have mindst 7 korrekte svar.");
 
 
@@ -46,6 +46,13 @@ public class BossFight{
             return;
         }
     }
+
+    public void checkCorrectAnswer() {
+        if (Storyline.player.getCorrectAnswers() >=7) {
+            System.out.println("Sådan! Du har bestået eksamen med bravour! ");
+        }
+    }
+
     public void gameOverScreen() {
         System.out.println("Du har tabt spillet!");
         System.exit(0);

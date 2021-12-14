@@ -24,11 +24,11 @@ så det gælder om at følge godt med i undervisningen, og ikke bruge for meget 
 
 0xstartScreen2x0
 Reglerne for DATAMATIKER-SPILLET er simple...
-Din karakter samler Study Points ved at gå til undervisning, læse bøger eller anden aktivitet.
-Hvis du skal til eksamen, skal du samle i alt 150 Study Points. Består du eksamen har du vundet spillet!
+Din karakter samler studypoints ved at gå til undervisning, læse bøger eller anden aktivitet.
+Hvis du skal til eksamen, skal du samle i alt 150 studypoints. Består du eksamen har du vundet spillet!
 Men husk at holde øje med dit energiniveau! For alle aktiviteter koster energi.
 Heldigvis kan du købe lækker mad i kantinen for at få ny energi. Det koster dog penge, og livet på SU er ikke let.
-Du finder dine købte og fundne ting i din rygsæk ved hjælp af menuen. I menuen kan du også se hvor mange penge du har tilbage og dine optjente Study Points.x0Slut
+Du finder dine købte og fundne ting i din rygsæk ved hjælp af menuen. I menuen kan du også se hvor mange penge du har tilbage og dine optjente studypoints.x0Slut
 
 0xintroChapterx0
 Det er en dejlig sommerdag. Solen skinner, der er ikke en sky på himlen og din rygsæk er fuld af dine ny-indkøbte bøger.
@@ -458,7 +458,7 @@ Du skynder dig hjem i seng, så du kan blive klar til næste skoledag! x0Slut
 Du indser alt, alt for sent, at du er datamatiker studerende,
 og pigerne her på kampus, vil derfor absolut ikke ses i nærheden af dig.
 Det kunne jo være, at dit nørderi smittede?
-Dine study Points går en smule ned fordi du mister selvtillid, og din energi er også en smule drænet.
+Dine studypoints går en smule ned fordi du mister selvtillid, og din energi er også en smule drænet.
 Skuffet vender du snuden hjemad. Ingen piger til dig i dag! x0Slut
 
 
@@ -605,7 +605,7 @@ August er så selvsikker, at han siger han vil give dig en kaffe hvis du vinder!
 
 0xkapitel3A3Slutx0
 Imens du spillede med August missede du dog nogle vigtige pointer i undervisningen
-og er derfor blevet trukket 5 study points.
+og er derfor blevet trukket 5 studypoints.
 Timen er overstået og dine klassekammerater er i gang med at pakke sammen.
 Du tager også selv dine ting og går hjemad. x0Slut
 
@@ -802,7 +802,7 @@ Hvad kunne du tænke dig at gøre?
 Du tænker, at det da kunne være fremragende at tage elevatoren, også selvom den er i udu ...
 Efter du har trykket på knappen venter du i en god halv time på elevatoren, men den dukker ikke op ...
 Nu står du så her og glor i stedet for at have undervisning. Det var ikke så smart.
-Efter at have brugt hele dagen her tager du hjem og får en stor straf i Study Points, måske du skulle prøve at gøre noget andet i morgen?
+Efter at have brugt hele dagen her tager du hjem og får en stor straf i studypoints, måske du skulle prøve at gøre noget andet i morgen?
 x0Slut
 
 0xkapitel6Bx0
@@ -1005,7 +1005,7 @@ Herefter skal man sætte en øvre grænse for mange gange loopet skal gentages. 
 Til sidst i loopet skal man bestemme hvor meget variblen skal øges, hver gang loopet bliver gennemført.
 Et for-loop kan for eksempel se således ud:
     for (int i = 0; i < 10; i++) {
-        System.out.println("Hej, jeg er blevet skrevet " + i + " gange!."
+        System.out.println("Hej, jeg er blevet skrevet " + i + " gange!");
     }"
 
 x0Slut
@@ -1014,8 +1014,7 @@ x0Slut
 Det var en lærerig dag, men nu er du træt og vil hjem.
 Din energi er nu x0Slut
 
-0xkapitel9A3x0 og dine studypoints er :
-x0Slut
+0xkapitel9A3x0 og dine studypoints er :x0Slut
 
 0xkapitel9påVejHjemx0
 Du vender snuden hjemad. På vejen hjem mærker du noget lande på din kind.
@@ -1237,7 +1236,7 @@ x0slut
 0xkapitelJulAHankyTekstx0
 Du får noget på den dumme og du skynder dig hjem igen. Så blev det alligevel en hvid jul i år!
 Med et kæmpe smil på læben tager du hjem igen, men mister 15 energy point. Desuden har du opdaget en ny interesse i piger!
-Bliver det overhovedet lige så sjovt at læse bøger fremover? Du mister 5 study points.
+Bliver det overhovedet lige så sjovt at læse bøger fremover? Du mister 5 studypoints.
 x0slut
 
 
