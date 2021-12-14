@@ -1,5 +1,6 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.nio.charset.spi.CharsetProvider;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -8,52 +9,42 @@ import java.util.Scanner;
 public class Storyline {
 
     static Storyline story = new Storyline();
-
-    public static void runStoryEvent(int i) {
-        int switchInt = i;
-        switch (i) {
-            case 1:
-                kapitel1A();
-            case 2:
-                goToCafeteria1();
-            case 3:
-                kapitel1C();
-            case 4:
-                kapitel1D();
-            case 5:
-                kapitel1A2();
-
-            default:
-                System.out.println("Wrong input for runStoryEvent()");
-        }
-    }
-
-    public static void clearAll() {
-        for (int i = 0; i < 50; i++) {
-            System.out.println("     ");
-        }
-    }
-
     static Player player = new Player("");
-    Player2 player2 = new Player2("", 100, 50, 100);
+    static Player2 player2 = new Player2("", 100, 50, 100);
     static Menu menu = new Menu();
+    static IO io = new IO();
+    static ArrayList<StoryPointer> storyPointers = io.readStoryFromFile();
+
+    public static StoryPointer findPointerFromId(String ID) {
+        for (StoryPointer sp : storyPointers) {
+            if (sp.getID().equals(ID)) {
+
+                return sp;
+            }
+        }
+        return null;
+    }
+
+    public static void startScreen() {
+
+        while (true) {
+
+            System.out.println(findPointerFromId("startScreen"));
+            io.pressEnterToContinue();
+            System.out.println(findPointerFromId("startScreen2"));
+            io.pressEnterToContinue();
+            Storyline.intro();
+        }
+    }
 
     public static void intro() {
         boolean running = true;
         while (running) {
             try {
-                System.out.println("\nDet er en dejlig sommerdag. Solen skinner, der er ikke en sky på himlen og din rygsæk er fuld af dine ny-indkøbte bøger" +
-                        "\nFørste skoledag på din nye uddannelse venter dig," +
-                        "\nforhåbningsfuldt træder du igennem døren til CPH-Business." +
-                        "\nForan dig står der tre skilte, hvilket vil du følge?" +
-                        "\n\t(1) 'Elevator'" +
-                        "\n\t(2) 'Kantine' " +
-                        "\n\t(3) 'Undervisningslokaler'" +
-                        "\n\t(4) 'Jeg bliver stående lidt endnu'" +
-                        "\n\t(5) For menu" +
-                        "\n----------------------------------------------------------------------------------------------------------");
+                io.clearAll();
+                System.out.println(findPointerFromId("introChapter"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 String playerName;
                 Scanner input = new Scanner(System.in);
 
@@ -62,116 +53,118 @@ public class Storyline {
                 } else if (pointer == 2) {
                     story.goToCafeteria1();
                 } else if (pointer == 3) {
-                    clearAll();
-                    System.out.println("Du er smart, så du følger selvfølgelig skiltet hvorpå der står 'DATAMATIKER'." +
-                            "\nPå vej derhen står der en dame og uddeler navneskilte. Du får stukket ét i hånden, samt en tusch." +
-                            "\n\"Skriv dit navn på det, så kan man hurtigere lære sine klassekammerater at kende.\", siger hun med et smil.");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("følgSkiltet"));
 
                     playerName = input.nextLine();
                     Storyline.player.setName(playerName);
-
-                    System.out.println("Du skriver " + Storyline.player.getName() + " på navneskiltet og tager det på." +
-                            "\nInden du ved af det, er du ankommet til din klasse." +
-                            "\nDu er kommet i god tid, så du kan sætte dig lige hvor du vil.");
-
-                    story.kapitel1C();
+                    System.out.print(findPointerFromId("navnValgtA"));
+                    System.out.print(player.getName());
+                    System.out.print(findPointerFromId("navnValgtB"));
+                    kapitel1C();
                 } else if (pointer == 4) {
                     player.setStudyPoints(player.getStudyPoints() - 5);
-                    story.kapitel1D();
+                    kapitel1D();
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
 
-    public static void kapitel1A() {
+    public static void kapitel1A() { //Træder hen til elavatoren
         boolean running = true;
 
         while (running) {
             try {
-                clearAll();
-                System.out.println("Du træder hen til elevatoren, hvor der i forvejen står to piger og venter." +
-                        "\nElevatoren ankommer med et 'DING', og pigerne træder ombord. Der er lige plads til dig, så du skynder dig med ind i elevatoren." +
-                        "\nDu står spændt og venter på at møde dine nye klassekammerater, men pludselig hører du en mærkelig lyd, og elavetoren stopper. ");
-                IO.pressEnterToContinue();
-                System.out.println("Du bliver panisk og kigger forvirret på de to piger, men til din store overraskelse står de helt afslappet og venter." +
-                        "\nHvad vil du gøre?" +
-                        "\n\t(1) Blive stående i stilhed, det er sgu for akavet at sige noget" +
-                        "\n\t(2) Spørge de to piger om de ved hvad der foregår" +
-                        "\n\t(3) Åbnen menu");
-
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel1AA"));
+                io.pressEnterToContinue();
+                System.out.println(findPointerFromId("kapitel1AB"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
-                    story.kapitel1A1();
+                    story.kapitel1A1(); //Venter halv time, 2 valg igen
                 } else if (pointer == 2) {
-                    story.kapitel1A2();
+                    story.kapitel1A2(); //Man spørger og kommer til time en time efter
                 } else if (pointer == 3) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
-
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
 
-
-    private static void kapitel1A1() {
+    private static void kapitel1A1() { //Man venter og venter i en halv time
         boolean running = true;
         while (running) {
-
-            System.out.println("Du står og står, men ingen ting sker." +
-                    "En halv time efter kigger du dig rundt omkring og ser de to piger stadig bare stå helt afslappet");
-            IO.pressEnterToContinue();
-            System.out.println("Hvad kunne du tænke dig at gøre?" +
-                    "\n(1)Jeg forbliver stille, selv om der er gået lang tid, er det stadig for underligt at sige noget til to fremmede." +
-                    "\n(2)Nu spørger jeg fandme hvad der foregår, ellers kommer jeg jo alt for sent til min første dag.");
-            int pointer;
-            pointer = IO.getUserInput();
-            if (pointer == 1) {
-                story.kapitel1A3();
-            } else if (pointer == 2) {
-                story.kapitel1A3();
-            } else if (pointer == 3) {
-                menu.playingMenu();
-            } else {
-                System.out.println("Det kan du ikke nu, prøv igen!");
+            try {
+                System.out.println(findPointerFromId("kapitel1A1A"));
+                io.pressEnterToContinue();
+                System.out.println(findPointerFromId("kapitel1A1B"));
+                int pointer;
+                pointer = io.getUserInput();
+                if (pointer == 1) {
+                    kapitel1A3();
+                } else if (pointer == 2) {
+                    kapitel1A4();
+                } else if (pointer == 3) {
+                    menu.playingMenu();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
-        }
-    }
-
-    private static void kapitel1A3() {
-        while (true) {
-
-
         }
     }
 
     private static void kapitel1A2() {
         boolean running = true;
         while (running) {
-            System.out.println("Undskyld? Ved I hvorfor elavatoren stoppede?");
-            IO.pressEnterToContinue();
-            System.out.println("Elavatoren her på stedet virker ikke, så man sidder altid fast når man bruger den." +
-                    "\nBare rolig, den burde starte igen om en times tid");
-            IO.pressEnterToContinue();
-            System.out.println("Det går op for dig at du kommer en hel time for på din første dag. " +
-                    "\nDu har ikke andre muligheder end at stå og vente på den starter igen.");
-            IO.pressEnterToContinue();
-            System.out.println("Lang om længe starter elavatoren." +
-                    "Du ankommer til klasselokalet, og på trods af dine forventninger er der ledige pladser rundt omkring.");
+            System.out.println(findPointerFromId("kapitel1A1B"));
+            io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel1A2"));
+            io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel1A2A"));
+            io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel1A2B"));
+            io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel1A2C"));
             player.setEnergyLevel(player.getEnergyLevel() - 5);
             kapitel1C();
         }
+    }
 
+
+    private static void kapitel1A3() { //Venter endnu 30 min, ankommer til klassen
+        while (true) {
+            System.out.println(findPointerFromId("kapitel1A3"));
+            player.setEnergyLevel(player.getEnergyLevel() - 10);
+            kapitel1C();
+        }
+    }
+
+    private static void kapitel1A4() {
+        while (true) {
+
+            System.out.println(findPointerFromId("kapitel1A4A"));
+            io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel1A4B"));
+            io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel1A4C"));
+            io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel1A4D"));
+            player.setEnergyLevel((player.getEnergyLevel() - 5));
+            kapitel1C();
+        }
     }
 
 
@@ -181,158 +174,91 @@ public class Storyline {
         while (running) {
             try {
 
-                System.out.println("" +
-                        "\n##     ##         #        ##       ##  ########### ######  ##       ##  ######## " +
-                        "\n##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##       " +
-                        "\n##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##       " +
-                        "\n## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##       " +
-                        "\n###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####    " +
-                        "\n## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##       " +
-                        "\n##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##       " +
-                        "\n##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##       " +
-                        "\n##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ######## ");
-
-                System.out.println("Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød," +
-                        "\nfriskbrygget kaffe og ung-drengesved. Du har " + player.getMoney() + " kroner. Hvad vil du gøre?" +
-                        "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
-                        "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
-                        "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
-                        "\n\t(4) Jeg forlader kantinen og skynder mig imod undervisningslokalerne." +
-                        "\n\t(5) For menu");
+                System.out.print(findPointerFromId("goToCafeteria1A"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 String playerName;
                 Scanner input = new Scanner(System.in);
 
                 if (pointer == 1) {
-                    // story.kapitel1B1();
-                    System.out.println("Vi har desværre udsolgt vores æbler." +
-                            "---------------------------------------------------------------------------------------------------");
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria1();
+                    System.out.println(findPointerFromId("udsolgtÆbler"));
+                    io.pressEnterToContinue();
+                    goToCafeteria1();
                 } else if (pointer == 2) {
                     player.buyCoffee();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria1();
+                    io.pressEnterToContinue();
+                    goToCafeteria1();
                 } else if (pointer == 3) {
                     player.buySandwich();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria1();
+                    io.pressEnterToContinue();
+                    goToCafeteria1();
                 } else if (pointer == 4) {
-                    clearAll();
-                    System.out.println("Du er smart, så du følger selvfølgelig skiltet hvorpå der står 'DATAMATIKER'." +
-                            "\nPå vej derhen står der en dame og uddeler navneskilte. Du får stukket ét i hånden, samt en tusch." +
-                            "\n\"Skriv dit navn på det, så kan man hurtigere lære sine klassekammerater at kende.\", siger hun med et smil.");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("følgSkiltet"));
 
                     playerName = input.nextLine();
                     Storyline.player.setName(playerName);
-
-                    System.out.println("Du skriver " + Storyline.player.getName() + " på navneskiltet og tager det på." +
-                            "\nInden du ved af det, er du ankommet til din klasse." +
-                            "\nDu er kommet i god tid, så du kan sætte dig lige hvor du vil." +
-                            "\nHvor vil du sidde?");
-                    story.kapitel1C();
+                    System.out.print(findPointerFromId("navnValgtA"));
+                    System.out.println(player.getName());
+                    System.out.print(findPointerFromId("navnValgtB"));
+                    kapitel1C();
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke gøre nu, prøv igen");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
-        }
-
-    }
-
-    private static void kapitel1B4() {
-        boolean running = true;
-        while (running) {
-
-        }
-    }
-
-    /*
-        private static void getSandwich() { // Er det sådan her vi skal gøre?
-            Sandwich sandwich = new Sandwich(50);
-            sandwich.buySandwich();
-            }
-    */
-    private static void buyCoffee() {
-        //  player.setCoffee(player.getCoffee()+1);
-        //    System.out.println("Du får en kop kaffe og har nu " + player.getCoffee() + " kopper kaffe til rådighed!");
-    }
-
-    private static void kapitel1B1() {
-        boolean running = true;
-        while (running) {
-
         }
     }
 
     public static void kapitel1C() {
+
         boolean running = true;
         while (running) {
             try {
-                System.out.println("Hvor kunne du godt tænke dig at sidde?" +
-                        "\n\t(1) Jeg sætter mig forrest, så kan læreren bedre se mig når jeg har fingeren oppe." +
-                        "\n\t(2) Bagerst. Gerne bag den højeste i klassen, så ingen bemærker mig." +
-                        "\n\t(3) Der hvor de søde piger sidder, selvfølgelig." +
-                        "\n\t(4) Jeg sætter mig i vindueskarmen, og beholder mine solbriller på." +
-                        "\n\t(5) For menu");
+                System.out.println(findPointerFromId("kapitel1C"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
-                    clearAll();
-                    System.out.println("Du sætter dig selvfølgelig så langt fremme som muligt." +
-                            "\n---------------------------------------------------------------------------------------------------");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("langtFremme"));
                     player.setStudyPoints(player.getStudyPoints() + 5);
-
                     kapitel1C5();
                 } else if (pointer == 2) {
-                    clearAll();
-                    System.out.println("Nede bagved skal du sidde, så kan du håbe, at læreren ikke bemærker dig." +
-                            "\n------------------------------------------------------------------------------------------------");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("nedeBagved"));
                     kapitel1C5();
                 } else if (pointer == 3) {
-                    clearAll();
-                    System.out.println("Der sidder en rigtig sød pige yderst til venstre, mon ikke hun kan bruge lidt selskab?" +
-                            "\n------------------------------------------------------------------------------------------------");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("vedPigerne"));
                     player.setStudyPoints(player.getStudyPoints() - 5);
                     kapitel1C5();
                 } else if (pointer == 4) {
-                    clearAll();
-                    System.out.println("De andre kan sætte sig lige hvor de vil, du sætter dig selvfølgelig i vindueskarmen, og finder din mobiltelefon frem... Instagram skal jo opdateres!" +
-                            "\n------------------------------------------------------------------------------------------------");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("iVindueskarmen"));
                     player.setStudyPoints(player.getStudyPoints() - 15);
                     kapitel1C5();
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke gøre nu, prøv igen");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
-    //bliv stående lidt endnu
 
     public static void kapitel1D() {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println("Du tænker, hey, det kunne da være sjovt at stå her og kigge på lobbyen." +
-                        "\nDer kommer flere studerende, og de fleste kigger lidt skævt på dig, men kan man klandre dem det?" +
-                        "\nDu står jo trods alt bare og kigger ud i luften." +
-                        "\nNu har du så gjort det i noget tid... hvad vil du så nu?" +
-                        "\n\t(1)Jeg går til elevatoren." +
-                        "\n\t(2)Jeg går lige i kantinen." +
-                        "\n\t(3)Jeg følger skiltet hvorpå der står 'Undervisningslokaler'." +
-                        "\n\t(4)Jeg står lige så godt ..." +
-                        "\n\t(5)For menu.");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel1D"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
                     player.setStudyPoints(player.getStudyPoints() - 5);
                     story.kapitel1A();
@@ -341,11 +267,8 @@ public class Storyline {
                     story.goToCafeteria1();
                 } else if (pointer == 3) {
                     player.setStudyPoints(player.getStudyPoints() - 5);
-                    clearAll();
-                    System.out.println("Du er smart, så du følger selvfølgelig skiltet hvorpå der står 'DATAMATIKER'," +
-                            "\nog inden du ved af det, er du ankommet i din klasse." +
-                            "\nDu er kommet i god tid, så du kan sætte dig lige hvor du vil." +
-                            "\nHvor vil du sidde?");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("følgSkiltet"));
                     story.kapitel1C();
                 } else if (pointer == 4) {
                     player.setStudyPoints(player.getStudyPoints() - 15);
@@ -353,10 +276,10 @@ public class Storyline {
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -365,32 +288,20 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println("Nu står du så her... hvad i alverden gør du dog det for?" +
-                        "\nDu kommer i hvert fald for sent til undervisningen, og du har allerede mistet studypoints." +
-                        "\nDine studypoints er derfor p.t.: " + player.getStudyPoints() + "." +
-                        "\nDer er altså undervisning som venter på dig ..." +
-                        "\nHvad vil du nu gøre?" +
-                        "\n\t(1)Jeg går til elevatoren." +
-                        "\n\t(2)Jeg er blevet sulten af at stå her, så jeg skal da i kantinen." +
-                        "\n\t(3)Jeg må hellere prøve at følge de skilte der ..." +
-                        "\n\t(4)Jeg står og står og står ... " +
-                        "\n\t(5)For menu.");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel1D1"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
                     player.setStudyPoints(player.getStudyPoints() - 10);
                     story.kapitel1A();
                 } else if (pointer == 2) {
-                    player.setStudyPoints(player.getStudyPoints() - 15);
+                    player.setStudyPoints(player.getStudyPoints() - 10);
                     story.goToCafeteria1();
                 } else if (pointer == 3) {
                     player.setStudyPoints(player.getStudyPoints() - 10);
-                    clearAll();
-                    System.out.println("Du er smart, så du følger selvfølgelig skiltet hvorpå der står 'DATAMATIKER'," +
-                            "\nog inden du ved af det, er du ankommet i din klasse." +
-                            "\nDu er kommet i god tid, så du kan sætte dig lige hvor du vil." +
-                            "\nHvor vil du sidde?");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("følgSkiltet"));
                     story.kapitel1C();
                 } else if (pointer == 4) {
                     player.setStudyPoints(player.getStudyPoints() - 25);
@@ -398,10 +309,10 @@ public class Storyline {
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -410,31 +321,20 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println("Det var smart gjort ... du hygger dig virkelig her." +
-                        "\nDu kan nu knap nå til time i dag? Måske du skulle være blevet hjemme i sengen?" +
-                        "\nDine studypoints er nu: " + player.getStudyPoints() + "." +
-                        "\nMåske du skulle finde på noget andet at lave?" +
-                        "\n\t(1)Jeg går til elevatoren. Det er vist på tide." +
-                        "\n\t(2)Jeg er blevet sulten af at stå her, så jeg skal da i kantinen." +
-                        "\n\t(3)Jeg løber af sted i den retning skiltet til 'Datamatiker' peger ..." +
-                        "\n\t(4)Jeg bliver da stående! Hold op med at stille mig så dumme spørgsmål!" +
-                        "\n\t(5)For menu.");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel1D2"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
                     player.setStudyPoints(player.getStudyPoints() - 10);
                     story.kapitel1A();
                 } else if (pointer == 2) {
-                    player.setStudyPoints(player.getStudyPoints() - 15);
+                    player.setStudyPoints(player.getStudyPoints() - 10);
                     story.goToCafeteria1();
                 } else if (pointer == 3) {
                     player.setStudyPoints(player.getStudyPoints() - 10);
-                    clearAll();
-                    System.out.println("Du er smart, så du følger selvfølgelig skiltet hvorpå der står 'DATAMATIKER'," +
-                            "\nog inden du ved af det, er du ankommet i din klasse." +
-                            "\nDu er kommet i god tid, så du kan sætte dig lige hvor du vil." +
-                            "\nHvor vil du sidde?");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("følgSkiltet"));
                     story.kapitel1C();
                 } else if (pointer == 4) {
                     player.setStudyPoints(player.getStudyPoints() - 25);
@@ -442,10 +342,10 @@ public class Storyline {
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -454,32 +354,23 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                System.out.println("Du hører pludselig en lyd bag dig ... hvad i alverden kan det være?" +
-                        "\nDu må hellere undersøge det ...");
-                Main.io.pressEnterToContinue();
-                clearAll();
-                System.out.println("Ude på parkeringspladsen står en skikkelse iført en sort kåbe. Hvem i alverden går dog sådan klædt?" +
-                        "\nDet er ca. 100 grader varmt, så han må have det varmt ... " +
-                        "\nHan rækker en hånd imod dig, og en raspende stemme siger:" +
-                        "\n\"Kom med mig, kriger, og jeg skal vise dig ting du ikke troede muligt!" +
-                        "\nHvad gør du?" +
-                        "\n\t(1)Jeg tror bare, at jeg vender næsen imod undervisningslokalerne, jeg er her for at lære noget, ikk?" +
-                        "\n\t(2)Jeg tager med manden! YOLO, bitches!");
+                System.out.println(findPointerFromId("kapitel1D3"));
+                io.pressEnterToContinue();
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel1D3Fortsat"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
-                    clearAll();
-                    System.out.println("Du vender hurtigt retur til lobbyen, og finder et skilt med retning imod undervisningslokalerne. " +
-                            "\nDu er dog en smule sent på den, men nu er du trods alt kommet til det rigtige lokale, hvor vil du så sidde henne?" +
-                            "\n--------------------------------------------------------------------------------------------------------");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("kapitel1D3Fortsat2"));
                     kapitel1C();
                 } else if (pointer == 2) {
                     kapitel1D4();
                 } else {
-                    System.out.println("Det kan du vist ikke gøre nu, prøve igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -490,70 +381,64 @@ public class Storyline {
 
         while (running) {
             try {
-                clearAll();
-                System.out.println("Du følger efter manden ...I går forbi jernbanen, og inden du ved af det, står I midt i en skov." +
-                        "\nHvor kom den fra? For du mente da ellers, at der kun lå industriområde bag skolen?" +
-                        "\nDa I kommer til en lysning, vender manden sig imod dig og spørger: " +
-                        "\n\"Hvad er dit navn kriger?\"" +
-                        "\nOg hvad er i grunden dit navn?");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel1D4"));
                 Scanner input = new Scanner(System.in);
                 String userInput = input.nextLine();
                 player2.setName(userInput);
-                clearAll();
-                System.out.println("\"Dit navn er altså, " + player2.getName() + "! " + " Sikke dog et grimt navn." + ",siger manden ... ubehøvlede stodder!\n");
-                Main.io.pressEnterToContinue();
-                clearAll();
-                System.out.println("\"Jeg har bragt dig her til DØDSSKOVEN, fordi jeg kan se, at du er en fremragende kriger, " + player2.getName() + "!" +
-                        "\nDu vil komme til at kæmpe imod farlige monstre, bestige bjerge og vinde kvindernes gunst over hele riget!\"" +
-                        "\n" +
-                        "\n ....Hvad fanden fabler han om?");
-                Main.io.pressEnterToContinue();
+                io.clearAll();
+                System.out.print(findPointerFromId("kapitel1D4FortsatA"));
+                System.out.print(Storyline.player2.getName());
+                System.out.print(findPointerFromId("kapitel1D4FortsatB"));
+                io.pressEnterToContinue();
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel1D4Fortsat2"));
+                io.pressEnterToContinue();
                 kapitel1D5();
 
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
 
     private void kapitel1D5() {
-        clearAll();
-        System.out.println("\"Hvilket våben vil du foretrække at benytte her i DØDSSKOVEN?\", spørger han. " +
-                "\nHan lægger to våben foran dig. Hvilket foretrækker du?" +
-                "\n\t(1)Sværdet der ser rimelig sejt ud, det prøver jeg da." +
-                "\n\t(2)Bue og pil må være sagen." +
-                "\n\t(3)Jeg tror jeg bruger min bare næver, den her DØDSSKOV ser ikke så skide farlig ud ...");
+        io.clearAll();
+        System.out.println(findPointerFromId("kapitel1D5"));
         boolean running = true;
         int pointer;
         pointer = IO.getUserInput();
         while (running) {
             try {
                 if (pointer == 1) {
-                    clearAll();
+                    io.clearAll();
                     player2.setAttackPower(player2.getAttackPower() + 10);
-                    System.out.println("Du tager sværdet, og kan allerede mærke hvordan du bliver en stærkere og farligere kriger af det ..." +
-                            "\nDin evne til at angribe og slås stiger, og du har nu " + player2.getAttackPower() + " i anggrebsstyrke!");
-                    Main.io.pressEnterToContinue();
+                    System.out.print(findPointerFromId("kapitel1D5SværdA"));
+                    System.out.print(player2.getAttackPower());
+                    System.out.print(findPointerFromId("kapitel1D5Slut"));
+                    io.pressEnterToContinue();
                     kapitel1D6();
                 } else if (pointer == 2) {
-                    clearAll();
+                    io.clearAll();
                     player2.setAttackPower(player2.getAttackPower() + 5);
-                    System.out.println("Du har ikke prøvet at kæmpe med bue og pil før, men det kan umuligt være værre end ikke at have noget våben, vel?" +
-                            "\nDin evne til at angribe og slås stiger, og du har nu " + player2.getAttackPower() + " i angrebsstyrke!");
-                    Main.io.pressEnterToContinue();
+                    System.out.print(findPointerFromId("kapitel1D5Bue"));
+                    System.out.print(player2.getAttackPower());
+                    System.out.print(findPointerFromId("kapitel1D5Slut"));
+                    io.pressEnterToContinue();
                     kapitel1D6();
                 } else if (pointer == 3) {
-                    clearAll();
+                    io.clearAll();
                     player2.setAttackPower(player2.getAttackPower() - 25);
-                    System.out.println("Det var nok ikke så smart, hvad nu hvis DØDSSKOVEN virkelig har en masse monstre?" +
-                            "\nDin evne til at slås er faldet gevaldigt, og du har nu " + player2.getAttackPower() + " i angrebsstyrke");
-                    Main.io.pressEnterToContinue();
+                    System.out.print(findPointerFromId("kapitel1D5BareNæver"));
+                    System.out.print(player2.getAttackPower());
+                    System.out.print(findPointerFromId("kapitel1D5Slut"));
+                    io.pressEnterToContinue();
                     kapitel1D6();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -562,22 +447,20 @@ public class Storyline {
         Random randomizer = new Random();
         final String[] monstreOgWeirdos = {"Zombie", "Tidligere Underviser på CPH-Business", "Tiger", "Klovn", "Kæmpe edderkop", "Vampyr", "Ork", "Ninja", "Skelet", "Elverpige", "Dinosaur"};
         boolean running = true;
+        String monsterName = monstreOgWeirdos[randomizer.nextInt(monstreOgWeirdos.length)];
+        Monster monster = new Monster(monsterName, 50);
 
         while (running) {
             try {
-                clearAll();
-
-                String monsterName = monstreOgWeirdos[randomizer.nextInt(monstreOgWeirdos.length)];
-                Monster monster = new Monster(monsterName, 50);
+                io.clearAll();
                 System.out.println("\"Du er nu klar til at tage kampen op imod de mange monstre som findes her i DØDSSKOVEN\", siger manden." +
                         "\nInden du når at svare ham, forsvinder han for øjnene af dig i en tågedis, og ud af tågen springer en " + monsterName + "!" +
                         "\nForbered dig på kamp til døden!\n");
-                Main.io.pressEnterToContinue();
+                io.pressEnterToContinue();
                 while (monster.getHealth() > 1) {
-                    System.out.println("\n\tTryk (1) for at angribe!" +
-                            "\n\tTryk (2) for at flygte og løbe hjem til CPH-Business ... hvis du altså kan finde vej ud af DØDSSKOVEN!");
+                    System.out.println(findPointerFromId("kapitel1D6Valgmuligheder"));
                     int pointer;
-                    pointer = IO.getUserInput();
+                    pointer = io.getUserInput();
                     if (pointer == 1) {
 
                         int fightPower = randomizer.nextInt(player2.getAttackPower() / 5);
@@ -590,60 +473,41 @@ public class Storyline {
                             System.out.println("GAME OVER!");
                         } else if (monster.getHealth() < 1) {
                             System.out.println("DØDT MONSTER!");
+                            kapitel1DSlut();
                         }
                     } else if (pointer == 2) {
-                        // Skal returnere til campus
+                        goToCafeteria1();
                     }
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
 
-
-    //TODO LAV ET NAVNELEGSSPIL!
+    private void kapitel1DSlut() {
+        System.out.println(findPointerFromId("kapitel1DSlut"));
+        io.pressEnterToContinue();
+        goToCafeteria1();
+    }
 
     public static void kapitel1C5() {
-        System.out.println("Første time går selvfølgelig med introduktion, navneleg og andre sjove påfund. " +
-                "\nDu får i løbet af dagen danset en følelse, hørt røverhistorier fra de andre studerende" +
-                "\nog næsten åbnet din bog. Du er træt, men har ikke helt lært så meget om kodning endnu.");
-        Main.io.pressEnterToContinue();
+        System.out.println(findPointerFromId("kapitel1C5"));
+        player.lootBook2();
+        io.pressEnterToContinue();
         kapitel2();
-
     }
 
     private static void kapitel2() {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println(
-
-                        "####            ###       ##########   #########    " +
-                                "\n## ###         ## ##      ##      ##   ##     ##    " +
-                                "\n##   ##       ##   ##     ##      ##          ##    " +
-                                "\n##    ##     ##     ##    ##                  ##    " +
-                                "\n##     ##   ##       ##   ##           #########    " +
-                                "\n##    ##   #############  ##    ####   ##           " +
-                                "\n##   ##    ##         ##  ##      ##   ##           " +
-                                "\n## ###     ##         ##  ##      ##   ##           " +
-                                "\n####       ##         ##  ##########   #########    " +
-                                "\n");
-                System.out.println("Efter den første dag på studiet, er du nu tilbage hvor du startede. " +
-                        "\nBogen i din taske har endnu ikke været åbnet, men mon ikke du får lov til, at lære noget i dag?" +
-                        "\nNu står du i hvert fald i lobbyen på CPH-Business igen og overvejer hvilken vej du skal tage i dag." +
-                        "\nHvad gør du?" +
-                        "\n\t(1)Jeg går direkte til undervisningslokalet, nu kan jeg jo vejen." +
-                        "\n\t(2)Jeg tager elevatoren, det må da gå hurtigere end trapperne?" +
-                        "\n\t(3)Jeg skal liiiiiige forbi kantinen først!" +
-                        "\n\t(4)For menu");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel2"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
-                    clearAll();
-                    System.out.println("-----------------------------------------------------------------------------------------------");
-
+                    io.clearAll();
                     kapitel2A();
                 } else if (pointer == 2) {
                     kapitel2B();
@@ -652,10 +516,10 @@ public class Storyline {
                 } else if (pointer == 4) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -664,49 +528,31 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                System.out.println("" +
-                        "\n##     ##         #        ##       ##  ########### ######  ##       ##  ######## " +
-                        "\n##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##       " +
-                        "\n##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##       " +
-                        "\n## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##       " +
-                        "\n###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####    " +
-                        "\n## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##       " +
-                        "\n##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##       " +
-                        "\n##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##       " +
-                        "\n##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ######## ");
-
-                System.out.println("Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød," +
-                        "\nfriskbrygget kaffe og ung-drengesved. Du har " + player.getMoney() + " kroner. Hvad vil du gøre?" +
-                        "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
-                        "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
-                        "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
-                        "\n\t(4) Jeg forlader kantinen og vender tilbage til det sidste sted jeg var." +
-                        "\n\t(5) For menu");
+                System.out.println(findPointerFromId("goToCafeteria2"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
                     // story.kapitel1B1();
-                    System.out.println("Vi har desværre udsolgt vores æbler." +
-                            "---------------------------------------------------------------------------------------------------");
-                    Main.io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("udsolgtÆbler"));
+                    io.pressEnterToContinue();
                     story.goToCafeteria2();
                 } else if (pointer == 2) {
                     player.buyCoffee();
-                    Main.io.pressEnterToContinue();
+                    io.pressEnterToContinue();
                     story.goToCafeteria2();
                 } else if (pointer == 3) {
                     player.buySandwich();
-                    Main.io.pressEnterToContinue();
+                    io.pressEnterToContinue();
                     story.goToCafeteria2();
                 } else if (pointer == 4) {
                     story.kapitel2();
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke gøre nu, prøv igen");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -715,38 +561,17 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                System.out.println("" +
-                        "\n########        ###  ##                 ##      ###       " +
-                        "\n      ##       ## ##  ##               ##      ## ##      " +
-                        "\n      ##      ##   ##  ##             ##      ##   ##     " +
-                        "\n      ##     ##     ##  ##           ##      ##     ##    " +
-                        "\n      ##    ##       ##  ##         ##      ##       ##   " +
-                        "\n      ##   ##         ##  ##       ##      ##         ##  " +
-                        "\n      ##  ##############   ##     ##      ##############  " +
-                        "\n##    ##  ##          ##    ##   ##       ##          ##  " +
-                        "\n##    ##  ##          ##     ## ##        ##          ##  " +
-                        "\n########  ##          ##      ###         ##          ## \n ");
-                System.out.println("Du ankommer til første time med din nye lærer, William. Han fortæller dig gladeligt om en ting som hedder variabler." +
-                        "\n" +
-                        "\nDet hele er meget nyt for dig, men du når at opfange, at variabler skal erklæres (declares) førend de kan benyttes. " +
-                        "\nFor at gøre det, skal man først specificere variabel-typen, og herefter give den værdi som passer til dens type." +
-                        "\nHvis du f.eks. skal lave en variabel af typen String (en sekvens af bogstaver), så benyttes syntaksen: " +
-                        "\n\tString name = \"Arne\" " +
-                        "\ntil at lave en String med navnet \"name\" og med værdien \"Arne\". " +
-                        "\nFørst variebel-typen (String), så det du navngiver den (name) og slutteligt dens værdi (Arne)\n");
+                System.out.println(findPointerFromId("kapitel2A"));
                 player.setStudyPoints(player.getStudyPoints() + 15);
                 player.setEnergyLevel(player.getEnergyLevel() - 30);
                 checkEnergyLevel();
-                Main.io.pressEnterToContinue();
-                clearAll();
-                System.out.println("Et lige tal kaldes en int (kort for en Integer). Du kan gemme dem ud fra samme syntaks som Strings." +
-                        "\n\tint newNumber = 100 " +
-                        "\nHer oprettes en variabel-type \"int\", med navnet \"newNumber\" og værdien \"100\"." +
-                        "\n");
-                Main.io.pressEnterToContinue();
+                io.pressEnterToContinue();
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel2AFortsat"));
+                io.pressEnterToContinue();
                 kapitel2C();
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -755,31 +580,23 @@ public class Storyline {
     private static void kapitel2B() {
         boolean running = true;
         while (running) {
-            clearAll();
-            System.out.println("Du stiller dig hen til elevatoren. Der er tre knapper." +
-                    "\nSmart som du er, kan du ikke helt huske hvilken etage undervisningen foregår på." +
-                    "\nDu trykker derfor på '3'. " +
-                    "\nMon ikke det var den etage du var på i går?");
+            io.clearAll();
+            System.out.println(findPointerFromId("kapitel2B"));
             player.setEnergyLevel(player.getEnergyLevel() - 5);
             player.setStudyPoints(player.getStudyPoints() - 5);
             checkEnergyLevel();
-            Main.io.pressEnterToContinue();
-            clearAll();
-            System.out.println("Lyset i elevatoren blinker så snart dørene er lukket i. " +
-                    "\nTi sekunder senere er elevatoren gået i stå... nu står du så her i mørket og venter." +
-                    "\nDer lugter forresten en smule af tis... måske der var en som troede elevatoren var et lokum?");
-            Main.io.pressEnterToContinue();
-            clearAll();
+            io.pressEnterToContinue();
+            io.clearAll();
+            System.out.println(findPointerFromId("kapitel2B1"));
+            io.pressEnterToContinue();
+            io.clearAll();
             player.setEnergyLevel(player.getEnergyLevel() - 10);
             checkEnergyLevel();
             player.setStudyPoints(player.getStudyPoints() - 10);
-            System.out.println("Først efter at have holdt alarmklokken i elevatoren nede i flere minutter får du kontakt til pedellen." +
-                    "\nHan kommer og hjælper dig ud, men det tager selvfølgelig en rum tid. Du går derfor glip af noget undervsining. " +
-                    "\nDu er også blevet træt, og din energi er derfor p.t.: " + player.getEnergyLevel() + "." +
-                    "\nMen nu kan du i det mindste skynde dig hen til din første lektion på studiet ...");
+            System.out.println(findPointerFromId("kapitel2B2"));
             checkEnergyLevel();
-            Main.io.pressEnterToContinue();
-            clearAll();
+            io.pressEnterToContinue();
+            io.clearAll();
             kapitel2A();
         }
     }
@@ -788,18 +605,10 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println("PYHA! Ovenpå den omgang med variabler, har du vist brug for en luftforandring. " +
-                        "\nDu er dog blevet lidt træt, og din energi er nu " + player.getEnergyLevel() + "." + "" +
-                        "\nTil gengæld har du fået nogle studypoints, og har nu i alt: " + player.getStudyPoints() + " studypoints." +
-                        "\nHvad kunne du nu tænke dig at gøre?" +
-                        "\n\t(1)Der er vist nogle af dine medstuderende som talte om nogle øl?" +
-                        "\n\t(2)Jeg skal direkte hjem, drikke en kop the og så sove så jeg kan være frisk til i morgen." +
-                        "\n\t(3)Jeg synes jeg har hørt om nogle spændende steder her på kampus. Jeg tror liiiige jeg skal se hvad det er ..." +
-                        "\n\t(4)Jeg sidder lige så godt, så jeg åbner min bog og læser videre i den ..." +
-                        "\n\t(5)For menu");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel2C"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
                     kapitel2D();
                 } else if (pointer == 2) {
@@ -811,10 +620,10 @@ public class Storyline {
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -822,15 +631,11 @@ public class Storyline {
     private static void kapitel2D() {
         boolean running = true;
         while (running) {
-            clearAll();
+            io.clearAll();
             player.setEnergyLevel(player.getEnergyLevel() - 25);
-            System.out.println("Du kommer vist til at tage ud med nogen fra studiet." +
-                    "\nDet blev ... sent? Du er faktisk i tvivl, for efter to øl kan du ikke huske hvad der skete." +
-                    "\nMen billederne fra Instagram lyver ikke, og ifølge dem var du med til kl. lort." +
-                    "\nDin energi er derfor langt fra i top næste morgen og er nu på: " + player.getEnergyLevel() + "" +
-                    "\nMon du kan klare endnu en skoledag?");
+            System.out.println(findPointerFromId("kapitel2D"));
             checkEnergyLevel();
-            Main.io.pressEnterToContinue();
+            io.pressEnterToContinue();
             kapitel3();
         }
     }
@@ -839,9 +644,8 @@ public class Storyline {
         boolean running = true;
         while (running) {
             player.setEnergyLevel(player.getEnergyLevel() + 20);
-            System.out.println("Jeg tager direkte hjem, min stakkels hjerne skal restituere og genopfriskes..." +
-                    "\nDu får ny energi, og din energi er nu " + player.getEnergyLevel());
-            Main.io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel2E"));
+            io.pressEnterToContinue();
             kapitel3();
         }
     }
@@ -850,16 +654,10 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println("Du tænker, at det da kunne være sjovt, at gå lidt på opdagelse og måske møde nogle andre elever på skolen." +
-                        "\nEfter lidt overtagelse går to af dine klassekamerater med dig. " +
-                        "\nHvor vil I begive jer hen?" +
-                        "\n\t(1)Vi skal se hvad der er på anden sal." +
-                        "\n\t(2)Vi bevæger os imod kantinen. Vi er SULTNE!" +
-                        "\n\t(3)Der var vist noget med nogle piger som læste her på kampus ..." +
-                        "\n\t(4)For menu");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel2F"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
                     kapitel2F1();
                 } else if (pointer == 2) {
@@ -869,10 +667,10 @@ public class Storyline {
                 } else if (pointer == 4) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -882,49 +680,30 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                System.out.println("" +
-                        "\n##     ##         #        ##       ##  ########### ######  ##       ##  ######## " +
-                        "\n##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##       " +
-                        "\n##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##       " +
-                        "\n## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##       " +
-                        "\n###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####    " +
-                        "\n## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##       " +
-                        "\n##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##       " +
-                        "\n##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##       " +
-                        "\n##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ######## ");
-
-                System.out.println("Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød," +
-                        "\nfriskbrygget kaffe og ung-drengesved. Du har " + player.getMoney() + " kroner. Hvad vil du gøre?" +
-                        "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
-                        "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
-                        "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
-                        "\n\t(4) Jeg forlader kantinen og går hjem, jeg skal være frisk til i morgen." +
-                        "\n\t(5) For menu");
+                System.out.println(findPointerFromId("kapitel2F2"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
-                    // story.kapitel1B1();
-                    System.out.println("Vi har desværre udsolgt vores æbler." +
-                            "---------------------------------------------------------------------------------------------------");
-                    Main.io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("udsolgtÆbler"));
+                    io.pressEnterToContinue();
                     story.goToCafeteria2();
                 } else if (pointer == 2) {
                     player.buyCoffee();
-                    Main.io.pressEnterToContinue();
+                    io.pressEnterToContinue();
                     story.goToCafeteria2();
                 } else if (pointer == 3) {
                     player.buySandwich();
-                    Main.io.pressEnterToContinue();
+                    io.pressEnterToContinue();
                     story.goToCafeteria2();
                 } else if (pointer == 4) {
                     story.kapitel2();
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke gøre nu, prøv igen");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -934,31 +713,24 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println("Du ankommer sammen med dine nye venner på anden sal." +
-                        "\nDer går en masse studerende der med et tomt blik går rundt i en zombielignende tilstand ..." +
-                        "\nAnders, din nye ven fra klassen kigger på dig og udbryder: 'Nice!'" +
-                        "\nDu er nu ikke helt så sikker på, at det er top-nice at være her på anden sal ..." +
-                        "\nHvad vil du gøre nu?" +
-                        "\n\t(1)Jeg skal i hvert fald ikke fremstå som en kylling. Vi BLIVER!" +
-                        "\n\t(2)Anden sal er vist ikke lige mig ... jeg tror, at jeg tager hjem for i dag ..." +
-                        "\n\t(3)For menu");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel2F1"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
                     kapitel2F12();
                 } else if (pointer == 2) {
-                    clearAll();
-                    System.out.println("Du synes de studerende på anden sal var lidt for skræmmende ... og vender næsen hjemad.");
-                    Main.io.pressEnterToContinue();
+                    io.clearAll();
+                    System.out.println(findPointerFromId("kapitel2F1Hjem"));
+                    io.pressEnterToContinue();
                     kapitel3();
                 } else if (pointer == 3) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
 
@@ -968,16 +740,12 @@ public class Storyline {
     private static void kapitel2F12() {
         boolean running = true;
         while (running) {
-            clearAll();
+            io.clearAll();
             player.setStudyPoints(player.getStudyPoints() - 15);
             player.setEnergyLevel(player.getEnergyLevel() - 15);
-            System.out.println("Anders synes det er sejt, så det gør du også. Desværre var det ikke så sejt." +
-                    "\nDe studerende gik rundt og så lige zombie-agtige ud fordi de har læst på CPH-business for længe." +
-                    "\nEfter I har tilbragt en halv time på anden sal kan du mærke din IQ blive tocifret, og derefter halveret." +
-                    "\nDu har nu " + player.getStudyPoints() + " studypoints og " + player.getEnergyLevel() + " i energi." +
-                    "\nDu skynder dig hjem i seng, så du kan blive klar til næste skoledag!");
+            System.out.println(findPointerFromId("kapitel2F12"));
             checkEnergyLevel();
-            Main.io.pressEnterToContinue();
+            io.pressEnterToContinue();
             kapitel3();
         }
     }
@@ -987,14 +755,10 @@ public class Storyline {
         while (running) {
             player.setStudyPoints(player.getStudyPoints() - 5);
             player.setEnergyLevel(player.getEnergyLevel() - 10);
-            clearAll();
-            System.out.println("Du indser alt, alt for sent, at du er datamatiker studerende, " +
-                    "\nog pigerne her på kampus, vil derfor absolut ikke ses i nærheden af dig." +
-                    "\nDet kunne jo være, at dit nørderi smittede?" +
-                    "\nDine studypoints går en smule ned (" + player.getStudyPoints() + ") fordi du mister selvtillid, og din energi er også en smule drænet (" + player.getEnergyLevel() + ")." +
-                    "\nSkuffet vender du snuden hjemad. Ingen piger til dig i dag!");
+            io.clearAll();
+            System.out.println(findPointerFromId("kapitel2F3"));
             checkEnergyLevel();
-            Main.io.pressEnterToContinue();
+            io.pressEnterToContinue();
             kapitel3();
         }
     }
@@ -1002,18 +766,11 @@ public class Storyline {
     private static void kapitel2G() {
         boolean running = true;
         while (running) {
-            clearAll();
+            io.clearAll();
             player.setEnergyLevel(player.getEnergyLevel() - 20);
             player.setStudyPoints(player.getStudyPoints() + 10);
-            System.out.println("Du bliver på skolen lidt længere og hygger dig med din bog." +
-                    "\n-------------------------------------------------------------------------------------------------" +
-                    "\nDu lærer bl.a., at man kan give variabler en 'final' værdi, så kan de ikke ændres." +
-                    "\nOg om variabel-typer som 'float' (komma-tal som erklæres med et 'f' efter værdien), " +
-                    "\n'char' (enkelte bogstaver, her skal værdien være i enkle situationstegn 'E' " +
-                    "\nog boolean, som altid har en 'true' eller 'false' værdi." +
-                    "\nDet giver selvfølgelig lidt ekstra studypoints, men kan også mærkes på din energi, du er godt træt i hovedet nu ...." +
-                    "\nDu tager hjem i seng, så du kan være klar til i morgen.\n");
-            Main.io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel2G"));
+            io.pressEnterToContinue();
             checkEnergyLevel();
             kapitel3();
         }
@@ -1024,60 +781,38 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println(
-
-                        "####            ###       ##########   ########     " +
-                                "\n## ###         ## ##      ##      ##   ##    ##     " +
-                                "\n##   ##       ##   ##     ##      ##         ##     " +
-                                "\n##    ##     ##     ##    ##                 ##     " +
-                                "\n##     ##   ##       ##   ##            #######     " +
-                                "\n##    ##   #############  ##    ####         ##     " +
-                                "\n##   ##    ##         ##  ##      ##         ##     " +
-                                "\n## ###     ##         ##  ##      ##   ##    ##     " +
-                                "\n####       ##         ##  ##########   ########     " +
-                                "\n" +
-                                "\nEndnu en dejlig dag på CPH-Business venter dig, du er spændt på at se, hvad du mon skal lære i dag." +
-                                "\nI lobbyen har du nu de velkendte valgmuligheder." +
-                                "\n\t(1)For at gå direkte til time." +
-                                "\n\t(2)For at gå i kantinen." +
-                                "\n\t(3)For at tage elevatoren." +
-                                "\n\t(4)For menu");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel3"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
-                    clearAll();
-                    System.out.println("Du bevæger dig straks til time, du skulle jo nødigt gå glip af noget undervisning!");
-                    Main.io.pressEnterToContinue();
+                    io.clearAll();
+                    System.out.println(findPointerFromId("kapitel3Undervisning"));
+                    io.pressEnterToContinue();
                     kapitel3A();
                 } else if (pointer == 2) {
-                    clearAll();
+                    io.clearAll();
                     goToCafeteria3();
                 } else if (pointer == 3) {
                     kapitel3B();
                 } else if (pointer == 4) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
-
     }
 
-
     private static void kapitel3B() {
-        clearAll();
+        io.clearAll();
         player.setStudyPoints(player.getStudyPoints() - 5);
         player.setEnergyLevel(player.getEnergyLevel() - 5);
-        System.out.println("Du har enten ikke prøvet at tage elevatoren før, " +
-                "\neller også lærer du ikke af dine fejl. " +
-                "\nElevatoren går i stå, og du kommer for sent til time fordi du først skal have hjælp af pedellen." +
-                "\nDu får fratrukket nogle studypoints og din energi bliver en smule drænet.");
+        System.out.println(findPointerFromId("kapitel3B"));
         checkEnergyLevel();
-        Main.io.pressEnterToContinue();
+        io.pressEnterToContinue();
         kapitel3A();
     }
 
@@ -1085,50 +820,30 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                System.out.println("" +
-                        "\n##     ##         #        ##       ##  ########### ######  ##       ##  ######## " +
-                        "\n##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##       " +
-                        "\n##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##       " +
-                        "\n## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##       " +
-                        "\n###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####    " +
-                        "\n## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##       " +
-                        "\n##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##       " +
-                        "\n##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##       " +
-                        "\n##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ######## ");
-
-                System.out.println("Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød," +
-                        "\nfriskbrygget kaffe og ung-drengesved." +
-                        "\nEn sød kantinemand råber ud : 'VI HAR FÅET RÅDNE ÆBLER PÅ LAGER'" +
-                        "\nHvad vil du gøre?" +
-                        "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
-                        "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
-                        "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
-                        "\n\t(4) Jeg forlader kantinen og skynder mig til time" +
-                        "\n\t(5) For menu");
+                System.out.println(findPointerFromId("goToCafeteria3"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
-                    // story.kapitel1B1();
                     player.buyApple();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria3();
+                    io.pressEnterToContinue();
+                    goToCafeteria3();
                 } else if (pointer == 2) {
                     player.buyCoffee();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria3();
+                    io.pressEnterToContinue();
+                    goToCafeteria3();
                 } else if (pointer == 3) {
                     player.buySandwich();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria3();
+                    io.pressEnterToContinue();
+                    goToCafeteria3();
                 } else if (pointer == 4) {
                     kapitel3A();
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke gøre nu, prøv igen");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -1137,55 +852,35 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println("Du har sådan glædet dig til den næste time. Og i dag præsenterer din lærer, Thorbjørn, et nyt koncept: if/else -statements.\n" +
-                        "\n ######  #########     ##  ######## ##       ########  ######## " +
-                        "\n   ##    ##           ##   ##       ##       ##        ##       " +
-                        "\n   ##    ##          ##    ##       ##       ##        ##       " +
-                        "\n   ##    ##         ##     ##       ##       ##        ##       " +
-                        "\n   ##    #####     ##      #####    ##       ########  #####    " +
-                        "\n   ##    ##       ##       ##       ##             ##  ##       " +
-                        "\n   ##    ##      ##        ##       ##             ##  ##       " +
-                        "\n   ##    ##     ##         ##       ##             ##  ##       " +
-                        "\n   ##    ##    ##          ##       ##             ##  ##       " +
-                        "\n ######  ##   ##           #######  #######  ########  ####### \n ");
-                Main.io.pressEnterToContinue();
-                clearAll();
-                System.out.println("En if/else-statement benytter et booleansk udtryk til at køre koden hvis det booleanske udtryk er sandt," +
-                        "\net andet stykke kode hvis et andet booleansk udtryk er sandt osv." +
-                        "\nI praksis skrives det således op:" +
-                        "\nif (1<2) {" +
-                        "\n\t\tkør den kode (1) som står her hvis 1<2" +
-                        "\n\t} else if (2<1) {" +
-                        "\n\tkør den kode (2)som står her hvis 2<1" +
-                        "\n\t} else {" +
-                        "\n\t\tkør den her kode (3) hvis ingen af udtrykkene er sande." +
-                        "\nHvilket stykke kode vil der blive kørt?" +
-                        "\n(1)" +
-                        "\n(2)" +
-                        "\n(3)");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel3A"));
+                io.pressEnterToContinue();
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel3Videre"));
                 int pointer;
                 pointer = IO.getUserInput();
                 if (pointer == 1) {
                     player.setStudyPoints(player.getStudyPoints() + 5);
-                    System.out.println("Det er korrekt! Du får 5 studypoints og har nu " + player.getStudyPoints() + " i alt.");
-                    Main.io.pressEnterToContinue();
+                    System.out.print(findPointerFromId("kapitel3AKorrekt"));
+                    System.out.print(player.getStudyPoints());
+                    System.out.print(findPointerFromId("kapitel3AKorrektB"));
+                    io.pressEnterToContinue();
                     kapitel3A1();
                 } else if (pointer == 2) {
                     player.setStudyPoints(player.getStudyPoints() - 5);
-                    System.out.println("Det er desværre forkert, da 2 ikke er mindre end 1 ... Du mister 5 studypoints og har nu " + player.getStudyPoints() + " i alt.");
-                    Main.io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitel3AForkert1"));
+                    io.pressEnterToContinue();
                     kapitel3A1();
                 } else if (pointer == 3) {
                     player.setStudyPoints(player.getStudyPoints() - 5);
-                    System.out.println("Det er desværre forkert. Du mister 5 studypoints og har nu " + player.getStudyPoints() + " i alt.");
-                    Main.io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitel3AForkert2"));
+                    io.pressEnterToContinue();
                     kapitel3A1();
                 } else {
-                    System.out.println("Det kan du ikke gøre nu, prøv igen.");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -1194,14 +889,8 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println("Din sidemakker, August, begynder at sidde og synge en sang... inden længe hænger den fast i hovedet på ham. " +
-                        "\nDu kan allerede mærke hovedpinen begynde at melde sig på banen, men du forsøger desperat at følge med i undervisningen." +
-                        "\nAugust spørger, om I skal slå sten, saks papir om en kop kaffe." +
-                        "\nHvad vil du gøre?" +
-                        "\n\t(1)Jeg ignorerer ham. Jeg er her for at lære, ikke for at få venner!" +
-                        "\n\t(2)Jeg siger top og begynder at slå sten saks papir med ham ...." +
-                        "\n\t(3)For menu");
+                IO.clearAll();
+                System.out.println(findPointerFromId("kapitel3A1"));
                 int pointer;
                 pointer = IO.getUserInput();
                 if (pointer == 1) {
@@ -1213,10 +902,10 @@ public class Storyline {
                 } else if (pointer == 3) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke gøre nu, prøv igen.");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -1225,25 +914,20 @@ public class Storyline {
     private static void kapitel3A2() {
         boolean running = true;
         while (running) {
-            clearAll();
-            System.out.println("Du ignorerer August, det er vigtigere at følge med i timen, end at lege med ham ..." +
-                    "\nI lærer om en anden \"conditional\": while-loop." +
-                    "\nEt while-loop fungerer således, at der tjekkes efter en boolean statement, og så længe denne er sand, køres en kode." +
-                    "\nNår det booleanske udtryk ikke længere er sandt, brydes der ud af statementen, og der kan køres anden kode. Det kan se således ud:" +
-                    "\n\twhile (x<1000){" +
-                    "\n\t\ti++" +
-                    "\n\t} " +
-                    "\nI eksemplet ville der lægges 1 til variablen 'i' hver gang der køres igennem loopet, hvilket er så længe 'x' er mindre end 1000");
-            Main.io.pressEnterToContinue();
+            io.clearAll();
+            System.out.println(findPointerFromId("kapitel3A2"));
+            io.pressEnterToContinue();
             player.setStudyPoints(player.getStudyPoints() + 25);
             player.setEnergyLevel(player.getEnergyLevel() - 25);
-            System.out.println("Du er helt bims i hovedet af al den snak om variabler. " +
-                    "\nDin energi er nu " + player.getEnergyLevel() + " og dine studypoints er : " + player.getStudyPoints() + "");
+            System.out.print(findPointerFromId("kapitel3A2Fortsat"));
+            System.out.print(player.getEnergyLevel());
+            System.out.print(findPointerFromId("kapitel3A2FortsatB"));
+            System.out.println(player.getStudyPoints());
             checkEnergyLevel();
-            IO.pressEnterToContinue();
-            clearAll();
-            System.out.println("Du skynder dig hjem i seng ... i morgen venter endnu en dag ...");
-            Main.io.pressEnterToContinue();
+            io.pressEnterToContinue();
+            io.clearAll();
+            System.out.println(findPointerFromId("kapitel3A2Hjem"));
+            io.pressEnterToContinue();
             kapitel4();
         }
     }
@@ -1251,61 +935,40 @@ public class Storyline {
     private static void kapitel3A3() {
         while (true) {
             player.setStudyPoints(player.getStudyPoints() - 5);
-            System.out.println("August er så selvsikker, at han siger han vil give dig en kaffe hvis du vinder!");
+            System.out.println(findPointerFromId("kapitel3A3"));
             RockPaperScissors stenSaksPapir = new RockPaperScissors();
             stenSaksPapir.RockPaperScissors();
-            System.out.println("Imens du spillede med August missede du dog nogle vigtige pointer i undervisningen" +
-                    " og er derfor blevet trukket 5 study points");
-            System.out.println("Timen er overstået og dine klassekammerater er i gang med at pakke sammen." +
-                    "\nDu tager også selv dine ting og går hjemad");
-            Main.io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel3A3Slut"));
+            io.pressEnterToContinue();
             kapitel4();
         }
     }
-
 
     private static void kapitel4() {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
-                System.out.println(
-
-                        "####            ###       ##########   ##      ##     " +
-                                "\n## ###         ## ##      ##      ##   ##      ##     " +
-                                "\n##   ##       ##   ##     ##      ##   ##      ##     " +
-                                "\n##    ##     ##     ##    ##           ##      ##     " +
-                                "\n##     ##   ##       ##   ##           ##########     " +
-                                "\n##    ##   #############  ##    ####           ##     " +
-                                "\n##   ##    ##         ##  ##      ##           ##     " +
-                                "\n## ###     ##         ##  ##      ##           ##     " +
-                                "\n####       ##         ##  ##########           ##     " +
-                                "\n" +
-                                "\nDu finder nu endnu engang dig selv stående i lobbyen hos CPH-Business." +
-                                "\nDu har her de velkendte valgmuligheder." +
-                                "\n\t(1)For at gå direkte til time." +
-                                "\n\t(2)For at gå i kantinen." +
-                                "\n\t(3)For at tage elevatoren." +
-                                "\n\t(4)For menu");
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel4"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
-                    clearAll();
-                    System.out.println("Du går målrettet mod undervisningenslokalet!");
-                    Main.io.pressEnterToContinue();
+                    io.clearAll();
+                    System.out.println(findPointerFromId("kapitel4Fortsat"));
+                    io.pressEnterToContinue();
                     kapitel4A();
                 } else if (pointer == 2) {
-                    clearAll();
+                    io.clearAll();
                     goToCafeteria4();
                 } else if (pointer == 3) {
                     kapitel4B();
                 } else if (pointer == 4) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -1313,98 +976,66 @@ public class Storyline {
     private static void kapitel4A() {
         while (true) {
             try {
-                System.out.println("\n" +
-                        "\n#########  ########  ##########                         ########  ######## ##########  " +
-                        "\n##     ##  ##            ##                             ##        ##           ##      " +
-                        "\n##         ##            ##                             ##        ##           ##      " +
-                        "\n##         ##            ##       ########   #######    ##        ##           ##      " +
-                        "\n##         #####         ##      ##      ##  ##   ##    ########  #####        ##      " +
-                        "\n##    ###  ##            ##      ##      ##  ##   ##          ##  ##           ##      " +
-                        "\n##     ##  ##            ##      ##      ##   ######          ##  ##           ##      " +
-                        "\n##     ##  ##            ##      ##      ##       ##          ##  ##           ##      " +
-                        "\n#########  #######       ##       ########        ##    ########  #######      ##      " +
-                        "\n                                             ##   ##                                   " +
-                        "\n                                             #######                                   ");
-                Main.io.pressEnterToContinue();
-                System.out.println("Din lærer, Tess fortæller gladeligt om et begreb kaldet \"Encapsulation\"." +
-                        "\nEncapsulation hjælper den som koder med, at beskytte dataen fra brugerens øjne." +
-                        "\nMan bruger ordet 'private' når der erklæres variabler og klasse, og 'getters' og 'setters' for at få fat i dataen." +
-                        "\nTess spørger \"Hvordan laver man en 'getter' til en variabel af typen String, kaldet 'name'?" +
-                        "\n\t(1)private String getName() {" +
-                        "\n\t\treturn name;" +
-                        "\n\t(2)public void setName(String newName) {" +
-                        "\n\t\treturn newName;" +
-                        "\n\t(3)public String getName() {" +
-                        "\n\t\treturn name;");
+                System.out.println(findPointerFromId("kapitel4A"));
+                io.pressEnterToContinue();
+                System.out.println(findPointerFromId("kapitel4Afortsat"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
-                    System.out.println("Det var desværre forkert, du får ingen studypoints for det svar.");
-                    Main.io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitel4AForkert"));
+                    io.pressEnterToContinue();
                 } else if (pointer == 2) {
-                    System.out.println("Det var desværre forkert, du får ingen studypoints for det svar.");
-                    Main.io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitel4AForkert"));
+                    io.pressEnterToContinue();
                 } else if (pointer == 3) {
                     player.setStudyPoints(player.getStudyPoints() + 5);
-                    System.out.println("Det er korrekt, godt klaret! 5 studypoints til dig, min ven!");
-                    Main.io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitel4ARigtigt"));
+                    io.pressEnterToContinue();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen.");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
-                clearAll();
-                System.out.println("Nu ved du hvordan, man sørger for, at data ikke kan tilgås uden getters og setter udenfor den tilhørende klasse." +
-                        "\nDu lærer også at lave metoder, og kalde dem." +
-                        "\nEfter en hård dag med Tess, metoder og matador(!!!) kan du nu tage hjem og slappe af.");
-                Main.io.pressEnterToContinue();
+                IO.clearAll();
+                System.out.println(findPointerFromId("kapitel4ASlut"));
+                io.pressEnterToContinue();
                 kapitel5();
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
-
 
     private static void kapitel4B() {
         while (true) {
             try {
                 player.setStudyPoints(player.getStudyPoints() - 5);
-                System.out.println("Har du taget elevatoren før? Forhåbentlig er svaret nej, for ellers burde du vide, at elevatoren går i stå ... " +
-                        "\nDu kommer for sent til undervisningen og mister 5 studypoints." +
-                        "\nDu bliver ovenikøbet sat af på den forkerte etage. Hvad vil du gøre nu?" +
-                        "\n\t(1)Jeg tager trappen, det er vist det sikreste!" +
-                        "\n\t(2)Jeg tager da elevatoren." +
-                        "\n\t(3)For menu.");
+                System.out.println(findPointerFromId("kapitel4B"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
-                    clearAll();
-                    System.out.println("Du skynder dig af sted til undervisningslokalet ...");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("kapitel4BTilUndervisning"));
                     kapitel4A();
-
                 } else if (pointer == 2) {
-                    clearAll();
-                    System.out.println("Du har vist ikke helt forstået hvordan den elevator virker ...");
+                    io.clearAll();
+                    System.out.println(findPointerFromId("kapitel4BTilElevator"));
+                    io.pressEnterToContinue();
                     kapitel4B1();
                 } else if (pointer == 3) {
-                    clearAll();
+                    io.clearAll();
                     menu.playingMenu();
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
 
     private static void kapitel4B1() {
-
-        System.out.println("Elevatoren kører forbi din sal ... du havner på øverste etage. " +
-                "\nHer er ikke andet end nogle nørder som sidder og læser i bøger." +
-                "\nMidt i al støvet finder du en gammel bog ... du samler den op.");
+        System.out.println(findPointerFromId("kapitel4B1"));
         player.lootBook1();
-
-        Main.io.pressEnterToContinue();
-        clearAll();
-        System.out.println("Du skynder dig til time, måske kan du lige nå at få lidt af undervisningen med?");
+        io.pressEnterToContinue();
+        io.clearAll();
+        System.out.println(findPointerFromId("kapitel4BTilUndervisning"));
         kapitel4A();
     }
 
@@ -1412,49 +1043,30 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                System.out.println("" +
-                        "\n##     ##         #        ##       ##  ########### ######  ##       ##  ######## " +
-                        "\n##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##       " +
-                        "\n##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##       " +
-                        "\n## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##       " +
-                        "\n###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####    " +
-                        "\n## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##       " +
-                        "\n##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##       " +
-                        "\n##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##       " +
-                        "\n##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ######## ");
-
-                System.out.println("Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød," +
-                        "\nfriskbrygget kaffe og ung-drengesved." +
-                        "En sød kantinemand råber ud : 'VI HAR FÅET RÅDNE ÆBLER PÅ LAGER'" +
-                        "Hvad vil du gøre?" +
-                        "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
-                        "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
-                        "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
-                        "\n\t(4) Jeg forlader kantinen og tager til time." +
-                        "\n\t(5) For menu");
+                System.out.println(findPointerFromId("goToCafeteria4"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
                     player.buyApple();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria4();
+                    io.pressEnterToContinue();
+                    goToCafeteria4();
                 } else if (pointer == 2) {
                     player.buyCoffee();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria4();
+                    io.pressEnterToContinue();
+                    goToCafeteria4();
                 } else if (pointer == 3) {
                     player.buySandwich();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria4();
+                    io.pressEnterToContinue();
+                    goToCafeteria4();
                 } else if (pointer == 4) {
                     kapitel4A();
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke gøre nu, prøv igen");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -1463,18 +1075,13 @@ public class Storyline {
         boolean running = true;
         while (running) {
             try {
-                System.out.println("I dag er der ingen undervisning på CPH-Business! " +
-                        "\nTil gengæld skal du ud og spille rundbold på en græsplæne bag bygningen." +
-                        "\nHvordan går du til den opgave?" +
-                        "\n\t(1)Jeg går hjem... De får ikke den her nørd til at løbe rundt i en firkant!" +
-                        "\n\t(2)Jeg giver den gas! Jeg er ikke på Vinderholdet for ingenting!" +
-                        "\n\t(3)Jeg tror liiiige der var nogle piger som ville have selskab?");
+                System.out.println(findPointerFromId("kapitel5"));
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
                     player.setEnergyLevel(player.getEnergyLevel() + 15);
-                    System.out.println("Du går hjem ... rundbold er ikke noget for en datamatiker!");
-                    Main.io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitel5Hjem"));
+                    io.pressEnterToContinue();
                     kapitel6();
                 } else if (pointer == 2) {
                     kapitel5B();
@@ -1482,7 +1089,7 @@ public class Storyline {
                     kapitel5C();
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
@@ -1493,190 +1100,683 @@ public class Storyline {
             try {
                 player.setEnergyLevel(player.getEnergyLevel() - 20);
                 checkEnergyLevel();
-                System.out.println("Du styrter rundt som en galning og satser alt på at vinde! Desværre går der kun fem minutter før du falder og brækker anklen. " +
-                        "\nDu må derfor bliver hjemme fra skolen i morgen, og går glip af værdifuld undervisning og samtidig er din energi fuldkommen drænet." +
-                        "Du har nu " + player.getEnergyLevel() + " i energi...");
-                Main.io.pressEnterToContinue();
+                System.out.print(findPointerFromId("kapitel5B"));
+                System.out.print(player.getEnergyLevel());
+                System.out.println("");
+                io.pressEnterToContinue();
                 kapitel7();
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
-
 
     private static void kapitel5C() {
         boolean running = true;
         while (running) {
             try {
-                clearAll();
+                io.clearAll();
                 player.setEnergyLevel(player.getEnergyLevel() - 10);
                 checkEnergyLevel();
-                System.out.println("Du stiller dig hen som opgiver, så kan du rigtig sludre med alle de søde piger som skal slå til bolden ..." +
-                        "\nDe kigger godt nok lidt mærkeligt på dig, men i det mindste løber de ikke skrigende bort som den slags plejer at gøre når de ser dig ..." +
-                        "\nEfter nogle runder vinder dit hold ... tror du. For når man er opgiver kan man ikke vinde, men det havde " + player.getName() + " selvfølgelig ikke tænkt på." +
-                        "\nDu bliver en smule til grin, men du inviteres alligevel med i byen af August og forhåbentlig også nogle af pigerne!" +
-                        "\nHvad gør du?" +
-                        "\n\t(1)For at tage med i byen" +
-                        "\n\t(2)For at tage hjem. Du skal være klar til næste dag. August må vente!");
+                System.out.println(findPointerFromId("kapitel5C"));
+                System.out.print(player.getName());
+                System.out.print(findPointerFromId("kapitel5C2"));
                 int pointer = IO.getUserInput();
                 if (pointer == 1) {
                     player.setEnergyLevel(player.getEnergyLevel() + 5);
-                    System.out.println("Du tager hjem og slapper af ... ovenpå den omgang rundbold skal du se Netflix hele aftenen!");
-                    Main.io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitel5CHjem"));
+                    io.pressEnterToContinue();
                     kapitel6();
                 } else if (pointer == 2) {
                     kapitel5C1();
                 } else {
-                    System.out.println("Det kan du ikke nu, prøv igen!");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
 
     private static void kapitel5C1() {
-        clearAll();
+        io.clearAll();
         while (true) {
             try {
                 player.setEnergyLevel(player.getEnergyLevel() - 25);
                 checkEnergyLevel();
-                System.out.println("Du skal da med i byen!" +
-                        "\nAugust og pigerne laver dog hurtigt forsvindingsnummert, og du havner på lokummet hvor du tilbringer hele natten." +
-                        "\nDa du vågner næste morgen står der en rengøringskone og kigger forvirret på dig... du mumler lidt og løber ud i solen." +
-                        "\nKan du overhovet nå i skole i dag?" +
-                        "\n\t(1)For at pjække og gå hjem..." +
-                        "\n\t(2)For at skynde dig i skole, også selvom du har tømmermænd ...");
-                int pointer = IO.getUserInput();
+                System.out.println(findPointerFromId("kapitel5C1"));
+                int pointer = io.getUserInput();
                 if (pointer == 1) {
-                    clearAll();
-                    System.out.println("Du tager hjem ... du ville alligevel ikke være noget værd i skolen i dag." +
-                            "\nDu får lidt energi af det og din energi er nu " + player.getEnergyLevel() + " men dine studypoints får et hak og du har nu kun " + player.getStudyPoints() + " studypoints tilbage ...");
-                    Main.io.pressEnterToContinue();
+                    io.clearAll();
+                    System.out.println(findPointerFromId("kapitel5C1Hjem"));
+                    io.pressEnterToContinue();
                     checkEnergyLevel();
                     kapitel7();
+                } else if (pointer == 2) {
+                    io.clearAll();
+                    kapitel6();
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
-
 
     private static void kapitel6() {
 
-        clearAll();
-        System.out.println("" +
-                "\n#######  ##       ##  #####     ##       ##  ##   ##      #######  ##      ##     ####         ###     #######  " +
-                "\n##       ## ##    ##  ##    ##  ## ##    ##  ##   ##      ##       ####    ##     ##  ##      ## ##    ##   ##  " +
-                "\n##       ##  ##   ##  ##     ## ##  ##   ##  ##   ##      ##       ## ##   ##     ##   ##    ##   ##   ##       " +
-                "\n####     ##   ##  ##  ##     ## ##   ##  ##  ##   ##      #####    ##  ##  ##     ##    ##  ##     ##  ##       " +
-                "\n##       ##    ## ##  ##   ##   ##    ## ##  ##   ##      ##       ##   ## ##     ##   ##  ##########  ##  ###  " +
-                "\n##       ##     ####  ##  ##    ##     ####  ##   ##      ##       ##    ####     ##  ##   ##      ##  ##   ##  " +
-                "\n##       ##      ###  ## ##     ##      ###  ##   ##      ##       ##     ###     ## ##    ##      ##  ##   ##  " +
-                "\n#######  ##       ##  ###       ##       ##  #######      #######  ##      ##     ###      ##      ##  #######  ");
+        io.clearAll();
         while (true) {
             try {
-                System.out.println("\nDu er tilbage i lobbyen på CPH-Business ..." +
-                        "\nSynes du dagene ligner hinanden? Hvis ja, så har du ret! " +
-                        "\nDagene på datamatiker-studiet er næsten ens. Du knokler, lærer lidt om JAVA, og går hjem og er træt. ");
-
+                System.out.println(findPointerFromId("kapitel6"));
+                io.pressEnterToContinue();
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel6Fortsat"));
+                int pointer = io.getUserInput();
+                if (pointer == 1) {
+                    io.clearAll();
+                    System.out.println(findPointerFromId("kapitel6A"));
+                    kappitel6A();
+                } else if (pointer == 2) {
+                    io.clearAll();
+                    System.out.println(findPointerFromId("goToCafeteria5"));
+                    goToCafeteria5();
+                } else if (pointer == 3) {
+                    io.clearAll();
+                    System.out.println(findPointerFromId("kapitel6B"));
+                    kapitel6B();
+                } else if (pointer == 4) {
+                    io.clearAll();
+                    kapitel6C();
+                } else if (pointer == 5) {
+                    menu.playingMenu();
+                }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
 
+    private static void kappitel6A() {
+        io.clearAll();
+        while (true) {
+            System.out.println(findPointerFromId("kapitel6A"));
+            player.setEnergyLevel(player.getEnergyLevel() - 5);
+            player.setStudyPoints(player.getStudyPoints() - 25);
+            checkEnergyLevel();
+            io.pressEnterToContinue();
+            kapitel7();
+        }
+    }
+
+    private static void kapitel6B() {
+        io.clearAll();
+        while (true) {
+            System.out.println(findPointerFromId("kapitel6B"));
+            player.setEnergyLevel(player.getEnergyLevel() + 20);
+            player.setStudyPoints(player.getStudyPoints() - 20);
+            checkEnergyLevel();
+            io.pressEnterToContinue();
+            kapitel7();
+        }
+    }
+
+    private static void kapitel6C() {
+        io.clearAll();
+        while (true) {
+            try {
+                System.out.println(findPointerFromId("kapitel6CA"));
+                io.pressEnterToContinue();
+                System.out.println(findPointerFromId("kapitel6CB"));
+                int pointer = io.getUserInput();
+                if (pointer == 1) {
+                    System.out.println(findPointerFromId("kapitel6BForkert"));
+                    io.pressEnterToContinue();
+                    kapitel6D();
+                } else if (pointer == 2) {
+                    System.out.println(findPointerFromId("kapitel6BKorrekt"));
+                    player.setStudyPoints(player.getStudyPoints() + 10);
+                    io.pressEnterToContinue();
+                    kapitel6D();
+                } else if (pointer == 3) {
+                    System.out.println(findPointerFromId("kapitel6BForkert"));
+                    io.pressEnterToContinue();
+                    kapitel6D();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+
+    private static void kapitel6D() {
+        io.clearAll();
+        while (true) {
+            System.out.println(findPointerFromId("kapitel6D"));
+            io.pressEnterToContinue();
+            System.out.println(findPointerFromId("kapitel6D1"));
+            player.setEnergyLevel(+player.getEnergyLevel() - 15);
+            player.setStudyPoints(player.getStudyPoints() + 25);
+            checkEnergyLevel();
+            io.pressEnterToContinue();
+            kapitel7();
+        }
+    }
 
     private static void goToCafeteria5() {
         boolean running = true;
         while (running) {
             try {
-                System.out.println("" +
-                        "\n##     ##         #        ##       ##  ########### ######  ##       ##  ######## " +
-                        "\n##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##       " +
-                        "\n##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##       " +
-                        "\n## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##       " +
-                        "\n###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####    " +
-                        "\n## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##       " +
-                        "\n##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##       " +
-                        "\n##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##       " +
-                        "\n##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ######## ");
-
-                System.out.println("Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød," +
-                        "\nfriskbrygget kaffe og ung-drengesved." +
-                        "En sød kantinemand råber ud : 'VI HAR FÅET RÅDNE ÆBLER PÅ LAGER'" +
-                        "Hvad vil du gøre?" +
-                        "\n\t(1) Jeg vil gerne bede om et æble til 5 kroner." +
-                        "\n\t(2) Jeg vil gerne bede om en kop kaffe til 10 kroner." +
-                        "\n\t(3) Jeg vil gerne bede om en sandwich til 25 kroner." +
-                        "\n\t(4) Jeg forlader kantinen og tager til time." +
-                        "\n\t(5) For menu");
                 int pointer;
-                pointer = IO.getUserInput();
+                pointer = io.getUserInput();
                 if (pointer == 1) {
                     player.buyApple();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria4();
+                    io.pressEnterToContinue();
+                    story.goToCafeteria5();
                 } else if (pointer == 2) {
                     player.buyCoffee();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria4();
+                    io.pressEnterToContinue();
+                    story.goToCafeteria5();
                 } else if (pointer == 3) {
                     player.buySandwich();
-                    Main.io.pressEnterToContinue();
-                    story.goToCafeteria4();
+                    io.pressEnterToContinue();
+                    story.goToCafeteria5();
                 } else if (pointer == 4) {
-                    kapitel4A();
+                    System.out.println(findPointerFromId("kapitel6B"));
                 } else if (pointer == 5) {
                     menu.playingMenu();
                 } else {
-                    System.out.println("Det kan du ikke gøre nu, prøv igen");
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Det er ikke et tal, prøv igen ...");
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
             }
         }
     }
 
     private static void kapitel7() {
+        while (true) {
+            io.clearAll();
+            System.out.println(findPointerFromId("kapitel7"));
+            player.setEnergyLevel(player.getEnergyLevel() + 15);
+            checkEnergyLevel();
+            io.pressEnterToContinue();
+            kapitel8();
+        }
+    }
+
+    private static void kapitel8() {
+        io.clearAll();
+        while (true) {
+            try {
+                System.out.println(findPointerFromId("kapitel8"));
+                int pointer = io.getUserInput();
+                if (pointer == 1) {
+                    kapitel8A();
+                } else if (pointer == 2) {
+                    goToCafeteria6();
+                } else if (pointer == 3) {
+                    player.setStudyPoints(player.getStudyPoints() - 15);
+                    player.setEnergyLevel(player.getEnergyLevel() - 5);
+                    checkEnergyLevel();
+                    io.pressEnterToContinue();
+                    kapitel8A();
+                } else if (pointer == 4) {
+                    System.out.println(findPointerFromId("kapitel8Pjæk"));
+                    player.setStudyPoints(player.getStudyPoints() - 20);
+                    kapitel9();
+                } else if (pointer == 5) {
+                    menu.playingMenu();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+
+    public static void kapitel8A() {
+        while (true) {
+            try {
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel8A"));
+                int pointer = io.getUserInput();
+                if (pointer == 1) {
+                    System.out.println(findPointerFromId("kapitel8AForkert"));
+                    player.setStudyPoints(player.getStudyPoints() - 10);
+                    kapitel8A1();
+                } else if (pointer == 2) {
+                    System.out.println(findPointerFromId("kapitel8AKorrekt"));
+                    player.setStudyPoints(player.getStudyPoints() + 10);
+                    kapitel8A1();
+                } else if (pointer == 3) {
+                    System.out.println(findPointerFromId("kapitel8AForkert"));
+                    System.out.println(findPointerFromId("kapitel8AForkert"));
+                    player.setStudyPoints(player.getStudyPoints() - 10);
+                    kapitel8A1();
+                } else {
+                    System.out.println(findPointerFromId("DetKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+
+    private static void kapitel8A1() {
+        io.clearAll();
+        while (true) {
+            System.out.println(findPointerFromId("kapitel8A1"));
+            io.pressEnterToContinue();
+            player.setStudyPoints(player.getStudyPoints() + 20);
+            player.setEnergyLevel(player.getEnergyLevel() - 15);
+            checkEnergyLevel();
+            System.out.print(findPointerFromId("kapitel8A2"));
+            System.out.println(player.getStudyPoints());
+            System.out.print(findPointerFromId("kapitel8A3"));
+            kapitel9();
+        }
+    }
+
+
+    private static void goToCafeteria6() {
+        boolean running = true;
+        while (running) {
+            try {
+                int pointer;
+                pointer = io.getUserInput();
+                if (pointer == 1) {
+                    player.buyApple();
+                    io.pressEnterToContinue();
+                    goToCafeteria6();
+                } else if (pointer == 2) {
+                    player.buyCoffee();
+                    io.pressEnterToContinue();
+                    goToCafeteria6();
+                } else if (pointer == 3) {
+                    player.buySandwich();
+                    io.pressEnterToContinue();
+                    goToCafeteria6();
+                } else if (pointer == 4) {
+                    System.out.println(findPointerFromId("kapitel8A"));
+                } else if (pointer == 5) {
+                    menu.playingMenu();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+
+    private static void kapitel9() {
+        while (true) {
+            try {
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel9"));
+                int pointer = io.getUserInput();
+                if (pointer == 1) {
+                    kapitel9A1();
+                } else if (pointer == 2) {
+                    goToCafeteria7();
+                } else if (pointer == 3) {
+                menu.playingMenu();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+    private static void goToCafeteria7() {
+        boolean running = true;
+        while (running) {
+            try {
+                System.out.println(findPointerFromId("goToCafeteria7"));
+                int pointer;
+                pointer = io.getUserInput();
+                if (pointer == 1) {
+                    player.buyApple();
+                    io.pressEnterToContinue();
+                    goToCafeteria7();
+                } else if (pointer == 2) {
+                    player.buyCoffee();
+                    io.pressEnterToContinue();
+                    goToCafeteria7();
+                } else if (pointer == 3) {
+                    player.buySandwich();
+                    io.pressEnterToContinue();
+                    goToCafeteria7();
+                } else if (pointer == 4) {
+                    kapitel9A1();
+                } else if (pointer == 5) {
+                    menu.playingMenu();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+
+    private static void kapitel9A1() {
+        io.clearAll();
+        System.out.println(findPointerFromId("kapitel9Undervisning"));
+        io.pressEnterToContinue();
+        System.out.println(findPointerFromId("kapitel9A1Del1"));
+        io.pressEnterToContinue();
+        System.out.println(findPointerFromId("kapitel9A1Del2"));
+        io.pressEnterToContinue();
+        System.out.print(findPointerFromId("kapitel9A2"));
+        player.setEnergyLevel(player.getEnergyLevel()-15);
+        System.out.print(player.getEnergyLevel());
+        player.setStudyPoints(player.getStudyPoints()+10);
+        System.out.print(findPointerFromId("kapitel9A3"));
+        System.out.print(player.getStudyPoints());
+        io.pressEnterToContinue();
+        System.out.println(findPointerFromId("kapitel9påVejHjem"));
+        kapitel10();
+    }
+
+
+    private static void kapitelJul() {
+        while (true) {
+            try {
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitelJul"));
+                int pointer = io.getUserInput();
+                if (pointer == 1) {
+                    kapitelJulA();
+                } else if (pointer == 2) {
+                    goToCafeteriaJUL();
+                } else if (pointer == 3) {
+                    kapitelJulC();
+                } else if (pointer == 4) {
+                    kapitelJulD();
+                } else if (pointer == 5) {
+                    menu.playingMenu();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+
+    private static void goToCafeteriaJUL() {
+        boolean running = true;
+        while (running) {
+            try {
+                System.out.println(findPointerFromId("goToCafeteriaJUL"));
+                int pointer;
+                pointer = io.getUserInput();
+                if (pointer == 1) {
+                    player.buyApple();
+                    io.pressEnterToContinue();
+                    goToCafeteriaJUL();
+                } else if (pointer == 2) {
+                    player.buyCoffee();
+                    io.pressEnterToContinue();
+                    goToCafeteriaJUL();
+                } else if (pointer == 3) {
+                    player.buySandwich();
+                    io.pressEnterToContinue();
+                    goToCafeteriaJUL();
+                } else if (pointer == 4) {
+                    kapitelJulC();
+                } else if (pointer == 5) {
+                   kapitelJulD();
+                } else if (pointer == 6) {
+                    menu.playingMenu();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+
+    private static void kapitelJulA() {
+        while (true) {
+            try {
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitelJulA"));
+                io.pressEnterToContinue();
+                System.out.println(findPointerFromId("kapitelJulAFortsat"));
+                int pointer = io.getUserInput();
+                if (pointer == 1) {
+                    System.out.println(findPointerFromId("kapitelJulAHanky"));
+                    System.out.println(findPointerFromId("kapitelJulAHankyTekst"));
+                    player.setEnergyLevel(player.getEnergyLevel()-15);
+                    player.setStudyPoints(player.getStudyPoints()-5);
+                    checkEnergyLevel();
+                    kapitel100();
+                } else if (pointer == 2) {
+                    System.out.println(findPointerFromId("kapitelJulAPANIK"));
+                    player.setEnergyLevel(player.getEnergyLevel()-10);
+                    checkEnergyLevel();
+                    kapitelJulC();
+                } else if (pointer == 3) {
+                    System.out.println(findPointerFromId("kapitelJulAPANIK"));
+                    player.setEnergyLevel(player.getEnergyLevel()-10);
+                    kapitelJulD();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+
+    private static void kapitelJulC() {
+        while (true) {
+            try {
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitelJulC"));
+
+                int pointer = io.getUserInput();
+                if (pointer == 1) {
+                    System.out.println(findPointerFromId("kapitelJulC1"));
+                    kapitel100();
+                } else if (pointer == 2) {
+                    System.out.println(findPointerFromId("kapitelJulC2"));
+                    player.setEnergyLevel(player.getEnergyLevel()+10);
+                    io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitelJulC2Fortsat"));
+                    kapitel100();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+
+    private static void kapitelJulD() {
+        while (true) {
+            try {
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitelJulD"));
+
+                int pointer = io.getUserInput();
+                if (pointer == 1) {
+                    System.out.println(findPointerFromId("kapitelJulC2Fortsat"));
+                    kapitel100();
+                } else if (pointer == 2) {
+                    System.out.println(findPointerFromId("0xkapitelJulD2"));
+                    io.pressEnterToContinue();
+                    player.lootBook3();
+                    player.readBook(3);
+                    io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitelJulC2Fortsat"));
+                    kapitel100();
+
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
+    }
+
+
+    private static void kapitel10() {
+        while (true) {
+            try {
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel11"));
+                int pointer = io.getUserInput();
+                if (pointer == 1) {
+                    io.clearAll();
+                    goToCafeteria8();
+                } else if (pointer == 2) {
+                    kapitel10A();
+                } else if (pointer == 3) {
+                    kapitel10B();
+                } else if (pointer == 4) {
+                    kapitel10C();
+                } else if (pointer == 5) {
+                    menu.playingMenu();
+                } else {
+                    System.out.println(findPointerFromId("DetErIkkeEtTal"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("DetKanDuIkkeGøreNu"));
+            }
+        }
+    }
+
+    private static void kapitel10A() { 
+        while (true) {
+            try {
+                io.clearAll();
+                System.out.println(findPointerFromId("kapitel10A"));
+                io.pressEnterToContinue();
+                System.out.println("kapitel10A2");
+                int pointer = io.getUserInput();
+                if (pointer==1) {
+                    System.out.println(findPointerFromId("kapitel10AKorrekt"));
+                    player.setStudyPoints(player.getStudyPoints()+10);
+                    io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitel10A3"));
+                    player.setEnergyLevel(player.getEnergyLevel()-10);
+                    checkEnergyLevel();
+                    kapitelJul();
+                } else if (pointer ==2) {
+                    System.out.println(findPointerFromId("kapitel10AForkert"));
+                    player.setStudyPoints(player.getStudyPoints()-5);
+                    io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitel10A3"));
+                    player.setEnergyLevel(player.getEnergyLevel()-10);
+                    kapitelJul();
+                } else {
+                    System.out.println(findPointerFromId("DetKanDuIkkeGøreNu"));
+                }
+            } catch(InputMismatchException e) {
+                System.out.println(findPointerFromId("DetErIkkeEtTal"));
+            }
+        }
+    }
+
+    private static void kapitel10B() {
+        while(true) {
+            io.clearAll();
+            System.out.println(findPointerFromId("kapitel10B"));
+            player.setEnergyLevel(player.getEnergyLevel()-10);
+            checkEnergyLevel();
+            io.pressEnterToContinue();
+        }
+    }
+
+    private static void kapitel10C() {
+        while (true) {
+            io.clearAll();
+            System.out.println(findPointerFromId("kapitel10C"));
+            player.setEnergyLevel(player.getEnergyLevel()-10);
+            checkEnergyLevel();
+            io.pressEnterToContinue();
+            kapitel10A();
+        }
+    }
+
+    private static void goToCafeteria8() {
+
+        boolean running = true;
+        while (running) {
+            System.out.println(findPointerFromId("goToCafeteria7"));
+            try {
+                int pointer;
+                pointer = io.getUserInput();
+                if (pointer == 1) {
+                    player.buyApple();
+                    io.pressEnterToContinue();
+                    goToCafeteria8();
+                } else if (pointer == 2) {
+                    player.buyCoffee();
+                    io.pressEnterToContinue();
+                    goToCafeteria8();
+                } else if (pointer == 3) {
+                    player.buySandwich();
+                    io.pressEnterToContinue();
+                    goToCafeteria8();
+                } else if (pointer == 4) {
+                    kapitel10A();
+                } else if (pointer == 5) {
+                    menu.playingMenu();
+                } else {
+                    System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
+                }
+            } catch (InputMismatchException e) {
+                System.out.println(findPointerFromId("detErIkkeEtTal"));
+            }
+        }
     }
 
 
     private static void kapitel100() {
-        System.out.println("Semestret er slut, og der skal nu tjekkes om du kan gå til eksamen eller ej. " +
-                "\nFor at få lov at gå til eksamen, skal du have et minimum på 100 studypoints ...");
-        Main.io.pressEnterToContinue();
+        System.out.println(findPointerFromId("kapitelslut"));
+        io.pressEnterToContinue();
         if (player.getStudyPoints() >= 20) {
-            System.out.println("Du klarede det! Du fik i alt " + player.getStudyPoints() + " og kan derfor gå til den spændende eksamen!" +
-                    "\nSpids blyanten og gør dig klar!");
-            Main.io.pressEnterToContinue();
+            System.out.print(findPointerFromId("kapitelslut2"));
+            System.out.print(player.getStudyPoints());
+            System.out.println(findPointerFromId("kapitelslut3"));
+            io.pressEnterToContinue();
             bossFightStart();
         } else if (player.getStudyPoints() < 100) {
-            System.out.println("Øv! Du har desværre kun fået " + player.getStudyPoints() + " og er ikke klar til eksamen ... du må prøve igen til næste år ...");
-            Main.io.pressEnterToContinue();
+            System.out.print(findPointerFromId("kapitelslut2"));
+            System.out.print(player.getStudyPoints());
+            System.out.print(findPointerFromId("kapitelslut4"));
+            io.pressEnterToContinue();
             BossFight bossFight = new BossFight();
             bossFight.gameOverScreen();
         }
     }
 
-
     private static void checkEnergyLevel() {
         if (player.getEnergyLevel() < 0) {
             System.out.println("Du har ikke mere energi! Øv! Du glemte vist at gå i kantinen og spise mad?");
-            Main.io.pressEnterToContinue();
+            io.pressEnterToContinue();
             BossFight boosfight = new BossFight();
             boosfight.gameOverScreen();
         }
     }
 
-
     private static void bossFightStart() {
         BossFight bossfight = new BossFight();
         bossfight.BossFight();
     }
-
 }
 
 

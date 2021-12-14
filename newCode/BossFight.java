@@ -9,7 +9,7 @@ public class BossFight{
     //quizzen starter
     public void BossFight() {
 
-         Storyline.clearAll();
+         IO.clearAll();
          System.out.println("Dine mange anstrengelser, tårer, blod og sved har gjort, at du er klar til SP1-opgaven!" +
          "\nFor at bestå prøven, skal du have mindst 7 korrekte svar.");
 

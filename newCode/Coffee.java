@@ -13,15 +13,6 @@ public class Coffee extends Item {
         return "coffee";
     }
 
-    /*@Override
-    public void addToBackpack() {
-        player.getInventory().addToBackPack(new Coffee(25));
-
-        player.setCoffee(player.getCoffee()+1);
-        System.out.println("Du tager kaffen ned i din rygsæk");
-                 }
-              */
-
 
     public int getEnergyBoost() {
         return energyBoost;

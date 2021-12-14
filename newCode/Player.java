@@ -3,23 +3,19 @@ import java.util.Scanner;
 
 public class Player {
 
-    private int sandwich;
     private int studyPoints;
     private int energyLevel;
     private int maxEnergyLevel;
-    private int coffee;
+
     private Backpack inventory;
     private int wrongAnswers;
     private int correctAnswers;
-    Scanner input;
     private int money;
-
 
     private String name;
 
     public Player(String name) {
         this.name = name;
-        this.coffee = 0;
         this.studyPoints = 0;
         this.energyLevel = 100;
         this.wrongAnswers = 0;
@@ -35,14 +31,6 @@ public class Player {
 
     public int getStudyPoints() {
         return studyPoints;
-    }
-
-    public int getCoffee() {
-        return coffee;
-    }
-
-    public void setCoffee(int coffee) {
-        this.coffee = coffee;
     }
 
     public void addItemToInventory(Item newItem) {
@@ -105,13 +93,6 @@ public class Player {
         this.money = money;
     }
 
-    public int getSandwich() {
-        return sandwich;
-    }
-
-    public void setSandwich(int sandwich) {
-        this.sandwich = sandwich;
-    }
 
     public void viewInventory() {
         System.out.println(inventory.toString());
@@ -125,16 +106,16 @@ public class Player {
         int pointer;
         pointer = IO.getUserInput();
         if (pointer == 1) {
-            Storyline.clearAll();
+            IO.clearAll();
             Storyline.player.getInventory().drinkCoffee();
         } else if (pointer == 2) {
-            Storyline.clearAll();
+            IO.clearAll();
             Storyline.player.getInventory().eatSandwich();
         } else if (pointer == 3) {
-            Storyline.clearAll();
+            IO.clearAll();
             Storyline.player.getInventory().eatApple();
         } else if(pointer == 4) {
-            Storyline.clearAll();
+            IO.clearAll();
             System.out.println("Leder efter din næste spændende bog...........");
             Storyline.player.getInventory().findBook();
         } else if (pointer == 5) {

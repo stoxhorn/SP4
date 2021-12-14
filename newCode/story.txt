@@ -1,0 +1,1263 @@
+0xdetKanDuIkkeGøreNux0
+Det kan du ikke gøre nu, prøv igen!x0Slut
+
+0xdetErIkkeEtTalx0
+Det er ikke et tal, prøv igen ...x0Slut
+
+0xstartScreenx0
+                ####               #    ###########   #         ##         ##         #    ########### ######  ##    ##   ########  #####
+                ##  ###          ## ##      ##      ## ##      ## ##     ## ##      ## ##      ##        ##    ##   ##    ##        ##  ###
+                ##     ##       ##   ##     ##     ##   ##     ##  ##   ##  ##     ##   ##     ##        ##    ##  ##     ##        ##    ##
+                ##       ##    ##     ##    ##    ##     ##    ##   ## ##   ##    ##     ##    ##        ##    ## ##      ##        ##   ##
+                ##        ##  ##       ##   ##   ##       ##   ##    ###    ##   ##       ##   ##        ##    ###        #####     #####     -SPILLET!
+                ##       ##  #############  ##  #############  ##           ##  #############  ##        ##    ## ##      ##        ##  ##
+                ##     ##    ##         ##  ##  ##         ##  ##           ##  ##         ##  ##        ##    ##  ##     ##        ##   ##
+                ##  ###      ##         ##  ##  ##         ##  ##           ##  ##         ##  ##        ##    ##   ##    ##        ##    ##
+                ####         ##         ##  ##  ##         ##  ##           ##  ##         ##  ##      ######  ##    ##   ########  ##     ##
+
+
+Velkommen til DATAMATIKER-SPILLET! Et rollespil hvor du selv er helten!
+Gennem spændende undervisning i faget skal du forberede dig til eksamen... men pas på!
+For fristelserne er mange, og de faglige områder svære,
+så det gælder om at følge godt med i undervisningen, og ikke bruge for meget tid på at kigge efter piger!
+                x0StringSlut
+
+0xstartScreen2x0
+Reglerne for DATAMATIKER-SPILLET er simple...
+Din karakter samler Study Points ved at gå til undervisning, læse bøger eller anden aktivitet.
+Hvis du skal til eksamen, skal du samle i alt 100 Study Points. Består du eksamen har du vundet spillet!
+Men husk at holde øje med dit energiniveau! For alle aktiviteter koster energi.
+Heldigvis kan du købe lækker med i kantinen for at få ny energi. Det koster dog penge, og livet på SU er ikke let.
+Du finder dine købte og fundne ting i din rygsæk ved hjælp af menuen. I menuen kan du også se hvor mange penge du har tilbage og dine optjente Study Pointsx0Slut
+
+0xintroChapterx0
+Det er en dejlig sommerdag. Solen skinner, der er ikke en sky på himlen og din rygsæk er fuld af dine ny-indkøbte bøger.
+Første skoledag på din nye uddannelse venter dig,
+forhåbningsfuldt træder du igennem døren til CPH-Business.
+Foran dig står der tre skilte, hvilket vil du følge?
+     (1)'Elevator'
+     (2)'Kantine'
+     (3)'Undervisningslokaler'
+     (4)Jeg bliver stående lidt endnu.
+     (5)For menu.
+------------------------------------------------------------------------------------------------------------------------x0Slut
+
+0xfølgSkiltetx0
+Du er smart, så du følger selvfølgelig skiltet hvorpå der står 'DATAMATIKER'.
+På vej derhen står der en dame og uddeler navneskilte. Du får stukket ét i hånden, samt en tusch.
+Skriv dit navn på det, så kan man hurtigere lære sine klassekammerater at kende.\", siger hun med et smil.x0Slut
+
+0xnavnValgtAx0
+Du skriver x0Slut
+
+0xnavnValgtBx0 på navneskiltet og tager det på.
+Inden du ved af det, er du ankommet til din klasse.
+Du er kommet i god tid, så du kan sætte dig lige hvor du vil.x0Slut
+
+0xkapitel1AAx0
+Du træder hen til elevatoren, hvor der i forvejen står to piger og venter.
+Elevatoren ankommer med et 'DING', og pigerne træder ombord. Der er lige plads til dig, så du skynder dig med ind i elevatoren.
+Du står spændt og venter på at møde dine nye klassekammerater, men pludselig hører du en mærkelig lyd, og elavetoren stopper.x0Slut
+
+0xkapitel1ABx0
+Du bliver panisk og kigger forvirret på de to piger, men til din store overraskelse står de helt afslappet og venter.
+Hvad vil du gøre?
+    (1) Blive stående i stilhed, det er sgu for akavet at sige noget!
+    (2) Spørge de to piger, om de ved hvad der foregår.
+    (3) For menux0Slut
+
+0xkapitel1A1Ax0
+Du står og står, men ingenting sker.
+En halv time efter kigger du dig rundt omkring og ser de at to piger stadig bare stå helt afslappet.x0Slut
+
+0xkapitel1A1Bx0
+Hvad kunne du tænke dig at gøre?
+     (1)Jeg forbliver stille, selv om der er gået lang tid, er det stadig for underligt at sige noget til to fremmede.
+     (2)Nu spørger jeg fandme hvad der foregår, ellers kommer jeg jo alt for sent til min første dag.x0Slut
+
+0xkapitel1A2x0
+Undskyld? Ved I hvorfor elavatoren stoppede?x0Slut
+
+0xkapitel1A2Ax0
+Elevatoren her på stedet virker ikke, så man sidder altid fast når man bruger den.
+Bare rolig, den burde starte igen om en times tid.x0Slut
+
+0xkapitel1A2Bx0
+Det går op for dig at du kommer en hel time for sent på din første dag.
+Du har ikke andre muligheder end at stå og vente på at den starter igen.x0Slut
+
+0xkapitel1A2Cx0
+Langt om længe starter elavatoren.
+Du ankommer til klasselokalet, og på trods af dine forventninger er der nogle ledige pladser rundt omkring.x0Slut
+
+0xkapitel1A3x0
+Jeg forbliver stille, men der er fortsat ingen tegn på forbedringer.
+En halv time efter, begynder elavatoren langt om længe at virke igen.
+Du ankommer til klasselokalet, og på trods af dine forventninger er der ledige padser rundt omkring.x0Slut
+
+0xkapitel1A4Ax0
+Undskyld, ved I hvornår elavatoren starter igen? Jeg vil nemlig nødig står her hele dagen.x0Slut
+
+0xkapitel1A4Bx0
+Den burde starte igen om en halv times tid. Elavatoren her på stedet virker nemlig ikke,
+og man sidder derfor ofte fast i omkring 1 time.x0Slut
+
+0xkapitel1A4Cx0
+Du vil nu komme en hel time for sent til første dag.
+Du har ikke andre muligheder end at stå og vente på at den starter igen.x0Slut
+
+0xkapitel1A4Dx0
+Langt om længe starter elavatoren.
+Du ankommer til klasselokalet, og på trods af dine forventninger er der nogle ledige pladser rundt omkring.x0Slut
+
+0xudsolgtÆblerx0
+Vi har desværre udsolgt vores æbler ...
+-----------------------------------------------------------------------------------------------------------x0Slut
+
+0xkapitel1C5x0
+Første time går med introduktion, navneleg og andre sjove påfund.
+Du får i løbet af dagen danset en følelse, hørt røverhistorier fra det andre studerende
+og næsten åbnet din nye bog, som nu ligger klar i din taske. Du er træt, men har ikke helt lært så meget om kodning endnu. x0Slut
+
+
+0xkapitel1Cx0
+Hvor kunne du godt tænke dig at sidde?
+     (1) Jeg sætter mig forrest, så kan læreren bedre se mig når jeg har fingeren oppe.
+     (2) Bagerst. Gerne bag den højeste i klassen, så ingen bemærker mig.
+     (3) Der hvor de søde piger sidder, selvfølgelig.
+     (4) Jeg sætter mig i vindueskarmen, og beholder mine solbriller på.
+     (5) For menu x0Slut
+
+0xlangtFremmex0
+Du sætter dig selvfølgelig så langt fremme som muligt.x0Slut
+
+0xnedeBagvedx0
+Nede bagved skal du sidde, så kan du håbe, at læreren ikke bemærker dig.
+------------------------------------------------------------------------------------------------x0Slut
+
+0xvedPigernex0
+Der sidder en rigtig sød pige yderst til venstre, mon ikke hun kan bruge lidt selskab?"
+------------------------------------------------------------------------------------------------x0Slut
+
+0xiVindueskarmenx0
+De andre kan sætte sig lige hvor de vil, du sætter dig selvfølgelig i vindueskarmen, og finder din mobiltelefon frem... Instagram skal jo opdateres!
+-------------------------------------------------------------------------------------------------------x0Slut
+
+0xgoToCafeteria1Ax0
+        ##     ##         #        ##       ##  ########### ######  ##       ##  ########
+        ##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##
+        ##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##
+        ## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##
+        ###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####
+        ## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##
+        ##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##
+        ##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##
+        ##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ########
+
+Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød,
+friskbrygget kaffe og ung-drengesved. Hvad vil du gøre?
+    (1) Jeg vil gerne bede om et æble til 5 kroner.
+    (2) Jeg vil gerne bede om en kop kaffe til 10 kroner.
+    (3) Jeg vil gerne bede om en sandwich til 25 kroner.
+    (4) Jeg forlader kantinen og går direkte til time.
+    (5) For menu
+    x0Slut
+
+
+0xkapitel1Dx0
+Du tænker, hey, det kunne da være sjovt at stå her og kigge på lobbyen.
+Der kommer flere studerende, og de fleste kigger lidt skævt på dig, men kan man klandre dem det?
+Du står jo trods alt bare og kigger ud i luften.
+Nu har du så gjort det i noget tid... hvad vil du så nu?
+         (1)Jeg går til elevatoren.
+         (2)Jeg går lige i kantinen.
+         (3)Jeg følger skiltet hvorpå der står 'Undervisningslokaler'.
+         (4)Jeg står lige så godt ...
+         (5)For menu. x0Slut
+
+
+0xkapitel1D1x0
+Nu står du så her... hvad i alverden gør du dog det for?
+Du kommer i hvert fald for sent til undervisningen, og du har allerede mistet studypoints.
+Der er altså undervisning som venter på dig ...
+Hvad vil du nu gøre?
+      (1)Jeg går til elevatoren.
+      (2)Jeg er blevet sulten af at stå her, så jeg skal da i kantinen.
+      (3)Jeg må hellere prøve at følge de skilte der ...
+      (4)Jeg står og står og står ...
+      (5)For menu.x0Slut
+
+
+0xkapitel1D2x0
+ Det var smart gjort ... du hygger dig virkelig her.
+ Du kan nu knap nå til time i dag? Måske du skulle være blevet hjemme i sengen?
+  Måske du skulle finde på noget andet at lave?
+     (1)Jeg går til elevatoren. Det er vist på tide.
+     (2)Jeg er blevet sulten af at stå her, så jeg skal da i kantinen.
+     (3)Jeg løber af sted i den retning skiltet til 'Datamatiker' peger ...
+     (4)Jeg bliver da stående! Hold op med at stille mig så dumme spørgsmål!
+     (5)For menu x0Slut
+
+
+0xkapitel1D3x0
+Du hører pludselig en lyd bag dig ... hvad i alverden kan det være?
+Du må hellere undersøge det ...x0Slut
+
+
+0xkapitel1D3Fortsatx0
+Ude på parkeringspladsen står en skikkelse iført en sort kåbe. Hvem i alverden går dog sådan klædt?
+Det er ca. 100 grader varmt, så han må have det varmt ...
+Han rækker en hånd imod dig, og en raspende stemme siger:
+"Kom med mig, kriger, og jeg skal vise dig ting du ikke troede muligt!"
+Hvad gør du?
+      (1)Jeg tror bare, at jeg vender næsen imod undervisningslokalerne, jeg er her for at lære noget, ikk?
+      (2)Jeg tager med manden! YOLO, bitches!x0Slut
+
+
+0xkapitel1D3Fortsat2x0
+Du vender hurtigt retur til lobbyen, og finder et skilt med retning imod undervisningslokalerne.
+Du er dog en smule sent på den, men nu er du trods alt kommet til det rigtige lokale ...
+--------------------------------------------------------------------------------------------------------x0Slut
+
+0xkapitel1D4x0
+Du følger efter manden ...I går forbi jernbanen, og inden du ved af det, står I midt i en skov.
+Hvor kom den fra? For du mente da ellers, at der kun lå industriområde bag skolen?
+Da I kommer til en lysning, vender manden sig imod dig og spørger:
+"Hvad er dit navn kriger?"
+Og hvad er i grunden dit navn?x0Slut
+
+
+0xkapitel1D4FortsatAx0
+Dit navn er altså, x0Slut
+
+0xkapitel1D4FortsatBx0! Sikke dog et grimt navn, siger manden ... ubehøvlede stodder!x0Slut
+
+0xkapitel1D4Fortsat2x0
+Jeg har bragt dig her til DØDSSKOVEN, fordi jeg kan se, at du er en fremragende kriger, "x0Slut
+
+0xkapitel1D4Fortsat3x0. Du vil komme til at kæmpe imod farlige monstre, bestige bjerge og vinde kvindernes gunst over hele riget!
+
+  ....Hvad fanden fabler han om?x0Slut
+
+
+0xkapitel1D5x0
+Hvilket våben vil du foretrække at benytte her i DØDSSKOVEN?\", spørger han.
+Han lægger to våben foran dig. Hvilket foretrækker du?
+    (1)Sværdet der ser rimelig sejt ud, det prøver jeg da.
+    (2)Bue og pil må være sagen.
+    (3)Jeg tror jeg bruger min bare næver, den her DØDSSKOV ser ikke så skide farlig ud ... x0Slut
+
+0xkapitel1D5SværdAx0
+Du tager sværdet, og kan allerede mærke hvordan du bliver en stærkere og farligere kriger af det ...
+Din evne til at angribe og slås stiger, og du har nu x0Slut
+
+0xkapitel1D5Slutx0 i angrebsstyrke!x0Slut
+
+0xkapitel1D5Buex0
+Du har ikke prøvet at kæmpe med bue og pil før, men det kan umuligt være værre end ikke at have noget våben, vel?
+Din evne til at angribe og slås stiger, og du har nu x0Slut
+
+
+
+
+0xkapitel1D5BareNæverx0
+Det var nok ikke så smart, hvad nu hvis DØDSSKOVEN virkelig har en masse monstre?
+Din evne til at slås er faldet gevaldigt, og du har nu x0Slut
+
+
+
+0xkapitel1D6x0 {
+
+    }
+
+0xkapitel1D6Valgmulighederx0
+Tryk (1) for at angribe!
+Tryk (2) for at flygte og løbe hjem til CPH-Business ... hvis du altså kan finde vej ud af DØDSSKOVEN!x0Slut
+
+
+0xkapitel1D6Kampx0
+        //skal være teksten fra 1D6Kamp, selvfølgelig
+    }
+
+0xkapitel1DSlutx0
+Du har besejret din fjende, og vandrer videre i skoven ... der sker desværre ikke så meget spændende her i DØDSSKOVEN!
+Du smutter derfor retur til kantinen på CPH-Business, det er nok smartest!
+Hvem der bare havde vidst, at en DØDSSKOV er så fandens kedelig?
+x0slut
+
+0xkapitel2x0
+
+    ####            ###       ##########   #########
+    ## ###         ## ##      ##      ##   ##     ##
+    ##   ##       ##   ##     ##      ##          ##
+    ##    ##     ##     ##    ##                  ##
+    ##     ##   ##       ##   ##           #########
+    ##    ##   #############  ##    ####   ##
+    ##   ##    ##         ##  ##      ##   ##
+    ## ###     ##         ##  ##      ##   ##
+    ####       ##         ##  ##########   #########
+
+Efter den første dag på studiet, er du nu tilbage hvor du startede.
+Bogen i din taske har endnu ikke været åbnet, men mon ikke du får lov til, at lære noget i dag?
+Nu står du i hvert fald i lobbyen på CPH-Business igen og overvejer hvilken vej du skal tage i dag.
+Hvad gør du?
+    (1)Jeg går direkte til undervisningslokalet, nu kan jeg jo vejen.
+    (2)Jeg tager elevatoren, det må da gå hurtigere end trapperne?
+    (3)Jeg skal liiiiiige forbi kantinen først!
+    (4)For menu x0Slut
+
+
+0xgoToCafeteria2x0
+
+        ##     ##         #        ##       ##  ########### ######  ##       ##  ########
+        ##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##
+        ##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##
+        ## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##
+        ###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####
+        ## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##
+        ##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##
+        ##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##
+        ##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ########
+
+Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød,
+friskbrygget kaffe og ung-drengesved. Hvad vil du gøre?
+    (1) Jeg vil gerne bede om et æble til 5 kroner.
+    (2) Jeg vil gerne bede om en kop kaffe til 10 kroner.
+    (3) Jeg vil gerne bede om en sandwich til 25 kroner.
+    (4) Jeg forlader kantinen og vender tilbage til det sidste sted jeg var.
+    (5) For menu
+
+    x0Slut
+
+
+0xkapitel2Ax0
+
+        ########        ###  ##                 ##      ###
+              ##       ## ##  ##               ##      ## ##
+              ##      ##   ##  ##             ##      ##   ##
+              ##     ##     ##  ##           ##      ##     ##
+              ##    ##       ##  ##         ##      ##       ##
+              ##   ##         ##  ##       ##      ##         ##
+              ##  ##############   ##     ##      ##############
+        ##    ##  ##          ##    ##   ##       ##          ##
+        ##    ##  ##          ##     ## ##        ##          ##
+        ########  ##          ##      ###         ##          ##
+Du ankommer til første time med din nye lærer, William. Han fortæller dig gladeligt om en ting som hedder variabler.
+
+Det hele er meget nyt for dig, men du når at opfange, at variabler skal erklæres (declares) førend de kan benyttes.
+For at gøre det, skal man først specificere variabel-typen, og herefter give den værdi som passer til dens type.
+Hvis du f.eks. skal lave en variabel af typen String (en sekvens af bogstaver), så benyttes syntaksen:
+    String name = "Arne";
+til at lave en String med navnet \"name\" og med værdien "Arne".
+Først variebel-typen (String), så det du navngiver den (name) og slutteligt dens værdi (Arne). x0Slut
+
+
+0xkapitel2AFortsatx0
+Et lige tal kaldes en int (kort for en Integer). Du kan gemme dem ud fra samme syntaks som Strings.
+    int newNumber = 100;
+Her oprettes en variabel-type "int", med navnet "newNumber" og værdien "100".
+
+x0Slut
+
+0xkapitel2Bx0
+Du stiller dig hen til elevatoren. Der er tre knapper.
+Smart som du er, kan du ikke helt huske hvilken etage undervisningen foregår på.
+Du trykker derfor på '3'.
+Mon ikke det var den etage du var på i går? x0Slut
+
+0xkapitel2B1x0
+Lyset i elevatoren blinker så snart dørene er lukket i.
+Ti sekunder senere er elevatoren gået i stå... nu står du så her i mørket og venter.
+Der lugter forresten en smule af tis... måske der var en som troede elevatoren var et lokum? x0Slut
+
+
+0xkapitel2B2x0
+Først efter at have holdt alarmklokken i elevatoren nede i flere minutter får du kontakt til pedellen.
+Han kommer og hjælper dig ud, men det tager selvfølgelig en rum tid. Du går derfor glip af noget undervsining.
+Du er også blevet en smule træt ...
+Men nu kan du i det mindste skynde dig hen til din første lektion på studiet ...x0Slut
+
+
+0xkapitel2Cx0
+PYHA! Ovenpå den omgang med variabler, har du vist brug for en luftforandring.
+Du er dog blevet lidt træt ...
+Til gengæld har du fået nogle studypoints!
+Hvad kunne du nu tænke dig at gøre?
+    (1)Der er vist nogle af dine medstuderende som talte om nogle øl?
+    (2)Jeg skal direkte hjem, drikke en kop te og så sove så jeg kan være frisk til i morgen.
+    (3)Jeg synes jeg har hørt om nogle spændende steder her på kampus. Jeg tror liiiige jeg skal se hvad det er ...
+    (4)Jeg sidder lige så godt, så jeg åbner min bog og læser videre i den ...
+    (5)For menu x0Slut
+
+
+0xkapitel2Dx0
+Du kommer vist til at tage ud med nogen fra studiet.
+Det blev ... sent? Du er faktisk i tvivl, for efter to øl kan du ikke huske hvad der skete.
+Men billederne fra Instagram lyver ikke, og ifølge dem var du med til kl. lort.
+Din energi er derfor langt fra i top næste morgen!
+Mon du kan klare endnu en skoledag? x0Slut
+
+
+0xkapitel2Ex0
+Jeg tager direkte hjem, min stakkels hjerne skal restituere og genopfriskes...
+
+Du får ny energi!x0Slut
+
+
+0xkapitel2Fx0
+Hvor vil du går hen?
+    (1)For at undersøge anden sal.
+    (2)For at gå i kantinen.
+    (3)For at tage hjem i stedet ...x0Slut
+
+0xkapitel2F2x0
+
+      ##     ##         #        ##       ##  ########### ######  ##       ##  ########
+      ##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##
+      ##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##
+      ## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##
+      ###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####
+      ## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##
+      ##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##
+      ##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##
+      ##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ########
+
+Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød,
+friskbrygget kaffe og ung-drengesved. Hvad vil du gøre?
+
+     (1) Jeg vil gerne bede om et æble til 5 kroner.
+     (2) Jeg vil gerne bede om en kop kaffe til 10 kroner.
+     (3) Jeg vil gerne bede om en sandwich til 25 kroner.
+     (4) Jeg forlader kantinen og går hjem, jeg skal være frisk til i morgen.
+     (5) For menux 0Slut
+
+0xkapitel2F1x0
+Du ankommer sammen med dine nye venner på anden sal.
+Der går en masse studerende der med et tomt blik går rundt i en zombielignende tilstand ...
+Anders, din nye ven fra klassen kigger på dig og udbryder: 'Nice!'
+Du er nu ikke helt så sikker på, at det er top-nice at være her på anden sal ...
+Hvad vil du gøre nu?
+    (1)Jeg skal i hvert fald ikke fremstå som en kylling. Vi BLIVER!
+    (2)Anden sal er vist ikke lige mig ... jeg tror, at jeg tager hjem for i dag ...
+    (3)For menu x0Slut
+
+
+0xkapitel2F1Hjemx0
+Du synes de studerende på anden sal var lidt for skræmmende ... og vender næsen hjemad. x0Slut
+
+    }
+
+0xkapitel2F12x0
+Anders synes det er sejt, så det gør du også. Desværre var det ikke så sejt.
+De studerende gik rundt og så lige zombie-agtige ud fordi de har læst på CPH-business for længe.
+Efter I har tilbragt en halv time på anden sal kan du mærke din IQ blive tocifret, og derefter halveret.
+Din energi er også blevet grundigt drænet af den omgang ...
+Du skynder dig hjem i seng, så du kan blive klar til næste skoledag! x0Slut
+
+0xkapitel2F3x0
+Du indser alt, alt for sent, at du er datamatiker studerende,
+og pigerne her på kampus, vil derfor absolut ikke ses i nærheden af dig.
+Det kunne jo være, at dit nørderi smittede?
+Dine studypoints går en smule ned fordi du mister selvtillid, og din energi er også en smule drænet.
+Skuffet vender du snuden hjemad. Ingen piger til dig i dag! x0Slut
+
+
+0xkapitel2Gx0
+Du bliver på skolen lidt længere og hygger dig med din bog.
+-------------------------------------------------------------------------------------------------
+Du lærer bl.a., at man kan give variabler en 'final' værdi, så kan de ikke ændres.
+Og om variabel-typer som 'float' (komma-tal som erklæres med et 'f' efter værdien),
+'char' (enkelte bogstaver, her skal værdien være i enkle situationstegn 'E'
+og boolean, som altid har en 'true' eller 'false' værdi.
+Det giver selvfølgelig lidt ekstra studypoints, men kan også mærkes på din energi, du er godt træt i hovedet nu ....
+Du tager hjem i seng, så du kan være klar til i morgen. x0Slut
+
+0xkapitel3x0
+
+                ####            ###       ##########   ########
+                ## ###         ## ##      ##      ##   ##    ##
+                ##   ##       ##   ##     ##      ##         ##
+                ##    ##     ##     ##    ##                 ##
+                ##     ##   ##       ##   ##            #######
+                ##    ##   #############  ##    ####         ##
+                ##   ##    ##         ##  ##      ##         ##
+                ## ###     ##         ##  ##      ##   ##    ##
+                ####       ##         ##  ##########   ########
+
+Endnu en dejlig dag på CPH-Business venter dig, du er spændt på at se, hvad du mon skal lære i dag?
+I lobbyen har du nu de velkendte valgmuligheder.
+    (1)For at gå direkte til time.
+    (2)For at gå i kantinen.
+    (3)For at tage elevatoren.
+    (4)For menu x0Slut
+
+0xkapitel3Undervisningx0
+Du bevæger dig straks til time, du skulle jo nødigt gå glip af noget undervisning! x0Slut
+
+0xkapitel3Bx0
+Du har enten ikke prøvet at tage elevatoren før,
+eller også lærer du ikke af dine fejl.
+Elevatoren går i stå, og du kommer for sent til time fordi du først skal have hjælp af pedellen.
+Du får fratrukket nogle studypoints og din energi bliver en smule drænet. x0Slut
+
+0xgoToCafeteria3x0
+
+         ##     ##         #        ##       ##  ########### ######  ##       ##  ########
+         ##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##
+         ##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##
+         ## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##
+         ###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####
+         ## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##
+         ##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##
+         ##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##
+         ##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ########
+
+Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød,
+friskbrygget kaffe og ung-drengesved.
+En sød kantinemand råber ud : 'VI HAR FÅET RÅDNE ÆBLER PÅ LAGER'
+Hvad vil du gøre?
+    (1) Jeg vil gerne bede om et æble til 5 kroner.
+    (2) Jeg vil gerne bede om en kop kaffe til 10 kroner.
+    (3) Jeg vil gerne bede om en sandwich til 25 kroner.
+    (4) Jeg forlader kantinen og skynder mig til time
+    (5) For menux0Slut
+
+
+0xkapitel3Ax0
+Du har sådan glædet dig til den næste time. Og i dag præsenterer din lærer, Thorbjørn, et nyt koncept: if/else -statements.
+          ######  #########     ##  ######## ##       ########  ########
+            ##    ##           ##   ##       ##       ##        ##
+            ##    ##          ##    ##       ##       ##        ##
+            ##    ##         ##     ##       ##       ##        ##
+            ##    #####     ##      #####    ##       ########  #####
+            ##    ##       ##       ##       ##             ##  ##
+            ##    ##      ##        ##       ##             ##  ##
+            ##    ##     ##         ##       ##             ##  ##
+            ##    ##    ##          ##       ##             ##  ##
+          ######  ##   ##           #######  #######  ########  #######
+
+                x0Slut
+
+0xkapitel3Viderex0
+En if/else-statement benytter et booleansk udtryk til at køre koden hvis det booleanske udtryk er sandt,
+et andet stykke kode hvis et andet booleansk udtryk er sandt osv.
+I praksis skrives det således op:
+if (1<2) {
+        kør den kode (1) som står her hvis 1<2
+    } else if (2<1) {
+        kør den kode (2) som står her hvis 2<1
+    } else {
+        kør den her kode (3) hvis ingen af udtrykkene er sande.
+
+Hvilket stykke kode vil der blive kørt?
+    (1)
+    (2)
+    (3) x0Slut
+
+0xkapitel3AKorrektx0
+Det er korrekt! Du får 5 studypoints og har nu x0Slut
+
+0xkapitel3AKorrektBx0 i alt.
+x0Slut
+
+0xkapitel3AForkert1x0
+Det er desværre forkert, da 2 ikke er mindre end 1 ... Du mister 5 studypoints. x0Slut
+
+
+0xkapitel3AForkert2x0
+
+Det er desværre forkert. Du mister 5 studypoints ... i alt.
+x0Slut
+
+
+
+0xkapitel3A1x0
+Din sidemakker, August, begynder at sidde og synge en sang... inden længe hænger den fast i hovedet på ham.
+Du kan allerede mærke hovedpinen begynde at melde sig på banen, men du forsøger desperat at følge med i undervisningen.
+August spørger, om I skal slå sten, saks papir om en kop kaffe.
+Hvad vil du gøre?
+   (1)Jeg ignorerer ham. Jeg er her for at lære, ikke for at få venner!
+   (2)Jeg siger top og begynder at slå sten saks papir med ham ....
+   (3)For menu x0Slut
+
+0xkapitel3A2x0
+Du ignorerer August, det er vigtigere at følge med i timen, end at lege med ham ...
+I lærer om en anden "conditional": while-loop.
+Et while-loop fungerer således, at der tjekkes efter en boolean statement, og så længe denne er sand, køres en kode.
+Når det booleanske udtryk ikke længere er sandt, brydes der ud af statementen, og der kan køres anden kode. Det kan se således ud:
+    while (x<1000){
+        i++
+    }
+I eksemplet ville der lægges 1 til variablen 'i' hver gang der køres igennem loopet, hvilket er så længe 'x' er mindre end 1000. x0Slut
+
+0xkapitel3A2Fortsatx0
+Du er helt bims i hovedet af al den snak om variabler.
+Din energi er nu x0Slut
+
+0xkapitel3A2FortsatBx0 og dine studypoints er : x0Slut
+
+0xkapitel3A2Hjemx0
+Du skynder dig hjem i seng ... i morgen venter endnu en dag ...x0Slut
+
+0xkapitel3A3x0
+August er så selvsikker, at han siger han vil give dig en kaffe hvis du vinder!x0Slut
+
+
+0xkapitel3A3Slutx0
+Imens du spillede med August missede du dog nogle vigtige pointer i undervisningen
+og er derfor blevet trukket 5 study points.
+Timen er overstået og dine klassekammerater er i gang med at pakke sammen.
+Du tager også selv dine ting og går hjemad. x0Slut
+
+0xkapitel4x0
+
+         ####            ###       ##########   ##      ##
+         ## ###         ## ##      ##      ##   ##      ##
+         ##   ##       ##   ##     ##      ##   ##      ##
+         ##    ##     ##     ##    ##           ##      ##
+         ##     ##   ##       ##   ##           ##########
+         ##    ##   #############  ##    ####           ##
+         ##   ##    ##         ##  ##      ##           ##
+         ## ###     ##         ##  ##      ##           ##
+         ####       ##         ##  ##########           ##
+
+Du finder nu endnu engang dig selv stående i lobbyen hos CPH-Business.
+Du har her de velkendte valgmuligheder.
+   (1)For at gå direkte til time.
+   (2)For at gå i kantinen.
+   (3)For at tage elevatoren.
+   (4)For menu x0Slut
+
+0xgoToCafeteria4x0
+
+         ##     ##         #        ##       ##  ########### ######  ##       ##  ########
+         ##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##
+         ##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##
+         ## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##
+         ###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####
+         ## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##
+         ##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##
+         ##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##
+         ##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ########
+
+Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød,
+friskbrygget kaffe og ung-drengesved.
+En sød kantinemand råber ud : 'VI HAR FÅET RÅDNE ÆBLER PÅ LAGER'
+Hvad vil du gøre?
+    (1) Jeg vil gerne bede om et æble til 5 kroner.
+    (2) Jeg vil gerne bede om en kop kaffe til 10 kroner.
+    (3) Jeg vil gerne bede om en sandwich til 25 kroner.
+    (4) Jeg forlader kantinen og tager til time.
+    (5) For menux0Slut
+
+0xkapitel4Fortsatx0
+Du går målrettet mod undervisningenslokalet!x0Slut
+
+
+0xkapitel4Ax0
+
+              #########  ########  ##########                         ########  ######## ##########
+              ##     ##  ##            ##                             ##        ##           ##
+              ##         ##            ##                             ##        ##           ##
+              ##         ##            ##       ########   #######    ##        ##           ##
+              ##         #####         ##      ##      ##  ##   ##    ########  #####        ##
+              ##    ###  ##            ##      ##      ##  ##   ##          ##  ##           ##
+              ##     ##  ##            ##      ##      ##   ######          ##  ##           ##
+              ##     ##  ##            ##      ##      ##       ##          ##  ##           ##
+              #########  #######       ##       ########        ##    ########  #######      ##
+                                                           ##   ##
+                                                           #######                                   x0Slut
+
+
+0xkapitel4Afortsatx0
+Din lærer, Tess fortæller gladeligt om et begreb kaldet "Encapsulation".
+Encapsulation hjælper den som koder med, at beskytte dataen fra brugerens øjne.
+Man bruger ordet 'private' når der erklæres variabler og klasse, og 'getters' og 'setters' for at få fat i dataen.
+Tess spørger \"Hvordan laver man en 'getter' til en variabel af typen String, kaldet 'name'?
+    (1)private String getName() {
+        return name;
+    (2)public void setName(String newName) {
+        return newName;
+    (3)public String getName() {
+        return name;x0Slut
+
+0xkapitel4AForkertx0
+Det var desværre forkert, du får ingen studypoints for det svar. x0Slut
+
+0xkapitel4ARigtigtx0
+Det er korrekt, godt klaret! 5 studypoints til dig, min ven!x0Slut
+
+
+0xkapitel4ASlutx0
+Nu ved du hvordan, man sørger for, at data ikke kan tilgås uden getters og setter udenfor den tilhørende klasse.
+Efter en hård dag med Tess, metoder og matador(!!!) kan du nu tage hjem og slappe af.x0Slut
+
+
+0xkapitel4Bx0
+Har du taget elevatoren før? Forhåbentlig er svaret nej, for ellers burde du vide, at elevatoren går i stå ...
+Du kommer for sent til undervisningen og mister 5 studypoints.
+Du bliver ovenikøbet sat af på den forkerte etage. Hvad vil du gøre nu?
+     (1)Jeg tager trappen, det er vist det sikreste!
+     (2)Jeg tager da elevatoren.
+     (3)For menu x0Slut
+
+
+0xkapitel4BTilUndervisningx0
+Du skynder dig af sted til undervisningslokalet ...x0Slut
+
+
+0xkapitel4BTilElevatorx0
+Du har vist ikke helt forstået hvordan den elevator virker ...x0Slut
+
+
+0xkapitel4B1x0
+Elevatoren kører forbi din sal ... du havner på øverste etage.
+Her er ikke andet end nogle nørder som sidder og læser i bøger.
+Midt i al støvet finder du en gammel bog ... du samler den op.x0Slut
+
+
+0xkapitel5x0
+
+     ###               ##       ###########   ############
+     ## ##            ####      ##       ##   ##
+     ##  ##          ##  ##     ##       ##   ##
+     ##   ##        ##    ##    ##      ###   ##
+     ##    ##      ##      ##   ##            ##
+     ##     ##    ##        ##  ##             ###########
+     ##    ##    #############  ##     ###              ##
+     ##   ##     ##         ##  ##       ##             ##
+     ##  ##      ##         ##  ##       ##             ##
+     ####        ##         ##  ##########     ###########
+
+I dag er der ingen undervisning på CPH-Business!
+Til gengæld skal du ud og spille rundbold på en græsplæne bag bygningen.
+Hvordan går du til den opgave?
+    (1)Jeg går hjem... De får ikke den her nørd til at løbe rundt i en firkant!
+    (2)Jeg giver den gas! Jeg er ikke på Vinderholdet for ingenting!
+    (3)Jeg tror liiiige der var nogle piger som ville have selskab?x0Slut
+
+0xkapitel5Hjemx0
+Du går hjem ... rundbold er ikke noget for en datamatiker!x0Slut
+
+0xkapitel5Bx0
+Du styrter rundt som en galning og satser alt på at vinde! Desværre går der kun fem minutter før du falder og brækker anklen.
+Du må derfor bliver hjemme fra skolen i morgen, og går glip af værdifuld undervisning og samtidig er din energi fuldkommen drænet.
+Din energi er nede på x0Slut
+
+0xkapitel5Cx0
+Du stiller dig hen som opgiver, så kan du rigtig sludre med alle de søde piger som skal slå til bolden ...
+De kigger godt nok lidt mærkeligt på dig, men i det mindste løber de ikke skrigende bort som den slags plejer at gøre når de ser dig ...
+Efter nogle runder vinder dit hold ... tror du. For når man er opgiver kan man ikke vinde, men det havde x0Slut
+
+0xkapitel5C2x0 selvfølgelig ikke tænkt på.
+Du bliver en smule til grin, men du inviteres alligevel med i byen af August og forhåbentlig også nogle af pigerne!
+Hvad gør du?
+    (1)For at tage hjem. Du skal være klar til næste dag. August må vente!
+    (2)For at tage med i byenx0Slut
+
+
+0xkapitel5CHjemx0
+Du tager hjem og slapper af ... ovenpå den omgang rundbold skal du se Netflix hele aftenen!"x0Slut
+
+0xkapitel5C1x0
+Du skal da med i byen!
+August og pigerne laver dog hurtigt forsvindingsnummert, og du havner på lokummet hvor du tilbringer hele natten.
+Da du vågner næste morgen står der en rengøringskone og kigger forvirret på dig... du mumler lidt og løber ud i solen.
+Kan du overhovet nå i skole i dag?
+   (1)For at pjække og gå hjem...
+   (2)For at skynde dig i skole, også selvom du har tømmermænd ...x0Slut
+
+0xkapitel5C1Hjemx0
+Du tager hjem ... du ville alligevel ikke være noget værd i skolen i dag.
+Du får lidt energi af det, men dine studypoints får et ordentligt hak ...x0Slut
+
+
+0xkapitel6x0
+
+#######  ##       ##  #####     ##       ##  ##    ##      #######  ##      ##     ####         ###     #######
+##       ## ##    ##  ##    ##  ## ##    ##  ##    ##      ##       ####    ##     ##  ##      ## ##    ##   ##
+##       ##  ##   ##  ##     ## ##  ##   ##  ##    ##      ##       ## ##   ##     ##   ##    ##   ##   ##
+####     ##   ##  ##  ##     ## ##   ##  ##  ##    ##      #####    ##  ##  ##     ##    ##  ##     ##  ##
+##       ##    ## ##  ##   ##   ##    ## ##  ##    ##      ##       ##   ## ##     ##   ##  ##########  ##  ###
+##       ##     ####  ##  ##    ##     ####  ##    ##      ##       ##    ####     ##  ##   ##      ##  ##   ##
+##       ##      ###  ## ##     ##      ###  ##    ##      ##       ##     ###     ## ##    ##      ##  ##   ##
+#######  ##       ##  ###       ##       ##  ########      #######  ##      ##     ###      ##      ##  #######
+
+Du er tilbage i lobbyen på CPH-Business ...
+Synes du dagene ligner hinanden? Hvis ja, så har du ret!
+Dagene på datamatiker-studiet er næsten ens. Du knokler, lærer lidt om JAVA, og går hjem og er træt.x0Slut
+
+
+
+0xkapitel6Fortsatx0
+Ved elevatoren står der nu et skilt med teksten "Ude af drift!"...
+Hvad kunne du tænke dig at gøre?
+   (1)Jeg prøver lige den elevator der ...
+   (2)Jeg smutter i kantinen!
+   (3)Jeg pjækker!
+   (4)Jeg skal da til undervisning!
+   (5)For menu.x0Slut
+
+0xkapitel6Ax0
+Du tænker, at det da kunne være fremragende at tage elevatoren, også selvom den er i udu ...
+Efter du har trykket på knappen venter du i en god halv time på elevatoren, men den dukker ikke op ...
+Nu står du så her og glor i stedet for at have undervisning. Det var ikke så smart.
+Efter at have brugt hele dagen her tager du hjem og får en stor straf i Study Points, måske du skulle prøve at gøre noget andet i morgen?
+x0Slut
+
+0xkapitel6Bx0
+Du gider ikke tage til undervisning i dag. Du får en masse energi, til gengæld mister du studypoints ...
+Hjem og spil Counter Strike med August!
+x0Slut
+
+0xkapitel6CAx0
+Efter du er ankommet til time og sidder og venter med dine klassekamerater på læreren kommer der pludselig en høj lyd fra gangen ...
+Lyden kommer nærmere, og det lyder umiskendeligt som en traktor?
+Og hvad er nu det? Heavy Metal?
+Hvad foregår der dog?
+x0Slut
+
+0xkapitel6CBx0
+Døren går op og ind kommer jeres nye underviser, Jesper!
+"Ådawhåwdalåw, traktor og træsko!", siger han på jydsk ... Du fatter intet af hvad han siger,
+men på tavlen har han skrevet lidt noter, dem kan du trods alt tyde:
+   public  class TryCatchExamples {
+        public static void main(String[] args {
+              int[] a = {4, 5, 1}
+              System.out.println(a[3]);
+        }
+   }
+
+Hvad vil der ske hvis du kørte programmet her?
+    (1)Den ville udskrive nummeret 1
+    (2)Der ville komme en fejl
+    (3)Den ville udskrive alle tallene 4, 5 og 1.
+x0Slut
+
+0xkapitel6BKorrektx0
+Det er korrekt. Den ville udskrive en fejl, da der ikke er noget tal på den tredje plads i arrayet.
+x0Slut
+
+0xkapitel6BForkertx0
+Det er desværre forkert. Da der ikke er noget tal på den trejde plads ville den ikke kunne printe dette.
+x0Slut
+
+0xkapitel6Dx0
+For at undgå den fejl, skal du lave en try/catch. Her vil koden forsøge at køre koden, og hvis der opstår problemer,
+vil den "gribe" fejlen og udføre den handling som der er givet i catchen.
+x0Slut
+
+0xkapitel6D1x0
+"Åarrrhwædaloh, Vendelbo!", siger Jesper og folk begynder at rejse sig og gå fra time ... det var vel så den dag?
+Du er træt, og har nu fuldkommen styr på try-catch og alt der hedder Exceptions i JAVA!
+x0Slut
+
+0xgoToCafeteria5x0
+                     ##     ##         #        ##       ##  ########### ######  ##       ##  ########
+                     ##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##
+                     ##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##
+                     ## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##
+                     ###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####
+                     ## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##
+                     ##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##
+                     ##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##
+                     ##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ########
+
+Du ankommer til kantinen og mødes af en dejlig duft af morgenbrød,
+friskbrygget kaffe og ung-drengesved.
+En sød kantinemand råber ud : 'VI HAR FÅET RÅDNE ÆBLER PÅ LAGER'
+Hvad vil du gøre?
+        (1) Jeg vil gerne bede om et æble til 5 kroner.
+        (2) Jeg vil gerne bede om en kop kaffe til 10 kroner.
+        (3) Jeg vil gerne bede om en sandwich til 25 kroner.
+        (4) Jeg forlader kantinen og tager til time.
+        (5) For menu
+x0Slut
+
+0xdetKanDuIkkeGøreNux0
+Det kan du ikke gøre nu, prøv igenx0Slut
+
+
+0xdetErIkkeEtTalx0
+Det er ikke et tal, prøv igen ...x0Slut
+
+
+0xkapitel7x0
+
+#######  ##       ##  #####      ##       ##  ##    ##      #######  ##      ##     #####         ###     #######
+##       ## ##    ##  ##   ##    ## ##    ##  ##    ##      ##       ####    ##     ##   ##      ## ##    ##   ##
+##       ##  ##   ##  ##    ##   ##  ##   ##  ##    ##      ##       ## ##   ##     ##    ##    ##   ##   ##
+####     ##   ##  ##  ##    ##   ##   ##  ##  ##    ##      #####    ##  ##  ##     ##    ##   ##     ##  ##
+##       ##    ## ##  ##    ##   ##    ## ##  ##    ##      ##       ##   ## ##     ##    ##  ##########  ##  ###
+##       ##     ####  ##    ##   ##     ####  ##    ##      ##       ##    ####     ##    ##  ##      ##  ##   ##
+##       ##      ###  ##   ##    ##      ###  ##    ##      ##       ##     ###     ##   ##   ##      ##  ##   ##
+#######  ##       ##  #####      ##       ##  ########      #######  ##      ##     #####     ##      ##  #######
+
+Du er gladeligt troppet op på skolen til endnu en undervisningsdag.
+Da du ankommer i lobbyen bliver du dog mødt af rektor, som siger, at der på
+grund af en møl-angreb ikke er noget undervisning i dag. Du tager derfor hjem, og
+får genopfrisket din energi.
+x0Slut
+
+0xkapitel8x0
+######## ##      ##     ##      ## ##        ##     #####         ###     #######
+##       ####    ##     ####    ##  ##      ##      ##   ##      ## ##    ##   ##
+##       ## ##   ##     ## ##   ##    ##   ##       ##    ##    ##   ##   ##
+##       ##  ##  ##     ##  ##  ##     ## ##        ##    ##   ##     ##  ##
+####     ##   ## ##     ##   ## ##      ##          ##    ##  ##########  ##  ###
+##       ##    ####     ##    ####      ##          ##    ##  ##      ##  ##   ##
+##       ##     ###     ##     ###      ##          ##   ##   ##      ##  ##   ##
+#######  ##      ##     ##      ##      ##          #####     ##      ##  #######
+Igen, igen, igen er du tilbage i lobbyen!
+Dine valgmuligheder er uendelige her! Kun fantasien sætter grænser!
+Hvad vil du gøre?
+   (1)For at gå direkte til time
+   (2)For at gå i kantinen
+   (3)For at tage elevatoren
+   (4)For at pjække
+   (5)For menu
+x0Slut
+
+0xkapitel8Ax0
+I dag skal I spille matador igen... Du troede ellers lige, at det var slut med det.
+Der tog du fejl!
+Tess spørger dig hvilket key-word du vil bruge til at lave en subklasse.
+Hvilket ord vil du benytte til det?
+   (1) is-a
+   (2) extends
+   (3) inherits
+x0Slut
+
+0xkapitel8A1x0
+I JAVA er der forskellige former for "Association". Der er en 'has-a' association som er den svage type association, kaldet "Aggregation".
+Her kan sub-klassen sagtens eksistere uafhængigt af overklassen.
+I "Composition"-associationer, er belong-to og part-of nøgleord.
+Her kan sub-klassen ikke eksistere uden overklassen.
+x0Slut
+
+0xkapitel8A2x0
+Ovenpå den omgang om sub-klasser og nedarving er du godt træt, til gengæld har du fået en masse dejlig studypoints.
+Dine studypoints er nu:
+x0Slut
+
+0xkapitel8A3x0. Du tager glad og træt hjem, så du kan være frisk til i morgen ...
+x0Slut
+
+0xkapitel8AForkertx0
+Det er desværre forkert!
+x0Slut
+
+0xkapitel8AKorrektx0
+Det er rigtigt! 10 fine studypoints til dig! x0Slut
+
+0xkapitel8Bx0
+Du stiller dig gladeligt hen til elevatoren. Den kommer faktisk denne her gang!
+Og den sætter dig også af!
+Desværre i kælderen, og du kravler rundt hernede i støvet i et par timer.
+Du går glip af en masse undervisning, og først efter to timer kommer du til klassen ...
+x0Slut
+
+0xkapitel8Pjæk
+Du tager hjem og spiller dit Anime-spil. Det der JAVA må vente til du bliver rigtig voksen!
+x0Slut
+
+
+0xkapitel9x0
+
+#######  ##       ##  #####      ##       ##  ##    ##      #######  ##      ##       ##      ## ##        ##     #####         ###     #######
+##       ## ##    ##  ##   ##    ## ##    ##  ##    ##      ##       ####    ##       ####    ##  ##      ##      ##   ##      ## ##    ##   ##
+##       ##  ##   ##  ##    ##   ##  ##   ##  ##    ##      ##       ## ##   ##       ## ##   ##    ##   ##       ##    ##    ##   ##   ##
+####     ##   ##  ##  ##    ##   ##   ##  ##  ##    ##      #####    ##  ##  ##       ##  ##  ##     ## ##        ##    ##   ##     ##  ##
+##       ##    ## ##  ##    ##   ##    ## ##  ##    ##      ##       ##   ## ##       ##   ## ##      ##          ##    ##  ##########  ##  ###
+##       ##     ####  ##    ##   ##     ####  ##    ##      ##       ##    ####       ##    ####      ##          ##    ##  ##      ##  ##   ##
+##       ##      ###  ##   ##    ##      ###  ##    ##      ##       ##     ###       ##     ###      ##          ##   ##   ##      ##  ##   ##
+#######  ##       ##  #####      ##       ##  ########      #######  ##      ##       ##      ##      ##          #####     ##      ##  #######
+
+Du er nu endnu en gang mødt op på skolen, og finder dig selv i lobbyen igen.
+Du kan ikke tænke på andet end den kommende juleafslutning!
+Dagene inden juleafslutningen er talte og stemningen på skolen bliver hyggeligere for hvert sekund der går.
+På et skilt ser du at elavatoren er ude af funktion.
+Du har følgende muligheder.
+
+   (1)For at gå direkte til time.
+   (2)For at gå i kantinen.
+   (3)For menu x0Slut
+
+0xkapitel9Undervisningx0
+
+Du går direkte mod undervisningslokalet, så du får mest mulig undervisning.
+
+x0Slut
+
+0xkapitel9A1Del1x0
+
+Du sidder i klasseværelset.
+En tutor træder ind i klassen og begynder at tale.
+"Hej allesammen! Jeg hedder Oliver og vil stå for dagens undervisning. Der er nemlig ingen af jeres lærere, som har haft mulighed for at møde op i dag.
+I dag skal i have om 'for-loops'.
+x0Slut
+
+0xkapitel9A1Del2x0
+Et for-loop bruges til at få en specifik række kode gentaget et bestemt antal gange. Man skal først angive en variabel, ofte bruges i.
+Man skal i det første led i for-loopet vælge hvilken værdi 'i' skal starte ud med at have.
+Herefter skal man sætte en øvre grænse for mange gange loopet skal gentages. Det kan for eksempel være et tal eller en variabel.
+Til sidst i loopet skal man bestemme hvor meget variblen skal øges, hver gang loopet bliver gennemført.
+Et for-loop kan for eksempel se således ud:
+    for (int i = 0; i < 10; i++) {
+        System.out.println("Hej, jeg er blevet skrevet " + i + " gange!."
+    }"
+
+x0Slut
+
+0xkapitel9A2x0
+Det var en lærerig dag, men nu er du træt og vil hjem.
+Din energi er nu x0Slut
+
+0xkapitel9A3x0 og dine studypoints er : x0Slut
+
+0xkapitel9påVejHjemx0
+Du vender snuden hjemad. På vejen hjem mærker du noget lande på din kind.
+Du kigger op og ser at det begynder at sne. Du smiler og tænker "Nu er der ikke længe til jul." x0Slut
+
+
+0xgoToCafeteria7x0
+   ##     ##         #        ##       ##  ########### ######  ##       ##  ########
+   ##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##
+   ##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##
+   ## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##
+   ###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####
+   ## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##
+   ##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##
+   ##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##
+   ##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ########
+
+Du ankommer til kantinen og kan straks dufte den nylavede kaffe.
+Hvad vil du gøre?
+        (1) Jeg vil gerne bede om et æble til 5 kroner.
+        (2) Jeg vil gerne bede om en kop kaffe til 10 kroner.
+        (3) Jeg vil gerne bede om en sandwich til 25 kroner.
+        (4) Jeg forlader kantinen og tager til time.
+        (5) For menu
+
+x0Slut
+
+
+
+0xkapitel11x0
+Du står her igen ... lobbyen på CPH-Business.
+Dine livsvalg har fået dig til at stå her, og du overvejer om du har truffet de rigtige valg?
+Måske du i stedet skulle være blevet cykelsmed?
+Eller hvad med fodboldspiller?
+Nah, du er en nørd, så tingene kunne sgu ikke være anderledes!
+Hvad vil du gøre nu?
+   (1)For at gå i kantinen
+   (2)For at tage til time og lære spændende ting
+   (3)For at cykle en tur
+   (4)For at tage elevatoren
+   (5)For menu
+x0slut
+
+0xkapitel10Ax0
+Du begiver dig afsted til timen. Jesper står derinde og headbanger til noget heavy metal!
+"JåwdaHow Snøvs! Traktor og træsko og Java og World of Warcraft!", siger Jesper.
+Du forstår stadigvæk ikke helt hvad der kommer ud af hans mund.
+x0slut
+
+0xkapitel10A2x0
+Pludselig kigger Jesper på dig, og for første gang forstår du hvad han siger (sådan nogenlunde da)...
+"Hvælken syntaks bruges for æ kalde en funktion på æ åbjekt?", siger han ...
+Og ja. Hvilken syntaks bruges?
+   (1)Skal bare skrives
+         runMyObjectNow!
+   (2)Jeg ville benytte mig af dot.syntaks, hr lærer. Det kunne se således ud:
+         objectname.function();
+   (3)Det ved jeg sgu da ikke!!!
+x0Slut
+
+0xkapitel10A2Korrektx0
+Det er rigtigt! 10 studypoints til dig, min ven!
+x0Slut
+
+0xkapitel10A2Forkertx0
+Det er desværre forkert. Ingen studypoints for det svar!
+x0Slut
+
+0xkapitel10A3x0
+"Jådalædalædalæda traktorhi!", siger Jesper...
+Jodlede han lige der?
+Nu er timen i hvert fald slut ... I morgen venter juleafslutningen! Så du skynder dig hjem i seng!
+x0Slut
+
+0xkapitel10Bx0
+Du tænker det kunne være mega sjovt at cykle en lille tur i byen.
+Du når desværre ikke længere end Lyngby Storcenter før du falder af cyklen og får en hudafskrabning.
+Det gør herre nas!
+Av av!
+Forpustet og forslået tager du hjem ...
+x0Slut
+
+0xkapitel10Cx0
+Du stiller dig gladeligt hen og trykker på elevatorknappen.
+Elevatoren kommer, og den sætter dig for en gangs skyld af på den rigtige sal!
+Desværre stank der så meget af tis i elevatoren, at du nu også stinker smule.
+Du mister derfor lidt energi, men i det mindst kan du gå til time til tiden!
+x0Slut
+
+
+0xkapitelJulx0
+###### ##     ## ##        #######   #####         ###     #######
+    ## ##     ## ##        ##        ##   ##      ## ##    ##   ##
+    ## ##     ## ##        ##        ##    ##    ##   ##   ##
+    ## ##     ## ##        ####      ##    ##   ##     ##  ##
+    ## ##     ## ##        ##        ##    ##  ##########  ##  ###
+    ## ##     ## ##        ##        ##    ##  ##      ##  ##   ##
+    ##  ##   ##  ##        ##        ##   ##   ##      ##  ##   ##
+#####    #####   ########  #######   #####     ##      ##  #######
+
+Idag er sidste dag inden den store eksamen. Har du ikke dine 100 studypoints endnu, er det idag du skal hente de sidste!
+Du ankommer til skolen og står i lobbyen. Du spotter nogle søde piger, men kommer i tanke om eksamen er lige rundt om hjørnet.
+Du ved at julehygge i klassen ikke bliver særlig fagligt, så din beslutning nu kan blive altafgørende!
+Hvad vil du gøre?
+   (1)For at gå hen til de søde piger og fortælle en vittighed
+   (2)For at gå i kantinen
+   (3)For at gå til klasselokalet og hygge med klassen
+   (4)For at tage til det nærmeste bibliotek. Du har hørt de lige har fået en ny bog om JAVA.
+   (5)For menu
+x0Slut
+
+0xgoToCafeteriaJULx0
+   ##     ##         #        ##       ##  ########### ######  ##       ##  ########
+   ##    ##        ## ##      ####     ##      ##        ##    ####     ##  ##
+   ##   ##        ##   ##     ## ##    ##      ##        ##    ## ##    ##  ##
+   ## ##         ##     ##    ##  ##   ##      ##        ##    ##  ##   ##  ##
+   ###          ##       ##   ##   ##  ##      ##        ##    ##   ##  ##  #####
+   ## ##       #############  ##    ## ##      ##        ##    ##    ## ##  ##
+   ##   ##     ##         ##  ##     ####      ##        ##    ##     ####  ##
+   ##    ##    ##         ##  ##      ###      ##        ##    ##      ###  ##
+   ##      ##  ##         ##  ##       ##      ##      ######  ##       ##  ########
+
+Du ankommer til kantinen og kan straks dufte den nylavede kaffe.
+Hvad vil du gøre?
+        (1) Jeg vil gerne bede om et æble til 5 kroner.
+        (2) Jeg vil gerne bede om en kop kaffe til 10 kroner.
+        (3) Jeg vil gerne bede om en sandwich til 25 kroner.
+        (4) Jeg forlader kantinen og tager til time.
+        (5) Jeg forlader kantinen og tager på biblioteket.
+        (6) For menu
+x0slut
+
+0xkapitelJulAx0
+Du går over til pigerne, som kigger underligt på dig. "Hvorfor står den datamatiker nørd ved siden af os?" siger den ene pige til den anden.
+Du afbryder deres snak og fortæller en vittighed:
+"Såå her den anden dag skulle jeg vælge ny kode til min computer. Jeg prøvede at ændre koden til 'MinPenis'"
+"Men computeren godkendte ikke min nye kode og gav mig fejlbeskeden: Dit kodeord er for kort"
+x0slut
+
+0xkapitelJulAFortsatx0
+Pigerne skriger af grin. De datamatikere er måske meget sjove alligevel? De kigger på hinanden og nikker. Og i kor spørger de dig:
+"Hvad siger du til at tage på toilettet med os og hygge lidt?"
+Du går i PANIK! Den joke har aldrig virket før! Det drypper med sved fra din pande, og du ryster af nervøsitet
+Hvad vil du gøre?
+   (1)It's time for some Hanky Panky!
+   (2)For at gå til klassen alligevel. Måske August sidder der?
+   (3)For at tage på biblioteket
+x0Slut
+
+0xkapitelJulCx0
+Du ankommer til klasselokalet. Der er dækket op til den helt store julemorgenmad med brunch, boller og kakao
+Du sætter dig ved siden af din bedste ven August, som ønsker dig god juleferie
+Han undskylder også for alle de gange han har prøvet at lokke dig til dumme ting, i stedet for at lade dig fokusere på dit studie.
+August har glemt sin kaffe på bordet da han går ud og tisser. Du kan mærke du er tørstig og den kaffe ser dejlig varm og fristende ud.
+Hvad vil du gøre?
+    (1) Du lader den være og nyder resten af dagen i godt selvskab
+    (2) Smager lige hurtigt hans kaffe
+x0slut
+
+0xkapitelJulC1x0
+August kommer tilbage og i nyder resten af dagen i godt selvskab med klassen
+Efter morgenmaden tager du hjem og gamer med august.
+x0slut
+
+0xkapitelJulC2x0
+Du drikker hans kaffe. MEGA forfriskende, du får 10 energipoint!
+August kommer tilbage og ser den manglende kaffe. Han spørger dig om du ved hvor den er.. til det svarer du at du ikke aner hvor den er blevet af.
+August løber grædende ud af klassen og kommer ikke igen.
+x0slut
+
+0xkapitelJulC2Fortsatx0
+Du kommer hjem og tænder computeren og ser august er online. Du spørger om han vil spille SIMS 3 med dig, og i spiller natten lang. Alt er godt!
+x0slut
+
+0xkapitelJulDx0
+Du tager på biblioteket og finder den bog du har manglet siden du startede!
+Du har glemt dit studiekort idag så du kan desværre ikke låne den.
+Meeen, det har da aldrig stoppet dig.. har det?
+Hvad vil du gøre?
+    (1) Du tænker "fuck it jeg har rigligt med studypoints" og tager hjem og gamer i stedet.
+    (2) Du stjæler bogen.
+x0slut
+
+0xkapitelJulD2x0
+Du tager bogen under armen og løber din vej... Heeeele vejen over til skolen. Du sætter dig i kantinen og finder bogen frem.
+x0slut
+
+0xkapitelJulAPANIKx0
+Du får fremmumlet "See you later, aligator, I'm a pussy-slayer" og spurter væk derfra. Det var godt nok pinligt...
+og hvorfor pokker fik du sagt det der?? PINLIGT! du mister 10 energi..
+x0Slut
+
+0xkapitelJulAHankyx0
+                           ####
+                           #####
+                            ###
+                           ######
+                          #######
+   ####                  #########
+  ######                 ##   ######
+  ######                ###   ######
+   ####                 ###    ######
+   ########################    ######
+    #######################==3######
+     #####################    #####
+      ###             ####    ######
+     ###              ####    #####
+    ###               ####    #####
+#######               #######  ########
+x0slut
+
+0xkapitelJulAHankyTekstx0
+Du får noget på den dumme og du skynder dig hjem igen. Så blev det alligevel en hvid jul i år!
+Med et kæmpe smil på læben tager du hjem igen, men mister 15 energy point. Desuden har du opdaget en ny interesse i piger!
+Bliver det overhovedet lige så sjovt at læse bøger fremover? Du mister 5 study points.
+x0slut
+
+
+
+0xkapitelslutx0
+Semestret er slut, og der skal nu tjekkes om du kan gå til eksamen eller ej.
+For at få lov at gå til eksamen, skal du have et minimum på 100 studypoints ... x0slut
+
+0xkapitelslut2x0
+Du har i løbet af semestret kæmpet og i alt har du optjent x0slut
+
+0xkapitelslut3x0 studypoitns og kan derfor gå til den spændende eksamen!
+Spids blyanten, tænd op for IntelliJ og glæd dig til sjov og spas til eksamen! x0Slut
+
+0xkapitelslut4x0 studypoints! Øv! øv! ØV! Du er ikke klar til eksamen, og må tage semestret om :(
+Too bad! x0Slut
+
+
+
+
+
+0xdetKanDuIkkeGøreNux0
+Det kan du ikke gøre nu, prøv igenx0Slut
+
+
+0xdetErIkkeEtTalx0
+Det er ikke et tal, prøv igen ...x0Slut
+
+
+
+
+

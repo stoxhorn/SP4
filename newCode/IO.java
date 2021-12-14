@@ -32,36 +32,9 @@ public class IO {
     }
 
     public static void clearAll() {
-        for (int i = 0 ; i<50; i++) {
-            System.out.printf("   ");
+        for (int i = 0; i < 50; i++) {
+            System.out.println("\n");
         }
-    }
-
-    public static void startScreen() {
-        System.out.println("----------------------------------------------------------------------------------------------------------" +
-
-                "\n####               #    ###########   #         ##         ##         #    ########### ######  ##    ##   ########  #####               " +
-                "\n##  ###          ## ##      ##      ## ##      ## ##     ## ##      ## ##      ##        ##    ##   ##    ##        ##  ###             " +
-                "\n##     ##       ##   ##     ##     ##   ##     ##  ##   ##  ##     ##   ##     ##        ##    ##  ##     ##        ##    ##            " +
-                "\n##       ##    ##     ##    ##    ##     ##    ##   ## ##   ##    ##     ##    ##        ##    ## ##      ##        ##   ##             " +
-                "\n##        ##  ##       ##   ##   ##       ##   ##    ###    ##   ##       ##   ##        ##    ###        #####     #####     -SPILLET! " +
-                "\n##       ##  #############  ##  #############  ##           ##  #############  ##        ##    ## ##      ##        ##  ##              " +
-                "\n##     ##    ##         ##  ##  ##         ##  ##           ##  ##         ##  ##        ##    ##  ##     ##        ##   ##             " +
-                "\n##  ###      ##         ##  ##  ##         ##  ##           ##  ##         ##  ##        ##    ##   ##    ##        ##    ##            " +
-                "\n####         ##         ##  ##  ##         ##  ##           ##  ##         ##  ##      ######  ##    ##   ########  ##     ##          " +
-                "\n" +
-                "\nVelkommen til DATAMATIKER-SPILLET! Et rollespil hvor du selv er helten! " +
-                "\nGennem spændende undervisning i faget skal du forberede dig til eksamen... men pas på! " +
-                "\nFor fristelserne er mange, og de faglige områder svære," +
-                "\nså det gælder om at følge godt med i undervisningen, og ikke bruge for meget tid på at kigge efter piger!" +
-                "\n");
-
-        boolean running = true;
-        IO.pressEnterToContinue();
-        IO.clearAll();
-        Storyline.intro();
-        IO.getUserInput();
-
     }
 
 
@@ -92,6 +65,7 @@ public class IO {
             // for loop of listen der er lavet af split()
             for (String str : questionStr) {
 
+                // When calling split(), sometimes there's an empty String i need to ignore
                 if (str.length() > 2) {
                     Question qTmp = createQuestion(str);
                     tmp.add(qTmp);
@@ -108,6 +82,63 @@ public class IO {
         return tmp;
     }
 
+        public ArrayList<StoryPointer> readStoryFromFile() {
+        ArrayList<StoryPointer> temp = new ArrayList<>();
+        try {
+            Path filepath = Path.of("src/story.txt");
+
+            String content = Files.readString(filepath);
+
+            String [] storyStrings = content.split ("0x", 0);
+            for (String str : storyStrings) {
+                if (str.length() > 2) {
+                    StoryPointer storyTemp = createStory(str);
+                    temp.add(storyTemp);
+                } else {
+                    //
+                }
+            }
+
+
+        } catch (Exception e) {
+            System.out.println(e + " asd");
+        } return temp;
+    }
+
+    /*
+    * ----------------
+    * "0x"startscreen\n         - ID/pointer
+    * asdasdasdasdasdasdasd\n
+    * asdasdasdasdasdasdasd\n
+    * asdasdasdasdasdasdasdx0 - storyString
+    * ----------------
+    * anything within "" is not included in storyString argument/parameter, but is what was removed before passing to this function
+    * */
+    private StoryPointer createStory (String storyString) {
+
+        // First line in each string is the ID/Pointer as seen in example above
+        // All of the remaining part, is the story string
+
+        // her splitter vi storyString op i, forhåbventlig, 3 dele. første del er ID, næste del er storyString, tredje del er irrelevant og skal ikke bruges
+        //"0xstartScreenx0\n" +
+        //"DATAMATIKERSPILLET\n" +
+        //"NU STARTER HISTORIEN!x0StringSlut\n"
+        String[] storyInput = storyString.split("x0", 0);
+        //storyInput = {"startScreen", "DATAMATIKERSPILLET\nNU STARTER HISTORIEN!", "StringSlut"};
+
+
+        if (storyInput.length<2) {
+            return null;
+        }
+        int x = storyInput.length;
+
+        StoryPointer returnedStory = new StoryPointer(storyInput[0], storyInput[1]);
+
+        return returnedStory;
+    }
+
+
+    // helper function for readQuestionsFromFile
     private Question createQuestion(String questionStr) {
 
         // NB: Sometimes Windows adds a different kind of newline referenced as "\r\n",
@@ -135,8 +166,6 @@ public class IO {
             }
         }
         Question ret = new Question(questionInput[0], choices, answer);
-
         return ret;
     }
-
 }
