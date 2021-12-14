@@ -27,8 +27,8 @@ Reglerne for DATAMATIKER-SPILLET er simple...
 Din karakter samler Study Points ved at gå til undervisning, læse bøger eller anden aktivitet.
 Hvis du skal til eksamen, skal du samle i alt 100 Study Points. Består du eksamen har du vundet spillet!
 Men husk at holde øje med dit energiniveau! For alle aktiviteter koster energi.
-Heldigvis kan du købe lækker med i kantinen for at få ny energi. Det koster dog penge, og livet på SU er ikke let.
-Du finder dine købte og fundne ting i din rygsæk ved hjælp af menuen. I menuen kan du også se hvor mange penge du har tilbage og dine optjente Study Pointsx0Slut
+Heldigvis kan du købe lækker mad i kantinen for at få ny energi. Det koster dog penge, og livet på SU er ikke let.
+Du finder dine købte og fundne ting i din rygsæk ved hjælp af menuen. I menuen kan du også se hvor mange penge du har tilbage og dine optjente Study Points.x0Slut
 
 0xintroChapterx0
 Det er en dejlig sommerdag. Solen skinner, der er ikke en sky på himlen og din rygsæk er fuld af dine ny-indkøbte bøger.
@@ -45,7 +45,7 @@ Foran dig står der tre skilte, hvilket vil du følge?
 0xfølgSkiltetx0
 Du er smart, så du følger selvfølgelig skiltet hvorpå der står 'DATAMATIKER'.
 På vej derhen står der en dame og uddeler navneskilte. Du får stukket ét i hånden, samt en tusch.
-Skriv dit navn på det, så kan man hurtigere lære sine klassekammerater at kende.\", siger hun med et smil.x0Slut
+"Skriv dit navn på det, så kan man hurtigere lære sine klassekammerater at kende!", siger hun med et smil.x0Slut
 
 0xnavnValgtAx0
 Du skriver x0Slut
@@ -940,7 +940,8 @@ Ovenpå den omgang om sub-klasser og nedarving er du godt træt, til gengæld ha
 Dine studypoints er nu:
 x0Slut
 
-0xkapitel8A3x0. Du tager glad og træt hjem, så du kan være frisk til i morgen ...
+0xkapitel8A3x0
+Du tager glad og træt hjem, så du kan være frisk til i morgen ...
 x0Slut
 
 0xkapitel8AForkertx0
@@ -1013,7 +1014,8 @@ x0Slut
 Det var en lærerig dag, men nu er du træt og vil hjem.
 Din energi er nu x0Slut
 
-0xkapitel9A3x0 og dine studypoints er : x0Slut
+0xkapitel9A3x0 og dine studypoints er :
+x0Slut
 
 0xkapitel9påVejHjemx0
 Du vender snuden hjemad. På vejen hjem mærker du noget lande på din kind.
@@ -1185,7 +1187,7 @@ August løber grædende ud af klassen og kommer ikke igen.
 x0slut
 
 0xkapitelJulC2Fortsatx0
-Du kommer hjem og tænder computeren og ser august er online. Du spørger om han vil spille SIMS 3 med dig, og i spiller natten lang. Alt er godt!
+Du kommer hjem og tænder computeren og ser August er online. Du spørger om han vil spille SIMS 3 med dig, og i spiller natten lang. Alt er godt!
 x0slut
 
 0xkapitelJulDx0

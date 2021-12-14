@@ -15,7 +15,7 @@ public class Player {
     private String name;
 
     public Player(String name) {
-        this.name = name;
+        this.name = "Unavngivet";
         this.studyPoints = 0;
         this.energyLevel = 100;
         this.wrongAnswers = 0;

@@ -23,14 +23,14 @@ public class IO {
             return 3;
         } else if (userInput == 4) {
             return 4;
-        } else if (userInput ==5) {
+        } else if (userInput == 5) {
             return 5;
-        }else {
-
-            }
-        return -1;
+        } else if (userInput == 6) {
+            return 6;
+        } else {
+            return -1;
+        }
     }
-
     public static void clearAll() {
         for (int i = 0; i < 50; i++) {
             System.out.println("\n");

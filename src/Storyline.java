@@ -28,7 +28,6 @@ public class Storyline {
     public static void startScreen() {
 
         while (true) {
-
             System.out.println(findPointerFromId("startScreen"));
             io.pressEnterToContinue();
             System.out.println(findPointerFromId("startScreen2"));
@@ -102,7 +101,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel1A1() { //Man venter og venter i en halv time
+    public static void kapitel1A1() { //Man venter og venter i en halv time
         boolean running = true;
         while (running) {
             try {
@@ -126,7 +125,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel1A2() {
+    public static void kapitel1A2() {
         boolean running = true;
         while (running) {
             System.out.println(findPointerFromId("kapitel1A1B"));
@@ -144,7 +143,7 @@ public class Storyline {
     }
 
 
-    private static void kapitel1A3() { //Venter endnu 30 min, ankommer til klassen
+    public static void kapitel1A3() { //Venter endnu 30 min, ankommer til klassen
         while (true) {
             System.out.println(findPointerFromId("kapitel1A3"));
             player.setEnergyLevel(player.getEnergyLevel() - 10);
@@ -152,7 +151,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel1A4() {
+    public static void kapitel1A4() {
         while (true) {
 
             System.out.println(findPointerFromId("kapitel1A4A"));
@@ -284,7 +283,7 @@ public class Storyline {
         }
     }
 
-    private void kapitel1D1() {
+    public void kapitel1D1() {
         boolean running = true;
         while (running) {
             try {
@@ -317,7 +316,7 @@ public class Storyline {
         }
     }
 
-    private void kapitel1D2() {
+    public void kapitel1D2() {
         boolean running = true;
         while (running) {
             try {
@@ -350,7 +349,7 @@ public class Storyline {
         }
     }
 
-    private void kapitel1D3() {
+    public void kapitel1D3() {
         boolean running = true;
         while (running) {
             try {
@@ -375,7 +374,7 @@ public class Storyline {
         }
     }
 
-    private void kapitel1D4() {
+    public void kapitel1D4() {
         boolean running = true;
 
 
@@ -402,7 +401,7 @@ public class Storyline {
         }
     }
 
-    private void kapitel1D5() {
+    public void kapitel1D5() {
         io.clearAll();
         System.out.println(findPointerFromId("kapitel1D5"));
         boolean running = true;
@@ -443,7 +442,7 @@ public class Storyline {
         }
     }
 
-    private void kapitel1D6() {
+    public void kapitel1D6() {
         Random randomizer = new Random();
         final String[] monstreOgWeirdos = {"Zombie", "Tidligere Underviser på CPH-Business", "Tiger", "Klovn", "Kæmpe edderkop", "Vampyr", "Ork", "Ninja", "Skelet", "Elverpige", "Dinosaur"};
         boolean running = true;
@@ -485,7 +484,7 @@ public class Storyline {
         }
     }
 
-    private void kapitel1DSlut() {
+    public void kapitel1DSlut() {
         System.out.println(findPointerFromId("kapitel1DSlut"));
         io.pressEnterToContinue();
         goToCafeteria1();
@@ -498,7 +497,7 @@ public class Storyline {
         kapitel2();
     }
 
-    private static void kapitel2() {
+    public static void kapitel2() {
         boolean running = true;
         while (running) {
             try {
@@ -557,7 +556,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel2A() {
+    public static void kapitel2A() {
         boolean running = true;
         while (running) {
             try {
@@ -577,7 +576,7 @@ public class Storyline {
     }
 
 
-    private static void kapitel2B() {
+    public static void kapitel2B() {
         boolean running = true;
         while (running) {
             io.clearAll();
@@ -601,7 +600,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel2C() {
+    public static void kapitel2C() {
         boolean running = true;
         while (running) {
             try {
@@ -628,7 +627,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel2D() {
+    public static void kapitel2D() {
         boolean running = true;
         while (running) {
             io.clearAll();
@@ -640,7 +639,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel2E() {
+    public static void kapitel2E() {
         boolean running = true;
         while (running) {
             player.setEnergyLevel(player.getEnergyLevel() + 20);
@@ -650,7 +649,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel2F() {
+    public static void kapitel2F() {
         boolean running = true;
         while (running) {
             try {
@@ -675,7 +674,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel2F2() {
+    public static void kapitel2F2() {
 
         boolean running = true;
         while (running) {
@@ -709,7 +708,7 @@ public class Storyline {
     }
 
 
-    private static void kapitel2F1() {
+    public static void kapitel2F1() {
         boolean running = true;
         while (running) {
             try {
@@ -737,7 +736,7 @@ public class Storyline {
     }
 
 
-    private static void kapitel2F12() {
+    public static void kapitel2F12() {
         boolean running = true;
         while (running) {
             io.clearAll();
@@ -750,7 +749,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel2F3() {
+    public static void kapitel2F3() {
         boolean running = true;
         while (running) {
             player.setStudyPoints(player.getStudyPoints() - 5);
@@ -763,7 +762,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel2G() {
+    public static void kapitel2G() {
         boolean running = true;
         while (running) {
             io.clearAll();
@@ -777,7 +776,7 @@ public class Storyline {
     }
 
 
-    private static void kapitel3() {
+    public static void kapitel3() {
         boolean running = true;
         while (running) {
             try {
@@ -806,7 +805,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel3B() {
+    public static void kapitel3B() {
         io.clearAll();
         player.setStudyPoints(player.getStudyPoints() - 5);
         player.setEnergyLevel(player.getEnergyLevel() - 5);
@@ -816,7 +815,7 @@ public class Storyline {
         kapitel3A();
     }
 
-    private static void goToCafeteria3() {
+    public static void goToCafeteria3() {
         boolean running = true;
         while (running) {
             try {
@@ -848,7 +847,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel3A() {
+    public static void kapitel3A() {
         boolean running = true;
         while (running) {
             try {
@@ -885,7 +884,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel3A1() {
+    public static void kapitel3A1() {
         boolean running = true;
         while (running) {
             try {
@@ -911,7 +910,7 @@ public class Storyline {
     }
 
 
-    private static void kapitel3A2() {
+    public static void kapitel3A2() {
         boolean running = true;
         while (running) {
             io.clearAll();
@@ -932,7 +931,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel3A3() {
+    public static void kapitel3A3() {
         while (true) {
             player.setStudyPoints(player.getStudyPoints() - 5);
             System.out.println(findPointerFromId("kapitel3A3"));
@@ -944,7 +943,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel4() {
+    public static void kapitel4() {
         boolean running = true;
         while (running) {
             try {
@@ -973,7 +972,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel4A() {
+    public static void kapitel4A() {
         while (true) {
             try {
                 System.out.println(findPointerFromId("kapitel4A"));
@@ -1004,7 +1003,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel4B() {
+    public static void kapitel4B() {
         while (true) {
             try {
                 player.setStudyPoints(player.getStudyPoints() - 5);
@@ -1030,7 +1029,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel4B1() {
+    public static void kapitel4B1() {
         System.out.println(findPointerFromId("kapitel4B1"));
         player.lootBook1();
         io.pressEnterToContinue();
@@ -1039,7 +1038,7 @@ public class Storyline {
         kapitel4A();
     }
 
-    private static void goToCafeteria4() {
+    public static void goToCafeteria4() {
         boolean running = true;
         while (running) {
             try {
@@ -1071,7 +1070,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel5() {
+    public static void kapitel5() {
         boolean running = true;
         while (running) {
             try {
@@ -1094,7 +1093,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel5B() {
+    public static void kapitel5B() {
         boolean running = true;
         while (running) {
             try {
@@ -1111,7 +1110,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel5C() {
+    public static void kapitel5C() {
         boolean running = true;
         while (running) {
             try {
@@ -1138,7 +1137,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel5C1() {
+    public static void kapitel5C1() {
         io.clearAll();
         while (true) {
             try {
@@ -1162,7 +1161,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel6() {
+    public static void kapitel6() {
 
         io.clearAll();
         while (true) {
@@ -1196,7 +1195,7 @@ public class Storyline {
         }
     }
 
-    private static void kappitel6A() {
+    public static void kappitel6A() {
         io.clearAll();
         while (true) {
             System.out.println(findPointerFromId("kapitel6A"));
@@ -1208,7 +1207,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel6B() {
+    public static void kapitel6B() {
         io.clearAll();
         while (true) {
             System.out.println(findPointerFromId("kapitel6B"));
@@ -1220,7 +1219,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel6C() {
+    public static void kapitel6C() {
         io.clearAll();
         while (true) {
             try {
@@ -1250,7 +1249,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel6D() {
+    public static void kapitel6D() {
         io.clearAll();
         while (true) {
             System.out.println(findPointerFromId("kapitel6D"));
@@ -1264,7 +1263,7 @@ public class Storyline {
         }
     }
 
-    private static void goToCafeteria5() {
+    public static void goToCafeteria5() {
         boolean running = true;
         while (running) {
             try {
@@ -1295,7 +1294,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel7() {
+    public static void kapitel7() {
         while (true) {
             io.clearAll();
             System.out.println(findPointerFromId("kapitel7"));
@@ -1306,7 +1305,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel8() {
+    public static void kapitel8() {
         io.clearAll();
         while (true) {
             try {
@@ -1346,15 +1345,17 @@ public class Storyline {
                 if (pointer == 1) {
                     System.out.println(findPointerFromId("kapitel8AForkert"));
                     player.setStudyPoints(player.getStudyPoints() - 10);
+                    io.pressEnterToContinue();
                     kapitel8A1();
                 } else if (pointer == 2) {
                     System.out.println(findPointerFromId("kapitel8AKorrekt"));
                     player.setStudyPoints(player.getStudyPoints() + 10);
+                    io.pressEnterToContinue();
                     kapitel8A1();
                 } else if (pointer == 3) {
                     System.out.println(findPointerFromId("kapitel8AForkert"));
-                    System.out.println(findPointerFromId("kapitel8AForkert"));
                     player.setStudyPoints(player.getStudyPoints() - 10);
+                    io.pressEnterToContinue();
                     kapitel8A1();
                 } else {
                     System.out.println(findPointerFromId("DetKanDuIkkeGøreNu"));
@@ -1365,7 +1366,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel8A1() {
+    public static void kapitel8A1() {
         io.clearAll();
         while (true) {
             System.out.println(findPointerFromId("kapitel8A1"));
@@ -1374,14 +1375,15 @@ public class Storyline {
             player.setEnergyLevel(player.getEnergyLevel() - 15);
             checkEnergyLevel();
             System.out.print(findPointerFromId("kapitel8A2"));
-            System.out.println(player.getStudyPoints());
+            System.out.print(player.getStudyPoints());
             System.out.print(findPointerFromId("kapitel8A3"));
+            io.pressEnterToContinue();
             kapitel9();
         }
     }
 
 
-    private static void goToCafeteria6() {
+    public static void goToCafeteria6() {
         boolean running = true;
         while (running) {
             try {
@@ -1412,7 +1414,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel9() {
+    public static void kapitel9() {
         while (true) {
             try {
                 io.clearAll();
@@ -1432,7 +1434,7 @@ public class Storyline {
             }
         }
     }
-    private static void goToCafeteria7() {
+    public static void goToCafeteria7() {
         boolean running = true;
         while (running) {
             try {
@@ -1464,7 +1466,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitel9A1() {
+    public static void kapitel9A1() {
         io.clearAll();
         System.out.println(findPointerFromId("kapitel9Undervisning"));
         io.pressEnterToContinue();
@@ -1480,11 +1482,12 @@ public class Storyline {
         System.out.print(player.getStudyPoints());
         io.pressEnterToContinue();
         System.out.println(findPointerFromId("kapitel9påVejHjem"));
+        io.pressEnterToContinue();
         kapitel10();
     }
 
 
-    private static void kapitelJul() {
+    public static void kapitelJul() {
         while (true) {
             try {
                 io.clearAll();
@@ -1509,7 +1512,7 @@ public class Storyline {
         }
     }
 
-    private static void goToCafeteriaJUL() {
+    public static void goToCafeteriaJUL() {
         boolean running = true;
         while (running) {
             try {
@@ -1543,7 +1546,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitelJulA() {
+    public static void kapitelJulA() {
         while (true) {
             try {
                 io.clearAll();
@@ -1557,15 +1560,18 @@ public class Storyline {
                     player.setEnergyLevel(player.getEnergyLevel()-15);
                     player.setStudyPoints(player.getStudyPoints()-5);
                     checkEnergyLevel();
+                    io.pressEnterToContinue();
                     kapitel100();
                 } else if (pointer == 2) {
                     System.out.println(findPointerFromId("kapitelJulAPANIK"));
                     player.setEnergyLevel(player.getEnergyLevel()-10);
                     checkEnergyLevel();
+                    io.pressEnterToContinue();
                     kapitelJulC();
                 } else if (pointer == 3) {
                     System.out.println(findPointerFromId("kapitelJulAPANIK"));
                     player.setEnergyLevel(player.getEnergyLevel()-10);
+                    io.pressEnterToContinue();
                     kapitelJulD();
                 } else {
                     System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
@@ -1576,7 +1582,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitelJulC() {
+    public static void kapitelJulC() {
         while (true) {
             try {
                 io.clearAll();
@@ -1585,12 +1591,14 @@ public class Storyline {
                 int pointer = io.getUserInput();
                 if (pointer == 1) {
                     System.out.println(findPointerFromId("kapitelJulC1"));
+                    io.pressEnterToContinue();
                     kapitel100();
                 } else if (pointer == 2) {
                     System.out.println(findPointerFromId("kapitelJulC2"));
                     player.setEnergyLevel(player.getEnergyLevel()+10);
                     io.pressEnterToContinue();
                     System.out.println(findPointerFromId("kapitelJulC2Fortsat"));
+                    io.pressEnterToContinue();
                     kapitel100();
                 } else {
                     System.out.println(findPointerFromId("detKanDuIkkeGøreNu"));
@@ -1602,7 +1610,7 @@ public class Storyline {
         }
     }
 
-    private static void kapitelJulD() {
+    public static void kapitelJulD() {
         while (true) {
             try {
                 io.clearAll();
@@ -1611,14 +1619,16 @@ public class Storyline {
                 int pointer = io.getUserInput();
                 if (pointer == 1) {
                     System.out.println(findPointerFromId("kapitelJulC2Fortsat"));
+                    io.pressEnterToContinue();
                     kapitel100();
                 } else if (pointer == 2) {
-                    System.out.println(findPointerFromId("0xkapitelJulD2"));
+                    System.out.println(findPointerFromId("kapitelJulD2"));
                     io.pressEnterToContinue();
                     player.lootBook3();
                     player.readBook(3);
                     io.pressEnterToContinue();
                     System.out.println(findPointerFromId("kapitelJulC2Fortsat"));
+                    io.pressEnterToContinue();
                     kapitel100();
 
                 } else {
@@ -1632,7 +1642,7 @@ public class Storyline {
     }
 
 
-    private static void kapitel10() {
+    public static void kapitel10() {
         while (true) {
             try {
                 io.clearAll();
@@ -1658,49 +1668,59 @@ public class Storyline {
         }
     }
 
-    private static void kapitel10A() { 
+    public static void kapitel10A() {
         while (true) {
             try {
                 io.clearAll();
                 System.out.println(findPointerFromId("kapitel10A"));
                 io.pressEnterToContinue();
-                System.out.println("kapitel10A2");
+                System.out.println(findPointerFromId("kapitel10A2"));
                 int pointer = io.getUserInput();
                 if (pointer==1) {
-                    System.out.println(findPointerFromId("kapitel10AKorrekt"));
-                    player.setStudyPoints(player.getStudyPoints()+10);
+                    System.out.println(findPointerFromId("kapitel10A2Forkert"));
+                    player.setStudyPoints(player.getStudyPoints()-5);
                     io.pressEnterToContinue();
                     System.out.println(findPointerFromId("kapitel10A3"));
                     player.setEnergyLevel(player.getEnergyLevel()-10);
                     checkEnergyLevel();
                     kapitelJul();
                 } else if (pointer ==2) {
-                    System.out.println(findPointerFromId("kapitel10AForkert"));
+                    System.out.println(findPointerFromId("kapitel10A2Korrekt"));
+                    player.setStudyPoints(player.getStudyPoints()+10);
+                    io.pressEnterToContinue();
+                    System.out.println(findPointerFromId("kapitel10A3"));
+                    player.setEnergyLevel(player.getEnergyLevel()-10);
+                    checkEnergyLevel();
+                    kapitelJul();
+                } else if (pointer ==3) {
+                    System.out.println(findPointerFromId("kapitel10A2Forkert"));
                     player.setStudyPoints(player.getStudyPoints()-5);
                     io.pressEnterToContinue();
                     System.out.println(findPointerFromId("kapitel10A3"));
                     player.setEnergyLevel(player.getEnergyLevel()-10);
+                    checkEnergyLevel();
                     kapitelJul();
-                } else {
-                    System.out.println(findPointerFromId("DetKanDuIkkeGøreNu"));
-                }
-            } catch(InputMismatchException e) {
+                }else {
+                        System.out.println(findPointerFromId("DetKanDuIkkeGøreNu"));
+                    }
+                } catch(InputMismatchException e) {
                 System.out.println(findPointerFromId("DetErIkkeEtTal"));
             }
         }
     }
 
-    private static void kapitel10B() {
+    public static void kapitel10B() {
         while(true) {
             io.clearAll();
             System.out.println(findPointerFromId("kapitel10B"));
-            player.setEnergyLevel(player.getEnergyLevel()-10);
+            player.setEnergyLevel(player.getEnergyLevel()-15);
             checkEnergyLevel();
             io.pressEnterToContinue();
+            kapitelJul();
         }
     }
 
-    private static void kapitel10C() {
+    public static void kapitel10C() {
         while (true) {
             io.clearAll();
             System.out.println(findPointerFromId("kapitel10C"));
@@ -1711,7 +1731,7 @@ public class Storyline {
         }
     }
 
-    private static void goToCafeteria8() {
+    public static void goToCafeteria8() {
 
         boolean running = true;
         while (running) {
@@ -1745,7 +1765,7 @@ public class Storyline {
     }
 
 
-    private static void kapitel100() {
+    public static void kapitel100() {
         System.out.println(findPointerFromId("kapitelslut"));
         io.pressEnterToContinue();
         if (player.getStudyPoints() >= 20) {
@@ -1764,7 +1784,7 @@ public class Storyline {
         }
     }
 
-    private static void checkEnergyLevel() {
+    public static void checkEnergyLevel() {
         if (player.getEnergyLevel() < 0) {
             System.out.println("Du har ikke mere energi! Øv! Du glemte vist at gå i kantinen og spise mad?");
             io.pressEnterToContinue();
@@ -1773,7 +1793,7 @@ public class Storyline {
         }
     }
 
-    private static void bossFightStart() {
+    public static void bossFightStart() {
         BossFight bossfight = new BossFight();
         bossfight.BossFight();
     }
