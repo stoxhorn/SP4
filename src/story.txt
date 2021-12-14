@@ -248,13 +248,13 @@ Han lægger to våben foran dig. Hvilket foretrækker du?
     (3)Jeg tror jeg bruger min bare næver, den her DØDSSKOV ser ikke så skide farlig ud ... x0Slut
 
 0xkapitel1D5SværdAx0
-Du tager sværdet, og kan allerede mærke hvordan du bliver en stærkere og farligere kriger af det ...
+🗡️ Du tager sværdet, og kan allerede mærke hvordan du bliver en stærkere og farligere kriger af det ...
 Din evne til at angribe og slås stiger, og du har nu x0Slut
 
 0xkapitel1D5Slutx0 i angrebsstyrke!x0Slut
 
 0xkapitel1D5Buex0
-Du har ikke prøvet at kæmpe med bue og pil før, men det kan umuligt være værre end ikke at have noget våben, vel?
+🏹 Du har ikke prøvet at kæmpe med bue og pil før, men det kan umuligt være værre end ikke at have noget våben, vel?
 Din evne til at angribe og slås stiger, og du har nu x0Slut
 
 
@@ -361,6 +361,9 @@ x0Slut
 
 0xkapitel2Bx0
 Du stiller dig hen til elevatoren. Der er tre knapper.
+🔘
+🔘
+🔘
 Smart som du er, kan du ikke helt huske hvilken etage undervisningen foregår på.
 Du trykker derfor på '3'.
 Mon ikke det var den etage du var på i går? x0Slut
@@ -577,7 +580,7 @@ Du kan allerede mærke hovedpinen begynde at melde sig på banen, men du forsøg
 August spørger, om I skal slå sten, saks papir om en kop kaffe.
 Hvad vil du gøre?
    (1)Jeg ignorerer ham. Jeg er her for at lære, ikke for at få venner!
-   (2)Jeg siger top og begynder at slå sten saks papir med ham ....
+   (2)Jeg siger top og begynder at slå sten saks papir med ham .... 🎲🎲
    (3)For menu x0Slut
 
 0xkapitel3A2x0
@@ -731,7 +734,7 @@ Midt i al støvet finder du en gammel bog ... du samler den op.x0Slut
 
 I dag er der ingen undervisning på CPH-Business!
 Til gengæld skal du ud og spille rundbold på en græsplæne bag bygningen.
-Hvordan går du til den opgave?
+Hvordan går du til den opgave? ⚾
     (1)Jeg går hjem... De får ikke den her nørd til at løbe rundt i en firkant!
     (2)Jeg giver den gas! Jeg er ikke på Vinderholdet for ingenting!
     (3)Jeg tror liiiige der var nogle piger som ville have selskab?x0Slut
@@ -960,6 +963,7 @@ x0Slut
 
 0xkapitel8Pjækx0
 Du tager hjem og spiller dit Anime-spil. Det der JAVA må vente til du bliver rigtig voksen!
+(づ｡◕‿‿◕｡)づ
 x0Slut
 
 
@@ -1168,7 +1172,7 @@ Hvad vil du gøre?
 x0Slut
 
 0xkapitelJulCx0
-Du ankommer til klasselokalet. Der er dækket op til den helt store julemorgenmad med brunch, boller og kakao
+🎄 Du ankommer til klasselokalet. Der er dækket op til den helt store julemorgenmad med brunch, boller og kakao
 Du sætter dig ved siden af din bedste ven August, som ønsker dig god juleferie
 Han undskylder også for alle de gange han har prøvet at lokke dig til dumme ting, i stedet for at lade dig fokusere på dit studie.
 August har glemt sin kaffe på bordet da han går ud og tisser. Du kan mærke du er tørstig og den kaffe ser dejlig varm og fristende ud.

@@ -84,7 +84,7 @@ public class Backpack {
     }
 
 
-    public void eatSandwich() { // Printer else if ud 3 gange hvis man har 3 kaffer *FIX*
+    public void eatSandwich() {
         for (int j = 0; j < items.size(); j++) {
             Item s = this.items.get(j);
             if (s.toString() == "sandwich") {
@@ -110,7 +110,7 @@ public class Backpack {
             Item s = this.items.get(j);
             if (s.toString() == "apple") {
                 items.remove(j);
-                System.out.println("Du spiser dit klamme æble, FØJ.. Meeeen den mætter");
+                System.out.println("\uD83C\uDF4E Du spiser dit klamme æble, FØJ.. Meeeen den mætter");
                 this.apple = apple - 1;
                 Storyline.player.setEnergyLevel(Storyline.player.getEnergyLevel() + 5);
                 if (Storyline.player.getEnergyLevel() >= Storyline.player.getMaxEnergyLevel()) {
@@ -126,12 +126,12 @@ public class Backpack {
         System.out.println("Du har intet æble");
     }
 
-    public void drinkCoffee() { // Skal erstatte den abstracte useItem metode **MANGLER TEST**
+    public void drinkCoffee() {
         for (int j = 0; j < items.size(); j++) {
             Item s = this.items.get(j);
             if (s.toString() == "coffee") {
                 items.remove(j);
-                System.out.println("Du drikker en kaffe - av den er varm");
+                System.out.println("☕ Du drikker en kaffe - av den er varm");
                 this.coffee = coffee - 1;
                 Storyline.player.setEnergyLevel(Storyline.player.getEnergyLevel() + 10);
                 if (Storyline.player.getEnergyLevel() >= Storyline.player.getMaxEnergyLevel()) {

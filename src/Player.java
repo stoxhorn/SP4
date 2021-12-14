@@ -130,7 +130,7 @@ public class Player {
             System.out.println("Den her bog har du ikke");
             return;
         } else {
-            System.out.println("Du læste den spændende bog ved navn: " + b.getBookTitle());
+            System.out.println("\uD83D\uDD6E Du læste den spændende bog ved navn: " + b.getBookTitle());
             System.out.println("Det er en rigtig spændende bog som giver dig " + b.getStudyPoints() + " ekstra Study Points");
             Storyline.player.setStudyPoints(Storyline.player.getStudyPoints() + b.getStudyPoints());
             System.out.println("Efter at have læst bogen er du nu i alt oppe på " + Storyline.player.getStudyPoints() + " Study Points");
@@ -144,7 +144,7 @@ public class Player {
     public void lootBook1() {
         Book book1 = new Book("Hvordan tænder man sin pc",25, 1);
         addItemToInventory(book1);
-        System.out.println("Bog tilføjet: '" + book1.getBookTitle() + "' \n" +
+        System.out.println("\uD83D\uDD6E Bog tilføjet: '" + book1.getBookTitle() + "' \n" +
                 "Det er en rigtig god bog som kan give dig " + book1.getStudyPoints() + " Study Points");
     }
 
@@ -152,21 +152,21 @@ public class Player {
     public void lootBook2() {
         Book book2 = new Book("Hvad er processing?",35,2);
         addItemToInventory(book2);
-        System.out.println("Bog tilføjet: '" + book2.getBookTitle() + "' \n" +
+        System.out.println("\uD83D\uDD6E Bog tilføjet: '" + book2.getBookTitle() + "' \n" +
                 "Det er en rigtig god bog som kan give dig " + book2.getStudyPoints() + " Study Points");
     }
 
     public void lootBook3() {
         Book book3 = new Book("Strings for nybegyndere",30,3);
         addItemToInventory(book3);
-        System.out.println("Bog tilføjet: '" + book3.getBookTitle() + "' \n" +
+        System.out.println("\uD83D\uDD6E Bog tilføjet: '" + book3.getBookTitle() + "' \n" +
                 "Det er en rigtig god bog som kan give dig " + book3.getStudyPoints() + " Study Points");
     }
 
     public void buyApple() {
         if(getMoney() >= 5) {
             setMoney(getMoney() - 5);
-            System.out.println("Du har købt et ulækkert æble med en orm i. Men hva faaa'en, det er ekstra protein" +
+            System.out.println("\uD83C\uDF4E Du har købt et ulækkert æble med en orm i. Men hva faaa'en, det er ekstra protein" +
                     "\n Du har nu " + getMoney() + "kroner tilbage");
             addItemToInventory(new Apple());
         } else {
@@ -177,7 +177,7 @@ public class Player {
     public void buyCoffee() {
         if (getMoney() >= 10) {
             setMoney(getMoney() - 10);
-            System.out.println("Du har nu købt en dejlig varm kop kaffe for 10 kroner" +
+            System.out.println("☕ Du har nu købt en dejlig varm kop kaffe for 10 kroner" +
                     "\nDu har nu " + getMoney() + " kroner tilbage");
             addItemToInventory(new Coffee());
         } else {
